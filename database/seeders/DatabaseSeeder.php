@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Molitor\Cms\Database\Seeders\CmsSeeder;
+use Molitor\Language\Database\Seeders\LanguageSeeder;
+use Molitor\User\Database\Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $this->call([
+            // User package MUST be first - creates user groups and permissions that other seeders depend on
+            UserSeeder::class,
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            // Language package - depends on 'admin' user group
+            LanguageSeeder::class,
+
+            // CMS package - depends on 'admin' user group
+            CmsSeeder::class,
         ]);
     }
 }

@@ -11,7 +11,20 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "istvanmolitor/admin": "@dev",
+        "istvanmolitor/article-parser": "@dev",
+        "istvanmolitor/article-scraper": "@dev",
+        "istvanmolitor/cms": "@dev",
+        "istvanmolitor/cms-search": "@dev",
+        "istvanmolitor/html-parser": "@dev",
+        "istvanmolitor/language": "@dev",
+        "istvanmolitor/media": "@dev",
+        "istvanmolitor/menu": "@dev",
+        "istvanmolitor/rss-watcher": "@dev",
+        "istvanmolitor/setting": "@dev",
+        "istvanmolitor/theme": "@dev",
+        "istvanmolitor/user": "@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -29,6 +42,60 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/admin"
+        },
+        {
+            "type": "path",
+            "url": "packages/article-parser"
+        },
+        {
+            "type": "path",
+            "url": "packages/article-scraper"
+        },
+        {
+            "type": "path",
+            "url": "packages/cms"
+        },
+        {
+            "type": "path",
+            "url": "packages/cms-search"
+        },
+        {
+            "type": "path",
+            "url": "packages/html-parser"
+        },
+        {
+            "type": "path",
+            "url": "packages/language"
+        },
+        {
+            "type": "path",
+            "url": "packages/media"
+        },
+        {
+            "type": "path",
+            "url": "packages/menu"
+        },
+        {
+            "type": "path",
+            "url": "packages/rss-watcher"
+        },
+        {
+            "type": "path",
+            "url": "packages/setting"
+        },
+        {
+            "type": "path",
+            "url": "packages/theme"
+        },
+        {
+            "type": "path",
+            "url": "packages/user"
+        }
+    ],
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"

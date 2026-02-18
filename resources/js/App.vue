@@ -6,7 +6,10 @@
 </script>
 
 
-<style scoped>
-/* Scoped styles for this component */
+<style>
+/* Global styles - ensure full height */
+#app {
+  height: 100%;
+}
 </style>
 

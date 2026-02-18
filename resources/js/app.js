@@ -1,4 +1,5 @@
 import './bootstrap';
+import './menuRegistry'; // Register all menu builders
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';

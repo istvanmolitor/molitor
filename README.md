@@ -29,34 +29,50 @@ Ez az alkalmazás **moduláris architektúrát** használ:
 
 ### Telepítés
 
+⚠️ **FONTOS:** Ez a projekt **Laravel Sail**-t használ! Használj mindig `./vendor/bin/sail` előtagot!
+
 ```bash
 # Backend függőségek
 composer install
 
+# Konténerek elindítása
+./vendor/bin/sail up -d
+
+# Storage jogosultságok
+./vendor/bin/sail exec laravel.test chmod -R 777 storage bootstrap/cache
+
 # Frontend függőségek
-npm install
+./vendor/bin/sail npm install
 
-# Környezeti változók
+# Környezeti változók (ha szükséges)
 cp .env.example .env
-php artisan key:generate
+./vendor/bin/sail artisan key:generate
 
-# Adatbázis
-php artisan migrate
+# Adatbázis migráció és seed
+./vendor/bin/sail artisan migrate
+./vendor/bin/sail artisan db:seed
 
 # Frontend build
-npm run build
+./vendor/bin/sail npm run build
 ```
 
 ### Fejlesztés
 
 ```bash
-# Mindent egyben indít (server, queue, logs, vite):
-composer dev
+# Konténerek elindítása (ha még nem futnak)
+./vendor/bin/sail up -d
 
-# VAGY külön terminálokban:
-php artisan serve    # Backend
-npm run dev          # Frontend
+# Frontend fejlesztés (watch mode)
+./vendor/bin/sail npm run dev
+
+# VAGY mindent egyben indít (server, queue, logs, vite):
+composer dev
 ```
+
+### Admin Hozzáférés
+
+- **Email:** admin@example.com
+- **Jelszó:** admin
 
 Nyisd meg: **http://localhost:8000**
 

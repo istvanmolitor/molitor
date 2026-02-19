@@ -1,0 +1,55 @@
+# Molitor Project - Cursor Rules
+
+## Project Structure Conventions
+
+### Backend Development (Laravel/PHP)
+- All Laravel packages are located in `/packages/`
+- Never create Laravel code outside of `/packages/` directory
+- Each package structure:
+  - `src/` - Controllers, Models, Services, Providers
+  - `resources/` - Views, config files
+  - `tests/` - Unit and Feature tests
+  - `composer.json` - Package dependencies
+
+### Frontend Development (Vue.js/TypeScript)
+- All Vue components and TypeScript files are in `/resources/js/vue-packages/`
+- Never create Vue/TS code outside of `/resources/js/vue-packages/` directory
+- Each package structure:
+  - `components/` - Reusable Vue components
+  - `views/` - Page-level components
+  - `services/` - API calls and utilities
+  - `types/` - TypeScript type definitions
+  - `stores/` - Pinia state management
+  - `composables/` - Vue composables
+
+### Examples
+- Backend user logic: `/packages/user/src/`
+- Frontend user components: `/resources/js/vue-packages/vue-user/`
+- Backend CMS: `/packages/cms/src/`
+- Frontend admin UI: `/resources/js/vue-packages/vue-admin/`
+
+### When Creating New Features
+1. **Backend API/Logic**: Create/modify in `/packages/[package-name]/src/`
+2. **Frontend UI/Components**: Create/modify in `/resources/js/vue-packages/[package-name]/`
+3. **Database**: Migrations in `/database/migrations/` or package-specific
+4. **Routes**: Define in `/routes/web.php` or package-specific route files
+
+## Technology Stack
+- Backend: Laravel 12, PHP 8.2+, SQLite/MySQL
+- Frontend: Vue 3, TypeScript, Vite
+- Auth: Laravel Sanctum (token-based)
+- Styling: Tailwind CSS 4
+- Icons: Lucide Vue
+
+## Development Commands
+- Start: `./vendor/bin/sail up -d`
+- Frontend: `./vendor/bin/sail npm run dev`
+- Backend: `./vendor/bin/sail artisan serve`
+- All: `composer dev`
+
+## Code Style
+- PHP: Follow PSR-12
+- TypeScript: Use strict mode, proper typing
+- Vue: Use Composition API with `<script setup lang="ts">`
+- Naming: PascalCase for components, camelCase for variables/functions
+

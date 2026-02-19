@@ -1,0 +1,27 @@
+# Molitor Project - AI Assistant Context
+
+## Project Structure Rules
+
+### Backend (Laravel/PHP)
+- Laravel packages location: `/packages/`
+- Each package contains: `composer.json`, `src/`, `resources/`, `tests/`
+- Use `/packages/` for all Laravel backend code
+
+### Frontend (Vue.js/TypeScript)
+- Vue packages location: `/resources/js/vue-packages/`
+- Each package contains: `components/`, `views/`, `services/`, `types/`
+- Use `/resources/js/vue-packages/` for all Vue and TypeScript code
+
+### Examples
+- Backend user package: `/packages/user/`
+- Frontend user components: `/resources/js/vue-packages/vue-user/`
+- Backend CMS: `/packages/cms/`
+- Frontend admin: `/resources/js/vue-packages/vue-admin/`
+
+## Quick Reference
+- PHP/Laravel code → `/packages/[package-name]/src/`
+- Vue/TypeScript code → `/resources/js/vue-packages/[package-name]/`
+- Migrations → `/database/migrations/` or package-specific
+- Routes → `/routes/` or package-specific
+- Public assets → `/public/build/` (compiled by Vite)
+

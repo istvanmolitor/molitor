@@ -86,24 +86,48 @@ Nyisd meg: **http://localhost:8000**
 
 ## 📁 Projekt Struktúra
 
+> **⚠️ FONTOS KONVENCIÓ:**
+> - **Backend (Laravel/PHP)**: Minden Laravel csomag a `/packages/` mappában található
+> - **Frontend (Vue/TypeScript)**: Minden Vue komponens és TypeScript fájl a `/resources/js/vue-packages/` mappában található
+
 ```
-├── packages/              # Backend packages
-│   ├── user/
-│   ├── cms/
-│   ├── media/
-│   └── ...
+├── packages/              # ⚙️ BACKEND: Laravel packages (PHP)
+│   ├── user/             # Felhasználó kezelés (Controllers, Models, Services)
+│   ├── cms/              # CMS backend logic
+│   ├── media/            # Média fájl kezelés
+│   ├── admin/            # Admin funkciók
+│   └── ...               # További backend csomagok
+│
 ├── resources/
 │   └── js/
-│       ├── router/        # Központi Vue router
-│       └── vue-packages/  # Frontend packages
-│           ├── vue-user/
-│           ├── vue-cms/
-│           └── ...
+│       ├── router/       # Központi Vue router
+│       └── vue-packages/ # 🎨 FRONTEND: Vue 3 + TypeScript packages
+│           ├── vue-user/     # User komponensek (.vue, .ts)
+│           ├── vue-admin/    # Admin UI komponensek
+│           └── ...           # További frontend csomagok
+│
 ├── routes/
-│   └── web.php           # Catch-all Vue app
+│   └── web.php          # Laravel route-ok + catch-all Vue app
 └── public/
-    └── build/            # Built assets
+    └── build/           # Compiled frontend assets (Vite)
 ```
+
+### Package Struktúra
+
+**Backend Package** (`/packages/[name]/`):
+- `src/` - Controllers, Models, Services
+- `resources/` - Views, config
+- `tests/` - Unit/Feature tesztek
+- `composer.json` - PHP dependencies
+
+**Frontend Package** (`/resources/js/vue-packages/[name]/`):
+- `components/` - Vue komponensek
+- `views/` - Oldal szintű komponensek
+- `services/` - API hívások, utility funkciók
+- `types/` - TypeScript típus definíciók
+- `stores/` - Pinia state management
+
+**Részletes dokumentáció:** [.github/copilot-instructions.md](.github/copilot-instructions.md)
 
 ## 🎯 API Végpontok
 

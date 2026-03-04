@@ -39,13 +39,13 @@ packages/
 - ❌ Helytelen: `/app/Controllers/UserController.php`
 
 ### 2. Frontend (Vue.js/TypeScript)
-**📍 Hely:** `/resources/js/vue-packages/`
+**📍 Hely:** `/resources/js/packages/`
 
-Minden Vue komponens és TypeScript kód a `/resources/js/vue-packages/` mappában található. Ne hozz létre Vue/TS kódot máshol!
+Minden Vue komponens és TypeScript kód a `/resources/js/packages/` mappában található. Ne hozz létre Vue/TS kódot máshol!
 
 #### Struktúra:
 ```
-resources/js/vue-packages/
+resources/js/packages/
 ├── vue-user/                # User-related frontend
 │   ├── components/          # Reusable components
 │   │   ├── UserCard.vue
@@ -75,8 +75,8 @@ resources/js/vue-packages/
 ```
 
 #### Példák:
-- ✅ Helyes: `/resources/js/vue-packages/vue-user/views/auth/Login.vue`
-- ✅ Helyes: `/resources/js/vue-packages/vue-admin/components/ui/Button.vue`
+- ✅ Helyes: `/resources/js/packages/vue-user/views/auth/Login.vue`
+- ✅ Helyes: `/resources/js/packages/vue-admin/components/ui/Button.vue`
 - ❌ Helytelen: `/resources/js/components/Login.vue`
 - ❌ Helytelen: `/app/vue/Login.vue`
 
@@ -93,12 +93,12 @@ resources/js/vue-packages/
 6. Test: `/packages/[package-name]/tests/`
 
 #### Frontend Feature:
-1. Navigálj a megfelelő package-hez: `/resources/js/vue-packages/[package-name]/`
-2. Component: `/resources/js/vue-packages/[package-name]/components/`
-3. View: `/resources/js/vue-packages/[package-name]/views/`
-4. Service: `/resources/js/vue-packages/[package-name]/services/`
-5. Type: `/resources/js/vue-packages/[package-name]/types/`
-6. Store: `/resources/js/vue-packages/[package-name]/stores/`
+1. Navigálj a megfelelő package-hez: `/resources/js/packages/[package-name]/`
+2. Component: `/resources/js/packages/[package-name]/components/`
+3. View: `/resources/js/packages/[package-name]/views/`
+4. Service: `/resources/js/packages/[package-name]/services/`
+5. Type: `/resources/js/packages/[package-name]/types/`
+6. Store: `/resources/js/packages/[package-name]/stores/`
 
 ### Példa: Login Feature
 
@@ -114,7 +114,7 @@ resources/js/vue-packages/
 
 **Frontend (Vue):**
 ```
-/resources/js/vue-packages/vue-user/
+/resources/js/packages/vue-user/
 ├── views/auth/
 │   ├── Login.vue                   # Login page component
 │   └── Register.vue                # Register page component
@@ -142,9 +142,9 @@ resources/js/vue-packages/
 ### Frontend Csomagok
 | Csomag | Hely | Célja |
 |--------|------|-------|
-| `vue-user` | `/resources/js/vue-packages/vue-user/` | User UI, auth views |
-| `vue-admin` | `/resources/js/vue-packages/vue-admin/` | Admin panel UI, shared components |
-| `vue-cms` | `/resources/js/vue-packages/vue-cms/` | CMS frontend |
+| `vue-user` | `/resources/js/packages/vue-user/` | User UI, auth views |
+| `vue-admin` | `/resources/js/packages/vue-admin/` | Admin panel UI, shared components |
+| `vue-cms` | `/resources/js/packages/vue-cms/` | CMS frontend |
 
 ## 🛠️ Technológiai Stack
 
@@ -243,7 +243,7 @@ onMounted(async () => {
 ```
 **✅ HELYES:**
 ```
-/resources/js/vue-packages/vue-user/views/auth/Login.vue
+/resources/js/packages/vue-user/views/auth/Login.vue
 ```
 
 ### ❌ HIBA: TypeScript service a rossz helyen
@@ -252,7 +252,7 @@ onMounted(async () => {
 ```
 **✅ HELYES:**
 ```
-/resources/js/vue-packages/vue-user/services/authService.ts
+/resources/js/packages/vue-user/services/authService.ts
 ```
 
 ## 📚 További Dokumentáció
@@ -267,7 +267,7 @@ Ha AI asszisztens vagy (GitHub Copilot, Cursor, Junie, stb.):
 
 1. **MINDIG** ellenőrizd, hogy a megfelelő helyen dolgozol
 2. Backend kód → `/packages/`
-3. Frontend kód → `/resources/js/vue-packages/`
+3. Frontend kód → `/resources/js/packages/`
 4. Ne hozz létre fájlokat a szabványos Laravel helyeken (`/app/Http/Controllers/`, stb.)
 5. Tartsd be a package struktúrát
 6. Kérdezz vissza, ha bizonytalan vagy!

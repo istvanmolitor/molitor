@@ -24,14 +24,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["resources/js/*"],
-      "@admin/*": ["resources/js/vue-packages/vue-admin/*"],
-      "@article-scraper/*": ["resources/js/vue-packages/vue-article-scraper/*"],
-      "@cms/*": ["resources/js/vue-packages/vue-cms/*"],
-      "@media/*": ["resources/js/vue-packages/vue-media/*"],
-      "@menu/*": ["resources/js/vue-packages/vue-menu/*"],
-      "@rss-watcher/*": ["resources/js/vue-packages/vue-rss-watcher/*"],
-      "@theme/*": ["resources/js/vue-packages/vue-theme/*"],
-      "@user/*": ["resources/js/vue-packages/vue-user/*"]
+      "@admin/*": ["resources/js/packages/vue-admin/*"],
+      "@article-scraper/*": ["resources/js/packages/vue-article-scraper/*"],
+      "@cms/*": ["resources/js/packages/vue-cms/*"],
+      "@media/*": ["resources/js/packages/vue-media/*"],
+      "@menu/*": ["resources/js/packages/vue-menu/*"],
+      "@rss-watcher/*": ["resources/js/packages/vue-rss-watcher/*"],
+      "@theme/*": ["resources/js/packages/vue-theme/*"],
+      "@user/*": ["resources/js/packages/vue-user/*"]
     }
   },
   "include": [

@@ -32,14 +32,14 @@ Each package typically contains:
 
 All Vue.js frontend packages are located in:
 ```
-/resources/js/vue-packages/
+/resources/js/packages/
 ```
 
 These packages contain Vue components (.vue files), TypeScript files (.ts), and frontend logic.
 
 Examples:
-- `/resources/js/vue-packages/vue-user/` - User-related Vue components
-- `/resources/js/vue-packages/vue-admin/` - Admin panel components
+- `/resources/js/packages/vue-user/` - User-related Vue components
+- `/resources/js/packages/vue-admin/` - Admin panel components
 
 Each Vue package typically contains:
 - `components/` - Reusable Vue components
@@ -52,7 +52,7 @@ Each Vue package typically contains:
 ### Key Conventions
 
 1. **Backend (PHP/Laravel)**: Always look in `/packages/` for Laravel packages
-2. **Frontend (Vue/TypeScript)**: Always look in `/resources/js/vue-packages/` for Vue components and TypeScript code
+2. **Frontend (Vue/TypeScript)**: Always look in `/resources/js/packages/` for Vue components and TypeScript code
 3. **Main Application**: The root Laravel application is in standard locations (`/app/`, `/config/`, `/routes/`, etc.)
 4. **Public Assets**: Compiled frontend assets are in `/public/build/`
 
@@ -65,7 +65,7 @@ Each Vue package typically contains:
 ### When Creating New Features
 
 - **Backend logic**: Create or modify files in `/packages/[package-name]/src/`
-- **Frontend components**: Create or modify files in `/resources/js/vue-packages/[package-name]/`
+- **Frontend components**: Create or modify files in `/resources/js/packages/[package-name]/`
 - **API endpoints**: Define in package-specific route files or `/routes/web.php`
 - **Database migrations**: Place in package-specific migrations or `/database/migrations/`
 

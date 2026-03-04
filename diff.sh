@@ -39,7 +39,7 @@ for package in packages/*/; do
 done
 
 # Check Vue packages for changes
-for package in resources/js/vue-packages/*/; do
+for package in resources/js/packages/*/; do
     if [ -d "$package" ]; then
         if ! git diff --quiet "$package" || ! git diff --cached --quiet "$package"; then
             has_vue_changes=true
@@ -70,17 +70,17 @@ if [ "$has_php_changes" = true ]; then
     done
 fi
 
-# Process vue-packages directory
+# Process packages directory
 if [ "$has_vue_changes" = true ]; then
     echo ""
     echo "═══════════════════════════════════════"
-    echo "Vue Packages (resources/js/vue-packages/)"
+    echo "Vue Packages (resources/js/packages/)"
     echo "═══════════════════════════════════════"
 
-    for package in resources/js/vue-packages/*/; do
+    for package in resources/js/packages/*/; do
         if [ -d "$package" ]; then
             package_name=$(basename "$package")
-            show_package_diff "$package" "vue-packages/$package_name"
+            show_package_diff "$package" "packages/$package_name"
         fi
     done
 fi

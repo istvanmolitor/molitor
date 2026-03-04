@@ -91,10 +91,10 @@ for package in packages/*/; do
     fi
 done
 
-# Process resources/js/vue-packages/ directory
-if [ -d "resources/js/vue-packages" ]; then
-    echo -e "\n${YELLOW}Processing resources/js/vue-packages/ directory...${NC}"
-    for package in resources/js/vue-packages/*/; do
+# Process resources/js/packages/ directory
+if [ -d "resources/js/packages" ]; then
+    echo -e "\n${YELLOW}Processing resources/js/packages/ directory...${NC}"
+    for package in resources/js/packages/*/; do
         if [ -d "$package" ]; then
             commit_package "$package"
         fi

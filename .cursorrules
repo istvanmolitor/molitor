@@ -12,8 +12,8 @@
   - `composer.json` - Package dependencies
 
 ### Frontend Development (Vue.js/TypeScript)
-- All Vue components and TypeScript files are in `/resources/js/vue-packages/`
-- Never create Vue/TS code outside of `/resources/js/vue-packages/` directory
+- All Vue components and TypeScript files are in `/resources/js/packages/`
+- Never create Vue/TS code outside of `/resources/js/packages/` directory
 - Each package structure:
   - `components/` - Reusable Vue components
   - `views/` - Page-level components
@@ -24,13 +24,13 @@
 
 ### Examples
 - Backend user logic: `/packages/user/src/`
-- Frontend user components: `/resources/js/vue-packages/vue-user/`
+- Frontend user components: `/resources/js/packages/vue-user/`
 - Backend CMS: `/packages/cms/src/`
-- Frontend admin UI: `/resources/js/vue-packages/vue-admin/`
+- Frontend admin UI: `/resources/js/packages/vue-admin/`
 
 ### When Creating New Features
 1. **Backend API/Logic**: Create/modify in `/packages/[package-name]/src/`
-2. **Frontend UI/Components**: Create/modify in `/resources/js/vue-packages/[package-name]/`
+2. **Frontend UI/Components**: Create/modify in `/resources/js/packages/[package-name]/`
 3. **Database**: Migrations in `/database/migrations/` or package-specific
 4. **Routes**: Define in `/routes/web.php` or package-specific route files
 

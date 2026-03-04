@@ -8,7 +8,7 @@ Moduláris Laravel + Vue 3 alkalmazás TypeScript-tel, több package-ben szervez
 
 Ez az alkalmazás **moduláris architektúrát** használ:
 - **Backend**: Laravel API végpontok a `/packages` mappában
-- **Frontend**: Vue 3 + TypeScript modulok a `/resources/js/vue-packages` mappában
+- **Frontend**: Vue 3 + TypeScript modulok a `/resources/js/packages` mappában
 
 ### Packages
 - **user** - Felhasználók, autentikáció, jogosultságok
@@ -88,7 +88,7 @@ Nyisd meg: **http://localhost:8000**
 
 > **⚠️ FONTOS KONVENCIÓ:**
 > - **Backend (Laravel/PHP)**: Minden Laravel csomag a `/packages/` mappában található
-> - **Frontend (Vue/TypeScript)**: Minden Vue komponens és TypeScript fájl a `/resources/js/vue-packages/` mappában található
+> - **Frontend (Vue/TypeScript)**: Minden Vue komponens és TypeScript fájl a `/resources/js/packages/` mappában található
 
 ```
 ├── packages/              # ⚙️ BACKEND: Laravel packages (PHP)
@@ -101,7 +101,7 @@ Nyisd meg: **http://localhost:8000**
 ├── resources/
 │   └── js/
 │       ├── router/       # Központi Vue router
-│       └── vue-packages/ # 🎨 FRONTEND: Vue 3 + TypeScript packages
+│       └── packages/ # 🎨 FRONTEND: Vue 3 + TypeScript packages
 │           ├── vue-user/     # User komponensek (.vue, .ts)
 │           ├── vue-admin/    # Admin UI komponensek
 │           └── ...           # További frontend csomagok
@@ -120,7 +120,7 @@ Nyisd meg: **http://localhost:8000**
 - `tests/` - Unit/Feature tesztek
 - `composer.json` - PHP dependencies
 
-**Frontend Package** (`/resources/js/vue-packages/[name]/`):
+**Frontend Package** (`/resources/js/packages/[name]/`):
 - `components/` - Vue komponensek
 - `views/` - Oldal szintű komponensek
 - `services/` - API hívások, utility funkciók

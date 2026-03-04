@@ -16,14 +16,14 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'resources/js'),
-            '@admin': path.resolve(__dirname, 'resources/js/vue-packages/vue-admin'),
-            '@article-scraper': path.resolve(__dirname, 'resources/js/vue-packages/vue-article-scraper'),
-            '@cms': path.resolve(__dirname, 'resources/js/vue-packages/vue-cms'),
-            '@media': path.resolve(__dirname, 'resources/js/vue-packages/vue-media'),
-            '@menu': path.resolve(__dirname, 'resources/js/vue-packages/vue-menu'),
-            '@rss-watcher': path.resolve(__dirname, 'resources/js/vue-packages/vue-rss-watcher'),
-            '@theme': path.resolve(__dirname, 'resources/js/vue-packages/vue-theme'),
-            '@user': path.resolve(__dirname, 'resources/js/vue-packages/vue-user'),
+            '@admin': path.resolve(__dirname, 'resources/js/packages/vue-admin'),
+            '@article-scraper': path.resolve(__dirname, 'resources/js/packages/vue-article-scraper'),
+            '@cms': path.resolve(__dirname, 'resources/js/packages/vue-cms'),
+            '@media': path.resolve(__dirname, 'resources/js/packages/vue-media'),
+            '@menu': path.resolve(__dirname, 'resources/js/packages/ts-menu'),
+            '@rss-watcher': path.resolve(__dirname, 'resources/js/packages/vue-rss-watcher'),
+            '@theme': path.resolve(__dirname, 'resources/js/packages/vue-theme'),
+            '@user': path.resolve(__dirname, 'resources/js/packages/vue-user'),
         },
     },
     server: {

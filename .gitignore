@@ -23,4 +23,4 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 /packages
-/resources/js/vue-packages
+/resources/js/packages

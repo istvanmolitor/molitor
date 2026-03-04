@@ -32,15 +32,7 @@ if [ ! -f .env ]; then
     cp .env.example .env
 fi
 
-# Install dependencies if vendor is missing
-if [ ! -d vendor ]; then
-    docker run --rm \
-        -u "$(id -u):$(id -g)" \
-        -v "$(pwd):/var/www/html" \
-        -w /var/www/html \
-        laravelsail/php84-composer:latest \
-        composer install --ignore-platform-reqs
-fi
+composer install
 
 ./vendor/bin/sail up -d
 

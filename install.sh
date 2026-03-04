@@ -26,3 +26,23 @@ git clone git@github.com:istvanmolitor/ts-menu.git
 git clone git@github.com:istvanmolitor/vue-rss-watcher.git
 git clone git@github.com:istvanmolitor/vue-theme.git
 git clone git@github.com:istvanmolitor/vue-user.git
+
+cd ../../../
+if [ ! -f .env ]; then
+    cp .env.example .env
+fi
+
+# Install dependencies if vendor is missing
+if [ ! -d vendor ]; then
+    docker run --rm \
+        -u "$(id -u):$(id -g)" \
+        -v "$(pwd):/var/www/html" \
+        -w /var/www/html \
+        laravelsail/php84-composer:latest \
+        composer install --ignore-platform-reqs
+fi
+
+./vendor/bin/sail up -d
+
+./vendor/bin/sail artisan key:generate
+./vendor/bin/sail artisan migrate --seed

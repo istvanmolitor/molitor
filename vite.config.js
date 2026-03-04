@@ -32,4 +32,22 @@ export default defineConfig({
             ignored: ['**/storage/framework/views/**'],
         },
     },
+    build: {
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (id.includes('node_modules')) {
+                        if (id.includes('lucide-vue-next')) {
+                            return 'vendor-lucide';
+                        }
+                        if (id.includes('radix-vue') || id.includes('reka-ui')) {
+                            return 'vendor-ui';
+                        }
+                        return 'vendor';
+                    }
+                },
+            },
+        },
+    },
 });

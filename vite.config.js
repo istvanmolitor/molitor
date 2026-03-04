@@ -24,6 +24,7 @@ export default defineConfig({
             '@rss-watcher': path.resolve(__dirname, 'resources/js/packages/vue-rss-watcher'),
             '@theme': path.resolve(__dirname, 'resources/js/packages/vue-theme'),
             '@user': path.resolve(__dirname, 'resources/js/packages/vue-user'),
+            '@language': path.resolve(__dirname, 'resources/js/packages/vue-language'),
         },
     },
     server: {

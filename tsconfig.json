@@ -28,10 +28,11 @@
       "@article-scraper/*": ["resources/js/packages/vue-article-scraper/*"],
       "@cms/*": ["resources/js/packages/vue-cms/*"],
       "@media/*": ["resources/js/packages/vue-media/*"],
-      "@menu/*": ["resources/js/packages/vue-menu/*"],
+      "@menu/*": ["resources/js/packages/ts-menu/*"],
       "@rss-watcher/*": ["resources/js/packages/vue-rss-watcher/*"],
       "@theme/*": ["resources/js/packages/vue-theme/*"],
-      "@user/*": ["resources/js/packages/vue-user/*"]
+      "@user/*": ["resources/js/packages/vue-user/*"],
+      "@language/*": ["resources/js/packages/vue-language/*"]
     }
   },
   "include": [

@@ -7,6 +7,9 @@ import cmsRoutes from '@cms/router/index'
 import mediaRoutes from '@media/router/index'
 import adminRoutes from '@admin/router/index'
 import rssWatcherRoutes from '@rss-watcher/router/index'
+import themeRoutes from '@theme/router/index'
+import languageRoutes from '@language/router/index'
+import articleScraperRoutes from '@article-scraper/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -22,6 +25,9 @@ const routes: RouteRecordRaw[] = [
   ...mediaRoutes,
   ...adminRoutes,
   ...rssWatcherRoutes,
+  ...themeRoutes,
+  ...languageRoutes,
+  ...articleScraperRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

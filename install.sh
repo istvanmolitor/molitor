@@ -26,6 +26,7 @@ git clone git@github.com:istvanmolitor/ts-menu.git
 git clone git@github.com:istvanmolitor/vue-rss-watcher.git
 git clone git@github.com:istvanmolitor/vue-theme.git
 git clone git@github.com:istvanmolitor/vue-user.git
+git clone git@github.com:istvanmolitor/vue-language.git
 
 cd ../../../
 if [ ! -f .env ]; then

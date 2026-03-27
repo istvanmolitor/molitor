@@ -6,4 +6,3 @@ Route::get('/', fn () => view('welcome'));
 
 // Register CMS routes
 Route::cms();
-

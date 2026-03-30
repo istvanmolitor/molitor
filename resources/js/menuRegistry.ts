@@ -14,6 +14,7 @@ import { articleScraperMenuBuilder } from "@article-scraper/index.ts";
 import { themeMenuBuilder } from "@theme/index.ts";
 import { rssWatcherMenuBuilder } from "@rss-watcher/index.ts";
 import { languageMenuBuilder } from "@language/index.ts";
+import { productMenuBuilder } from "@product/index.ts";
 
 // Register admin menu builders
 const adminMenuBuilder = new AdminMenuBuilder()
@@ -28,6 +29,7 @@ menuRegistry.register(themeMenuBuilder)
 menuRegistry.register(rssWatcherMenuBuilder)
 menuRegistry.register(languageMenuBuilder)
 menuRegistry.register(currencyMenuBuilder)
+menuRegistry.register(productMenuBuilder)
 
 export { adminMenuBuilder, cmsMenuBuilder }
 

@@ -22,6 +22,7 @@ export default defineConfig({
             '@currency': path.resolve(__dirname, 'resources/js/packages/vue-currency'),
             '@media': path.resolve(__dirname, 'resources/js/packages/vue-media'),
             '@menu': path.resolve(__dirname, 'resources/js/packages/ts-menu'),
+            '@product': path.resolve(__dirname, 'resources/js/packages/vue-product'),
             '@rss-watcher': path.resolve(__dirname, 'resources/js/packages/vue-rss-watcher'),
             '@theme': path.resolve(__dirname, 'resources/js/packages/vue-theme'),
             '@user': path.resolve(__dirname, 'resources/js/packages/vue-user'),

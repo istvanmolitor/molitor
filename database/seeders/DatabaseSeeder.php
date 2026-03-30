@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Molitor\Cms\Database\Seeders\CmsSeeder;
 use Molitor\Currency\Database\Seeders\CurrencySeeder;
 use Molitor\Language\Database\Seeders\LanguageSeeder;
+use Molitor\Product\Database\Seeders\ProductSeeder;
 use Molitor\User\Database\Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             CmsSeeder::class,
             CurrencySeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }

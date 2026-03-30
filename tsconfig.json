@@ -30,6 +30,7 @@
       "@currency/*": ["resources/js/packages/vue-currency/*"],
       "@media/*": ["resources/js/packages/vue-media/*"],
       "@menu/*": ["resources/js/packages/ts-menu/*"],
+      "@product/*": ["resources/js/packages/vue-product/*"],
       "@rss-watcher/*": ["resources/js/packages/vue-rss-watcher/*"],
       "@theme/*": ["resources/js/packages/vue-theme/*"],
       "@user/*": ["resources/js/packages/vue-user/*"],

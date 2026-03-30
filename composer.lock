@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb3881f7e88d67a7d60b50f7bd2ddf25",
+    "content-hash": "e58fb85477c4ceaec50efbd71d1997ee",
     "packages": [
         {
             "name": "brick/math",
@@ -1174,7 +1174,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/admin",
-                "reference": "d348eeb3702da3b3edce98a514c5b11cba605482"
+                "reference": "503fd015c4ed6b19dc768eade8d1a691a3ad7d39"
             },
             "type": "library",
             "extra": {
@@ -1278,7 +1278,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "c95fede867fe38197985c6e0c54fa4fe574f62cd"
+                "reference": "bbdf322aa3ad41a148ee3c8235be3ecacf3c6171"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1360,7 +1360,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/currency",
-                "reference": "7bc8cc040f7716c9269a3a65c8e90a68b7be67da"
+                "reference": "843773b073ee3f6464f22528018f50a6e22a9769"
             },
             "require": {
                 "istvanmolitor/language": "*@dev"
@@ -1432,7 +1432,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/language",
-                "reference": "68380e0e62c6452b248473276c41265a1159fe39"
+                "reference": "8ff25555685154f3ad3d5bfd62aefb8cf5b28616"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -1543,6 +1543,44 @@
                 }
             ],
             "description": "Menu",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/product",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/product",
+                "reference": "cfc28bb27b16e1f02d0b36bd5abb99eb32da5bda"
+            },
+            "require": {
+                "istvanmolitor/currency": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Product\\Providers\\ProductServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Product\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Product",
             "transport-options": {
                 "relative": true
             }
@@ -9826,6 +9864,7 @@
         "istvanmolitor/language": 20,
         "istvanmolitor/media": 20,
         "istvanmolitor/menu": 20,
+        "istvanmolitor/product": 20,
         "istvanmolitor/rss-watcher": 20,
         "istvanmolitor/setting": 20,
         "istvanmolitor/theme": 20,

@@ -17,6 +17,7 @@
         "istvanmolitor/article-scraper": "@dev",
         "istvanmolitor/cms": "@dev",
         "istvanmolitor/cms-search": "@dev",
+        "istvanmolitor/currency": "@dev",
         "istvanmolitor/html-parser": "@dev",
         "istvanmolitor/language": "@dev",
         "istvanmolitor/media": "@dev",
@@ -63,6 +64,10 @@
         {
             "type": "path",
             "url": "packages/cms-search"
+        },
+        {
+            "type": "path",
+            "url": "packages/currency"
         },
         {
             "type": "path",

@@ -4,6 +4,7 @@ import type { RouteRecordRaw } from 'vue-router'
 // Import routes from all packages
 import userRoutes from '@user/router/index'
 import cmsRoutes from '@cms/router/index'
+import currencyRoutes from '@currency/router/index'
 import mediaRoutes from '@media/router/index'
 import adminRoutes from '@admin/router/index'
 import rssWatcherRoutes from '@rss-watcher/router/index'
@@ -22,6 +23,7 @@ const routes: RouteRecordRaw[] = [
   },
   ...userRoutes,
   ...cmsRoutes,
+  ...currencyRoutes,
   ...mediaRoutes,
   ...adminRoutes,
   ...rssWatcherRoutes,

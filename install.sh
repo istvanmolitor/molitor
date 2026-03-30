@@ -13,6 +13,7 @@ git clone git@github.com:istvanmolitor/rss-watcher.git
 git clone git@github.com:istvanmolitor/setting.git
 git clone git@github.com:istvanmolitor/theme.git
 git clone git@github.com:istvanmolitor/user.git
+git clone git@github.com:istvanmolitor/currency.git
 
 cd ../resources/js
 mkdir packages
@@ -27,6 +28,7 @@ git clone git@github.com:istvanmolitor/vue-rss-watcher.git
 git clone git@github.com:istvanmolitor/vue-theme.git
 git clone git@github.com:istvanmolitor/vue-user.git
 git clone git@github.com:istvanmolitor/vue-language.git
+git clone git@github.com:istvanmolitor/vue-currency.git
 
 cd ../../../
 if [ ! -f .env ]; then

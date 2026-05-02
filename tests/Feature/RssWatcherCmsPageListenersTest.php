@@ -52,7 +52,7 @@ class RssWatcherCmsPageListenersTest extends TestCase
         $this->assertCount(2, $elements);
 
         $contentHandler = app(ContentHandler::class);
-        $textData = $contentHandler->getContentData($elements->first());
+        $textData = $contentHandler->getSettings($elements->first());
 
         $this->assertSame('Created item description', $textData['text'] ?? null);
     }
@@ -104,7 +104,7 @@ class RssWatcherCmsPageListenersTest extends TestCase
 
         $elements = $updatedPage->content->contentElements()->orderBy('sort')->get();
         $contentHandler = app(ContentHandler::class);
-        $textData = $contentHandler->getContentData($elements->first());
+        $textData = $contentHandler->getSettings($elements->first());
 
         $this->assertSame('Updated description', $textData['text'] ?? null);
     }

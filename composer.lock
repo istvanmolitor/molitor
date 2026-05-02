@@ -1244,7 +1244,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/article-scraper",
-                "reference": "ea6ece905b3dc20f9fb60ba4bc3761652bf99cd1"
+                "reference": "7a6a18663dd21b904863db7969eaef6652ad2992"
             },
             "require": {
                 "istvanmolitor/article-parser": "dev-main",
@@ -1278,7 +1278,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "bbdf322aa3ad41a148ee3c8235be3ecacf3c6171"
+                "reference": "e43e122a56e79cea285f51416eecdd6ccb1c0d57"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1360,7 +1360,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/currency",
-                "reference": "843773b073ee3f6464f22528018f50a6e22a9769"
+                "reference": "ecb19a23168ab7652932292765a68debf51281b0"
             },
             "require": {
                 "istvanmolitor/language": "*@dev"
@@ -1398,7 +1398,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/html-parser",
-                "reference": "27203ef19680cc4a1217973127a332d3de194890"
+                "reference": "71522b521336405396c0633381d2cbeb1348a161"
             },
             "require": {
                 "php": "^8.2"
@@ -1432,7 +1432,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/language",
-                "reference": "8ff25555685154f3ad3d5bfd62aefb8cf5b28616"
+                "reference": "fbcca1cf568ca06e748935cbce38a7c131fee95e"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -1471,7 +1471,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/media",
-                "reference": "93252dd52e99a64c38e7f345ecc9967de14309bb"
+                "reference": "463239893ca4e40c5fde17f9d4295fa384abed25"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1553,7 +1553,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/product",
-                "reference": "cfc28bb27b16e1f02d0b36bd5abb99eb32da5bda"
+                "reference": "d41ee9cc147954d16ab7a8e6f8755a278502600d"
             },
             "require": {
                 "istvanmolitor/currency": "*@dev"
@@ -1591,7 +1591,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/rss-watcher",
-                "reference": "50e3b35e79611ead08c81f727dde504ab0732030"
+                "reference": "2cb76010bca0a8272925233683d8641d6cc0d934"
             },
             "require": {
                 "illuminate/support": "^10.0|^11.0|^12.0",
@@ -1701,7 +1701,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
-                "reference": "c1f8b7e0ea6872dfc96f37231935061502007205"
+                "reference": "d450ea0fda892b402a433eaa2bf25d1544232027"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -5857,16 +5857,16 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
                 "shasum": ""
             },
             "require": {
@@ -5917,7 +5917,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -5937,20 +5937,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-02T08:10:11+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/polyfill-php82",
-            "version": "v1.33.0",
+            "version": "v1.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php82.git",
-                "reference": "5d2ed36f7734637dacc025f179698031951b1692"
+                "reference": "34808efe3e68f69685796f7c253a2f1d8ea9df59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php82/zipball/5d2ed36f7734637dacc025f179698031951b1692",
-                "reference": "5d2ed36f7734637dacc025f179698031951b1692",
+                "url": "https://api.github.com/repos/symfony/polyfill-php82/zipball/34808efe3e68f69685796f7c253a2f1d8ea9df59",
+                "reference": "34808efe3e68f69685796f7c253a2f1d8ea9df59",
                 "shasum": ""
             },
             "require": {
@@ -5997,7 +5997,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php82/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-php82/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -6017,7 +6017,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/polyfill-php83",

@@ -27,6 +27,7 @@ export default defineConfig({
             '@theme': path.resolve(__dirname, 'resources/js/packages/vue-theme'),
             '@user': path.resolve(__dirname, 'resources/js/packages/vue-user'),
             '@language': path.resolve(__dirname, 'resources/js/packages/vue-language'),
+            '@gallery': path.resolve(__dirname, 'resources/js/packages/vue-gallery'),
         },
     },
     server: {

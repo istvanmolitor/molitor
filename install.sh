@@ -14,6 +14,7 @@ git clone git@github.com:istvanmolitor/setting.git
 git clone git@github.com:istvanmolitor/theme.git
 git clone git@github.com:istvanmolitor/user.git
 git clone git@github.com:istvanmolitor/currency.git
+git clone git@github.com:istvanmolitor/contact.git
 
 cd ../resources/js
 mkdir packages

@@ -1,1 +1,1 @@
-<?php
+@extends('theme::layouts.container')

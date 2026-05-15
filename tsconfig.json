@@ -29,6 +29,7 @@
       "@cms/*": ["resources/js/packages/vue-cms/*"],
       "@currency/*": ["resources/js/packages/vue-currency/*"],
       "@media/*": ["resources/js/packages/vue-media/*"],
+      "@gallery/*": ["resources/js/packages/vue-gallery/*"],
       "@menu/*": ["resources/js/packages/ts-menu/*"],
       "@product/*": ["resources/js/packages/vue-product/*"],
       "@rss-watcher/*": ["resources/js/packages/vue-rss-watcher/*"],

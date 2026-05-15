@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e58fb85477c4ceaec50efbd71d1997ee",
+    "content-hash": "0728fca7f41646feb724908e4be5bff6",
     "packages": [
         {
             "name": "brick/math",
@@ -1174,7 +1174,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/admin",
-                "reference": "503fd015c4ed6b19dc768eade8d1a691a3ad7d39"
+                "reference": "9bb9373022fdb24b93fab81f2c51399cafbf0ef2"
             },
             "type": "library",
             "extra": {
@@ -1278,7 +1278,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "e43e122a56e79cea285f51416eecdd6ccb1c0d57"
+                "reference": "fa445058838711b0c2284bcfadee60d647bbcb6f"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1319,7 +1319,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms-search",
-                "reference": "c6a4e65e5a14de9fff5423774e6e25ba72fcf9f4"
+                "reference": "03267772cac00c85c889af5d04ccd457b0750f9f"
             },
             "require": {
                 "elasticsearch/elasticsearch": "^8.11",
@@ -1350,6 +1350,45 @@
                 }
             ],
             "description": "Elasticsearch integration for CMS package.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/contact",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/contact",
+                "reference": "0f471546d18cb931d298764ef0b1ca3bf5238467"
+            },
+            "require": {
+                "laravel/framework": "^11.0|^12.0",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Contact\\Providers\\ContactServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Contact\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Contact package",
             "transport-options": {
                 "relative": true
             }
@@ -1388,6 +1427,44 @@
                 }
             ],
             "description": "Currency",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/gallery",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/gallery",
+                "reference": "296752bde8e0981629f09dcbbf595c9347fea166"
+            },
+            "require": {
+                "istvanmolitor/admin": "dev-main"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Gallery\\Providers\\GalleryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Gallery\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Gallery",
             "transport-options": {
                 "relative": true
             }
@@ -1509,7 +1586,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/menu",
-                "reference": "00fb593f6a9f34744cd8aa88fbbf95b89e20ea10"
+                "reference": "0eebc8efe60f7fee2749868ea60265bde78922f5"
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.0|^11.0"
@@ -1663,7 +1740,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/theme",
-                "reference": "76d6c712d0f0c98cab5bd4a91925ba1f7b9dd9db"
+                "reference": "ba0e2fda03ce59c1c042737fb1d10ccf4b778252"
             },
             "require": {
                 "php": "^8.2"
@@ -1701,7 +1778,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
-                "reference": "d450ea0fda892b402a433eaa2bf25d1544232027"
+                "reference": "0cf478d28e2412eaecd13e15f4a99eec668069d0"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -9859,7 +9936,9 @@
         "istvanmolitor/article-scraper": 20,
         "istvanmolitor/cms": 20,
         "istvanmolitor/cms-search": 20,
+        "istvanmolitor/contact": 20,
         "istvanmolitor/currency": 20,
+        "istvanmolitor/gallery": 20,
         "istvanmolitor/html-parser": 20,
         "istvanmolitor/language": 20,
         "istvanmolitor/media": 20,

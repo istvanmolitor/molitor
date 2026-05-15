@@ -10,14 +10,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1",
         "istvanmolitor/admin": "@dev",
         "istvanmolitor/article-parser": "@dev",
         "istvanmolitor/article-scraper": "@dev",
         "istvanmolitor/cms": "@dev",
         "istvanmolitor/cms-search": "@dev",
+        "istvanmolitor/contact": "@dev",
         "istvanmolitor/currency": "@dev",
+        "istvanmolitor/gallery": "@dev",
         "istvanmolitor/html-parser": "@dev",
         "istvanmolitor/language": "@dev",
         "istvanmolitor/media": "@dev",
@@ -26,7 +26,9 @@
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/theme": "@dev",
-        "istvanmolitor/user": "@dev"
+        "istvanmolitor/user": "@dev",
+        "laravel/framework": "^12.0",
+        "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -68,7 +70,15 @@
         },
         {
             "type": "path",
+            "url": "packages/contact"
+        },
+        {
+            "type": "path",
             "url": "packages/currency"
+        },
+        {
+            "type": "path",
+            "url": "packages/gallery"
         },
         {
             "type": "path",

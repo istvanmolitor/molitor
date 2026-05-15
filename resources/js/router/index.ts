@@ -12,6 +12,7 @@ import themeRoutes from '@theme/router/index'
 import languageRoutes from '@language/router/index'
 import articleScraperRoutes from '@article-scraper/router/index'
 import productRoutes from '@product/router/index'
+import { galleryRoutes } from '@gallery/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -32,6 +33,7 @@ const routes: RouteRecordRaw[] = [
   ...languageRoutes,
   ...articleScraperRoutes,
   ...productRoutes,
+  ...galleryRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

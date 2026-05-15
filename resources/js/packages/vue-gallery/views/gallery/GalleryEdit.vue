@@ -25,7 +25,20 @@ const fetchGallery = async (id: string | number) => {
   try {
     isLoading.value = true
     const response = await galleryService.getById(id)
-    gallery.value = response.data.data
+    console.log('API response:', response.data)
+    // Ha a JsonResource wrapping be van kapcsolva, akkor response.data.data,
+    // ha nincs, akkor response.data
+    const responseData = (response.data as any).data || response.data
+
+    // Csak azokat a mezőket vegyük át, amikre az űrlapnak szüksége van,
+    // hogy ne írjuk felül a reaktív objektum referenciáját teljesen, ha nem muszáj,
+    // de a legegyszerűbb az assign
+    Object.assign(gallery.value, responseData)
+
+    // Biztosítsuk, hogy az images tömb mindig létezik
+    if (!gallery.value.images) {
+      gallery.value.images = []
+    }
   } catch (error) {
     console.error('Hiba a galéria betöltésekor:', error)
     toastService.error('Hiba történt a galéria betöltése során.')

@@ -5,9 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use Molitor\Cms\Models\Content;
 use Molitor\Cms\Models\Page;
-use Molitor\Cms\Models\PageGroup;
 use Molitor\Cms\Models\PageMeta;
-use Molitor\Cms\Repositories\PageGroupRepositoryInterface;
 use Molitor\Cms\Repositories\PageMetaRepositoryInterface;
 use Molitor\Cms\Repositories\PageRepositoryInterface;
 use Molitor\Cms\Services\ContentHandler;
@@ -23,8 +21,7 @@ class RssWatcherCmsPageService
     public function __construct(
         private ContentHandler $contentHandler,
         private PageRepositoryInterface $pageRepository,
-        private PageMetaRepositoryInterface $pageMetaRepository,
-        private PageGroupRepositoryInterface $pageGroupRepository
+        private PageMetaRepositoryInterface $pageMetaRepository
     ) {}
 
     public function createOrUpdateFromRssItem(RssFeedItem $rssFeedItem): Page
@@ -39,9 +36,8 @@ class RssWatcherCmsPageService
 
         $this->savePageMeta($page, $rssFeedItem);
         $this->syncContent($page, $rssFeedItem);
-        $this->syncPageGroups($page, $rssFeedItem);
 
-        return $page->fresh(['content.contentElements', 'metaData', 'pageGroups']);
+        return $page->fresh(['content.contentElements', 'metaData']);
     }
 
     private function createPage(RssFeedItem $rssFeedItem): Page
@@ -193,54 +189,5 @@ class RssWatcherCmsPageService
         }
 
         return Str::length($imageUrl) > 255 ? null : $imageUrl;
-    }
-
-    private function syncPageGroups(Page $page, RssFeedItem $rssFeedItem): void
-    {
-        $rssFeedItem->load('feed');
-
-        if (! $rssFeedItem->feed) {
-            return;
-        }
-
-        $domain = $this->extractDomainFromUrl($rssFeedItem->feed->url);
-
-        if (! $domain) {
-            return;
-        }
-
-        $pageGroup = $this->getOrCreatePageGroupByDomain($domain);
-
-        $page->pageGroups()->syncWithoutDetaching([$pageGroup->id]);
-    }
-
-    private function getOrCreatePageGroupByDomain(string $domain): PageGroup
-    {
-        $slug = Str::slug(str_replace('.', '-', $domain));
-        $pageGroup = $this->pageGroupRepository->getBySlug($slug);
-
-        if ($pageGroup) {
-            return $pageGroup;
-        }
-
-        return $this->pageGroupRepository->create([
-            'name' => $domain,
-            'slug' => $slug,
-            'layout' => 'default',
-        ]);
-    }
-
-    private function extractDomainFromUrl(string $url): ?string
-    {
-        $parsedUrl = parse_url($url);
-
-        if (! isset($parsedUrl['host'])) {
-            return null;
-        }
-
-        $host = $parsedUrl['host'];
-
-        // Remove 'www.' prefix if present
-        return preg_replace('/^www\./i', '', $host);
     }
 }

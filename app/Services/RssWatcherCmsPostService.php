@@ -2,8 +2,11 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Str;
 use Molitor\Cms\Models\Post;
+use Molitor\Cms\Models\PostGroup;
 use Molitor\Cms\Repositories\ContentRepositoryInterface;
+use Molitor\Cms\Repositories\PostGroupRepositoryInterface;
 use Molitor\Cms\Repositories\PostMetaRepositoryInterface;
 use Molitor\Cms\Repositories\PostRepositoryInterface;
 use Molitor\Language\Repositories\LanguageRepositoryInterface;
@@ -16,6 +19,7 @@ class RssWatcherCmsPostService
         protected ContentRepositoryInterface $contentRepository,
         protected PostMetaRepositoryInterface $postMetaRepository,
         protected LanguageRepositoryInterface $languageRepository,
+        protected PostGroupRepositoryInterface $postGroupRepository,
     ) {}
 
     public function createOrUpdateFromRssItem(RssFeedItem $rssFeedItem): Post
@@ -50,6 +54,11 @@ class RssWatcherCmsPostService
             mainImageUrl: $rssFeedItem->image
         );
 
+        $postGroup = $this->getOrCreatePostGroupFromRssItem($rssFeedItem);
+        if ($postGroup) {
+            $post->postGroups()->syncWithoutDetaching([$postGroup->id]);
+        }
+
         $postMeta = $this->postMetaRepository->getByPostIdAndName($post->id, 'rss_source_link');
         if ($postMeta) {
             $this->postMetaRepository->update($postMeta, ['meta_data' => $rssFeedItem->link]);
@@ -62,5 +71,45 @@ class RssWatcherCmsPostService
         }
 
         return $post;
+    }
+
+    protected function getOrCreatePostGroupFromRssItem(RssFeedItem $rssFeedItem): ?PostGroup
+    {
+        $domainName = $this->getDomainNameFromRssFeedItem($rssFeedItem);
+        if (! $domainName) {
+            return null;
+        }
+
+        $slug = Str::slug(str_replace('.', '-', $domainName));
+        if ($slug === '') {
+            return null;
+        }
+
+        $postGroup = $this->postGroupRepository->getBySlug($slug);
+        if ($postGroup) {
+            return $postGroup;
+        }
+
+        return $this->postGroupRepository->create([
+            'name' => $domainName,
+            'slug' => $slug,
+        ]);
+    }
+
+    protected function getDomainNameFromRssFeedItem(RssFeedItem $rssFeedItem): ?string
+    {
+        $url = $rssFeedItem->link ?: $rssFeedItem->feed?->url;
+        if (! $url) {
+            return null;
+        }
+
+        $host = parse_url($url, PHP_URL_HOST);
+        if (! is_string($host) || $host === '') {
+            return null;
+        }
+
+        $host = Str::lower($host);
+
+        return Str::startsWith($host, 'www.') ? Str::after($host, 'www.') : $host;
     }
 }

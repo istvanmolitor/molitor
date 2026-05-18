@@ -4,6 +4,7 @@ namespace Tests\Feature\Services;
 
 use App\Services\RssWatcherCmsPostService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Molitor\Cms\Models\PostGroup;
 use Molitor\Language\Models\Language;
 use Molitor\RssWatcher\Models\RssFeed;
 use Molitor\RssWatcher\Models\RssFeedItem;
@@ -53,8 +54,24 @@ class RssWatcherCmsPageServiceTest extends TestCase
         $this->assertTrue($post->is_published);
         $this->assertSame('https://example.com/image.jpg', $post->main_image_url);
 
+        $postGroup = PostGroup::query()->first();
+        $this->assertNotNull($postGroup);
+        $this->assertSame('example.com', $postGroup->name);
+        $this->assertSame('example-com', $postGroup->slug);
+
         $this->assertDatabaseHas('posts', [
             'id' => $post->id,
+        ]);
+
+        $this->assertDatabaseHas('post_groups', [
+            'id' => $postGroup->id,
+            'name' => 'example.com',
+            'slug' => 'example-com',
+        ]);
+
+        $this->assertDatabaseHas('post_post_groups', [
+            'post_id' => $post->id,
+            'post_group_id' => $postGroup->id,
         ]);
 
         $this->assertDatabaseHas('post_meta', [
@@ -97,9 +114,17 @@ class RssWatcherCmsPageServiceTest extends TestCase
 
         $updatedPost = $this->service->createOrUpdateFromRssItem($rssFeedItem->fresh());
 
+        $postGroup = PostGroup::query()->first();
+
         $this->assertSame($firstPost->id, $updatedPost->id);
         $this->assertSame('Updated title', $updatedPost->title);
         $this->assertSame('Updated description', $updatedPost->lead);
         $this->assertDatabaseCount('posts', 1);
+        $this->assertDatabaseCount('post_groups', 1);
+        $this->assertNotNull($postGroup);
+        $this->assertDatabaseHas('post_post_groups', [
+            'post_id' => $updatedPost->id,
+            'post_group_id' => $postGroup->id,
+        ]);
     }
 }

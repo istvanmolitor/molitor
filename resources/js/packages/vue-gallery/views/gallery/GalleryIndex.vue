@@ -88,14 +88,12 @@ onMounted(() => {
       </template>
 
       <template #row-actions="{ row }">
-        <div class="flex items-center gap-2">
-          <EditButton
-            @click="editGallery(row.id!)"
-          />
-          <DeleteButton
-            @confirm="deleteGallery(row.id!)"
-          />
-        </div>
+        <EditButton
+          @click="editGallery(row.id!)"
+        />
+        <DeleteButton
+          @confirm="deleteGallery(row.id!)"
+        />
       </template>
 
       <template #empty>

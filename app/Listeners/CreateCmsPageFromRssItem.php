@@ -2,18 +2,18 @@
 
 namespace App\Listeners;
 
-use App\Services\RssWatcherCmsPageService;
+use App\Services\RssWatcherCmsPostService;
 use Molitor\RssWatcher\Events\RssFeedItemCreated;
 use Molitor\RssWatcher\Events\RssFeedItemCreatedEvent;
 
 class CreateCmsPageFromRssItem
 {
     public function __construct(
-        private RssWatcherCmsPageService $rssWatcherCmsPageService
+        private RssWatcherCmsPostService $rssWatcherCmsPostService
     ) {}
 
     public function onCreated(RssFeedItemCreatedEvent|RssFeedItemCreated $event): void
     {
-        $this->rssWatcherCmsPageService->createOrUpdateFromRssItem($event->item);
+        $this->rssWatcherCmsPostService->createOrUpdateFromRssItem($event->item);
     }
 }

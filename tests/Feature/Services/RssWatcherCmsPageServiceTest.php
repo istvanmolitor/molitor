@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Services;
 
-use App\Services\RssWatcherCmsPageService;
+use App\Services\RssWatcherCmsPostService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Molitor\Language\Models\Language;
 use Molitor\RssWatcher\Models\RssFeed;
@@ -13,22 +13,21 @@ class RssWatcherCmsPageServiceTest extends TestCase
 {
     use RefreshDatabase;
 
-    private RssWatcherCmsPageService $service;
+    private RssWatcherCmsPostService $service;
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->service = app(RssWatcherCmsPageService::class);
+        $this->service = app(RssWatcherCmsPostService::class);
 
         // Create a default language
         Language::query()->create([
-            'name' => 'Hungarian',
             'code' => 'hu',
-            'is_default' => true,
+            'enabled' => true,
         ]);
     }
 
-    public function test_creates_page_with_content_and_metadata(): void
+    public function test_creates_post_with_content_and_metadata(): void
     {
         $rssFeed = RssFeed::query()->create([
             'enabled' => true,
@@ -46,27 +45,32 @@ class RssWatcherCmsPageServiceTest extends TestCase
             'published_at' => now(),
         ]);
 
-        $page = $this->service->createOrUpdateFromRssItem($rssFeedItem);
+        $post = $this->service->createOrUpdateFromRssItem($rssFeedItem);
 
-        $this->assertSame('Test Article', $page->title);
-        $this->assertSame('test-article', $page->slug);
-        $this->assertTrue($page->is_published);
-        $this->assertSame('https://example.com/image.jpg', $page->main_image_url);
+        $this->assertSame('hu', Language::query()->where('enabled', true)->first()->code);
+        $this->assertSame('Test Article', $post->title);
+        $this->assertSame('test-article', $post->slug);
+        $this->assertTrue($post->is_published);
+        $this->assertSame('https://example.com/image.jpg', $post->main_image_url);
 
-        $this->assertDatabaseHas('page_meta', [
-            'page_id' => $page->id,
-            'name' => 'rss_feed_item_id',
-            'meta_data' => (string) $rssFeedItem->id,
+        $this->assertDatabaseHas('posts', [
+            'id' => $post->id,
         ]);
 
-        $this->assertDatabaseHas('page_meta', [
-            'page_id' => $page->id,
+        $this->assertDatabaseHas('post_meta', [
+            'post_id' => $post->id,
             'name' => 'rss_source_link',
             'meta_data' => 'https://example.com/article',
         ]);
+
+        $this->assertDatabaseHas('post_meta', [
+            'post_id' => $post->id,
+            'name' => 'rss_feed_item_id',
+            'meta_data' => (string) $rssFeedItem->id,
+        ]);
     }
 
-    public function test_updates_existing_page_for_same_rss_feed_item(): void
+    public function test_updates_existing_post_for_same_rss_feed_item(): void
     {
         $rssFeed = RssFeed::query()->create([
             'enabled' => true,
@@ -83,7 +87,7 @@ class RssWatcherCmsPageServiceTest extends TestCase
             'published_at' => now(),
         ]);
 
-        $firstPage = $this->service->createOrUpdateFromRssItem($rssFeedItem);
+        $firstPost = $this->service->createOrUpdateFromRssItem($rssFeedItem);
 
         $rssFeedItem->update([
             'title' => 'Updated title',
@@ -91,11 +95,11 @@ class RssWatcherCmsPageServiceTest extends TestCase
             'link' => 'https://example.com/updated',
         ]);
 
-        $updatedPage = $this->service->createOrUpdateFromRssItem($rssFeedItem->fresh());
+        $updatedPost = $this->service->createOrUpdateFromRssItem($rssFeedItem->fresh());
 
-        $this->assertSame($firstPage->id, $updatedPage->id);
-        $this->assertSame('Updated title', $updatedPage->title);
-        $this->assertSame('Updated description', $updatedPage->lead);
-        $this->assertDatabaseCount('pages', 1);
+        $this->assertSame($firstPost->id, $updatedPost->id);
+        $this->assertSame('Updated title', $updatedPost->title);
+        $this->assertSame('Updated description', $updatedPost->lead);
+        $this->assertDatabaseCount('posts', 1);
     }
 }

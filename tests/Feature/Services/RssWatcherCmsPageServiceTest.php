@@ -76,7 +76,7 @@ class RssWatcherCmsPageServiceTest extends TestCase
 
         $this->assertDatabaseHas('post_meta', [
             'post_id' => $post->id,
-            'name' => 'rss_source_link',
+            'name' => 'source_link',
             'meta_data' => 'https://example.com/article',
         ]);
 

@@ -28,7 +28,6 @@ class RssWatcherCmsPostService
         $postMetaRssId = $this->postMetaRepository->getByValue((string) $rssFeedItem->id, 'rss_feed_item_id');
         $layout = app(LayoutService::class)->getDefault();
 
-
         if ($postMetaRssId) {
             $post = $postMetaRssId->post;
         } else {
@@ -63,13 +62,13 @@ class RssWatcherCmsPostService
             $post->postGroups()->syncWithoutDetaching([$postGroup->id]);
         }
 
-        $postMeta = $this->postMetaRepository->getByPostIdAndName($post->id, 'rss_source_link');
+        $postMeta = $this->postMetaRepository->getByPostIdAndName($post->id, 'source_link');
         if ($postMeta) {
             $this->postMetaRepository->update($postMeta, ['meta_data' => $rssFeedItem->link]);
         } else {
             $this->postMetaRepository->create([
                 'post_id' => $post->id,
-                'name' => 'rss_source_link',
+                'name' => 'source_link',
                 'meta_data' => $rssFeedItem->link,
             ]);
         }

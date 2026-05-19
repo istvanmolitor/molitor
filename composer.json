@@ -14,6 +14,7 @@
         "istvanmolitor/article-parser": "@dev",
         "istvanmolitor/article-scraper": "@dev",
         "istvanmolitor/cms": "@dev",
+        "istvanmolitor/cms-post-relations": "@dev",
         "istvanmolitor/cms-search": "@dev",
         "istvanmolitor/contact": "@dev",
         "istvanmolitor/currency": "@dev",
@@ -27,6 +28,7 @@
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/theme": "@dev",
         "istvanmolitor/user": "@dev",
+        "istvanmolitor/post-calendar": "@dev",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
     },
@@ -43,6 +45,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Molitor\\PostCalendar\\": "packages/post-calendar/src/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
@@ -63,6 +66,10 @@
         {
             "type": "path",
             "url": "packages/cms"
+        },
+        {
+            "type": "path",
+            "url": "packages/cms-post-relations"
         },
         {
             "type": "path",
@@ -115,6 +122,10 @@
         {
             "type": "path",
             "url": "packages/user"
+        },
+        {
+            "type": "path",
+            "url": "packages/post-calendar"
         }
     ],
     "autoload-dev": {

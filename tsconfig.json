@@ -27,6 +27,7 @@
       "@admin/*": ["resources/js/packages/vue-admin/*"],
       "@article-scraper/*": ["resources/js/packages/vue-article-scraper/*"],
       "@cms/*": ["resources/js/packages/vue-cms/*"],
+      "@cms-relations/*": ["resources/js/packages/vue-cms-post-relations/*"],
       "@currency/*": ["resources/js/packages/vue-currency/*"],
       "@media/*": ["resources/js/packages/vue-media/*"],
       "@gallery/*": ["resources/js/packages/vue-gallery/*"],

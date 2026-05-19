@@ -19,6 +19,7 @@ export default defineConfig({
             '@admin': path.resolve(__dirname, 'resources/js/packages/vue-admin'),
             '@article-scraper': path.resolve(__dirname, 'resources/js/packages/vue-article-scraper'),
             '@cms': path.resolve(__dirname, 'resources/js/packages/vue-cms'),
+            '@cms-relations': path.resolve(__dirname, 'resources/js/packages/vue-cms-post-relations'),
             '@currency': path.resolve(__dirname, 'resources/js/packages/vue-currency'),
             '@media': path.resolve(__dirname, 'resources/js/packages/vue-media'),
             '@menu': path.resolve(__dirname, 'resources/js/packages/ts-menu'),

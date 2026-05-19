@@ -7,6 +7,7 @@ import { menuRegistry } from '@menu/index.ts'
 import { AdminMenuBuilder } from '@admin/lib/AdminMenuBuilder.ts'
 // import { SettingsMenuBuilder } from '@admin/config/settingsMenuBuilder'
 import { cmsMenuBuilder } from '@cms/index.ts'
+import { cmsRelationsMenuBuilder } from '@cms-relations/index.ts'
 import { currencyMenuBuilder } from '@currency/index.ts'
 import { mediaMenuBuilder } from "@media/index.ts";
 import { userMenuBuilder } from "@user/index.ts";
@@ -25,6 +26,7 @@ menuRegistry.register(adminMenuBuilder)
 menuRegistry.register(mediaMenuBuilder)
 menuRegistry.register(userMenuBuilder)
 menuRegistry.register(cmsMenuBuilder)
+menuRegistry.register(cmsRelationsMenuBuilder)
 menuRegistry.register(articleScraperMenuBuilder)
 menuRegistry.register(themeMenuBuilder)
 menuRegistry.register(rssWatcherMenuBuilder)
@@ -33,5 +35,5 @@ menuRegistry.register(currencyMenuBuilder)
 menuRegistry.register(productMenuBuilder)
 menuRegistry.register(galleryMenuBuilder)
 
-export { adminMenuBuilder, cmsMenuBuilder }
+export { adminMenuBuilder, cmsMenuBuilder, cmsRelationsMenuBuilder }
 

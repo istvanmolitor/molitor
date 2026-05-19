@@ -58,4 +58,47 @@ class CmsPostWebTest extends TestCase
         $response->assertSee('Hirek');
         $response->assertSee('Csoport bejegyzes');
     }
+
+    public function test_post_group_index_page_is_accessible(): void
+    {
+        PostGroup::query()->create([
+            'name' => 'Elso Csoport',
+            'slug' => 'elso-csoport',
+        ]);
+
+        PostGroup::query()->create([
+            'name' => 'Masodik Csoport',
+            'slug' => 'masodik-csoport',
+        ]);
+
+        $response = $this->get(route('cms.post-group.index'));
+
+        $response->assertStatus(200);
+        $response->assertSee('Elso Csoport');
+        $response->assertSee('Masodik Csoport');
+    }
+
+    public function test_post_group_show_page_displays_post_main_image(): void
+    {
+        $content = Content::query()->create();
+
+        $post = Post::query()->create([
+            'title' => 'Képes bejegyzés',
+            'slug' => 'kepes-bejegyzes',
+            'content_id' => $content->id,
+            'main_image_url' => 'https://example.com/image.jpg',
+        ]);
+
+        $postGroup = PostGroup::query()->create([
+            'name' => 'Képes hírek',
+            'slug' => 'kepes-hirek',
+        ]);
+
+        $postGroup->posts()->attach($post->id);
+
+        $response = $this->get(route('cms.post-group.show', $postGroup->slug));
+
+        $response->assertStatus(200);
+        $response->assertSee('https://example.com/image.jpg');
+    }
 }

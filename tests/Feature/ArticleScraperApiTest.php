@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Molitor\ArticleParser\Article\Article;
 use Molitor\ArticleParser\Services\ArticleParserService;
+use Molitor\Cms\Models\PostGroup;
 use Molitor\Language\Models\Language;
 use Tests\TestCase;
 
@@ -108,12 +109,67 @@ class ArticleScraperApiTest extends TestCase
             'id' => $postId,
             'title' => 'Mentendo cikk',
             'slug' => 'mentendo-cikk',
+            'layout' => 'default',
         ]);
 
         $this->assertDatabaseHas('post_meta', [
             'post_id' => $postId,
             'name' => 'source_link',
             'meta_data' => $url,
+        ]);
+    }
+
+    public function test_scrape_and_save_endpoint_automatically_attaches_group_based_on_domain(): void
+    {
+        Language::query()->create([
+            'code' => 'hu',
+            'enabled' => true,
+        ]);
+
+        $this->app->instance(ArticleParserService::class, new class extends ArticleParserService
+        {
+            public function isValidUrl(string $url): bool
+            {
+                return true;
+            }
+
+            public function getByUrl(string $url): ?Article
+            {
+                $article = new Article;
+                $article->setPortal('telex.hu');
+                $article->setUrl($url);
+                $article->setTitle('Domain alapu csoport');
+                $article->setLead('Lead');
+
+                return $article;
+            }
+        });
+
+        $url = 'https://telex.hu/belfold/2026/01/01/teszt';
+
+        $response = $this->postJson('/api/article-scraper/scrape-and-save', [
+            'url' => $url,
+            'publish' => false,
+        ]);
+
+        $response->assertOk();
+        $postId = (int) $response->json('data.post_id');
+
+        $this->assertDatabaseHas('post_groups', [
+            'slug' => 'telexhu',
+            'name' => 'Telex.hu',
+        ]);
+
+        $group = PostGroup::where('slug', 'telexhu')->first();
+
+        $this->assertDatabaseHas('post_post_groups', [
+            'post_id' => $postId,
+            'post_group_id' => $group->id,
+        ]);
+
+        $this->assertDatabaseHas('posts', [
+            'id' => $postId,
+            'layout' => 'default',
         ]);
     }
 }

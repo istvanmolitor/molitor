@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0728fca7f41646feb724908e4be5bff6",
+    "content-hash": "5931f248fc503690824ff370e37eae8b",
     "packages": [
         {
             "name": "brick/math",
@@ -1209,7 +1209,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/article-parser",
-                "reference": "b9430b7bfa2656cb0eeda0b785742dc79614cf7c"
+                "reference": "75be47a3855956632add84df54c3051d46a842fb"
             },
             "require": {
                 "istvanmolitor/html-parser": "@dev",
@@ -1244,7 +1244,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/article-scraper",
-                "reference": "7a6a18663dd21b904863db7969eaef6652ad2992"
+                "reference": "7529b7987e037de749f5cf965c85c17794588537"
             },
             "require": {
                 "istvanmolitor/article-parser": "dev-main",
@@ -1278,7 +1278,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "fa445058838711b0c2284bcfadee60d647bbcb6f"
+                "reference": "ee1636b1f6a1597d672dbe32f85c7d5437034941"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1314,12 +1314,52 @@
             }
         },
         {
+            "name": "istvanmolitor/cms-post-relations",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/cms-post-relations",
+                "reference": "3650ad0ce025cca869ee9850d15274ca8b25b64b"
+            },
+            "require": {
+                "istvanmolitor/admin": "dev-main",
+                "istvanmolitor/cms": "*@dev",
+                "istvanmolitor/media": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\CmsPostRelations\\Providers\\CmsPostRelationsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\CmsPostRelations\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "CMS post and image relations",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/cms-search",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/cms-search",
-                "reference": "03267772cac00c85c889af5d04ccd457b0750f9f"
+                "reference": "f3eba00623869bbfa65177408d49f3c2ba5fab1e"
             },
             "require": {
                 "elasticsearch/elasticsearch": "^8.11",
@@ -1437,7 +1477,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/gallery",
-                "reference": "296752bde8e0981629f09dcbbf595c9347fea166"
+                "reference": "877d2a49ccc82085a908b17b9e37ef4042d4d9aa"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1548,7 +1588,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/media",
-                "reference": "463239893ca4e40c5fde17f9d4295fa384abed25"
+                "reference": "c722be1c12769081eb5903ba2f2b7ff33dec3276"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1625,12 +1665,51 @@
             }
         },
         {
+            "name": "istvanmolitor/post-calendar",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/post-calendar",
+                "reference": "36b8ec054e91f987ecf49119fc057536fb4a922b"
+            },
+            "require": {
+                "laravel/framework": "^11.0|^12.0",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\PostCalendar\\Providers\\PostCalendarServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\PostCalendar\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Junie",
+                    "email": "junie@jetbrains.com"
+                }
+            ],
+            "description": "Calendar package for displaying posts.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/product",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/product",
-                "reference": "d41ee9cc147954d16ab7a8e6f8755a278502600d"
+                "reference": "ebcb61de397a5b45ed16cb862459e2f787b3d5d0"
             },
             "require": {
                 "istvanmolitor/currency": "*@dev"
@@ -1740,7 +1819,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/theme",
-                "reference": "ba0e2fda03ce59c1c042737fb1d10ccf4b778252"
+                "reference": "5699055e2551be375b7ec43f9861e909113faf93"
             },
             "require": {
                 "php": "^8.2"
@@ -1778,7 +1857,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
-                "reference": "0cf478d28e2412eaecd13e15f4a99eec668069d0"
+                "reference": "edf28a7eabd1677f34b3decc08db2a014f7cdcfa"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -9935,6 +10014,7 @@
         "istvanmolitor/article-parser": 20,
         "istvanmolitor/article-scraper": 20,
         "istvanmolitor/cms": 20,
+        "istvanmolitor/cms-post-relations": 20,
         "istvanmolitor/cms-search": 20,
         "istvanmolitor/contact": 20,
         "istvanmolitor/currency": 20,
@@ -9943,6 +10023,7 @@
         "istvanmolitor/language": 20,
         "istvanmolitor/media": 20,
         "istvanmolitor/menu": 20,
+        "istvanmolitor/post-calendar": 20,
         "istvanmolitor/product": 20,
         "istvanmolitor/rss-watcher": 20,
         "istvanmolitor/setting": 20,

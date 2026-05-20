@@ -16,7 +16,11 @@ import { themeMenuBuilder } from "@theme/index.ts";
 import { rssWatcherMenuBuilder } from "@rss-watcher/index.ts";
 import { languageMenuBuilder } from "@language/index.ts";
 import { productMenuBuilder } from "@product/index.ts";
+import { stockMenuBuilder } from "@stock/index.ts";
 import { galleryMenuBuilder } from "@gallery/index.ts";
+import { unasMenuBuilder } from "@unas";
+import { orderMenuBuilder } from "@order";
+import { customerMenuBuilder } from "@customer";
 
 // Register admin menu builders
 const adminMenuBuilder = new AdminMenuBuilder()
@@ -33,7 +37,11 @@ menuRegistry.register(rssWatcherMenuBuilder)
 menuRegistry.register(languageMenuBuilder)
 menuRegistry.register(currencyMenuBuilder)
 menuRegistry.register(productMenuBuilder)
+menuRegistry.register(stockMenuBuilder)
 menuRegistry.register(galleryMenuBuilder)
+menuRegistry.register(unasMenuBuilder)
+menuRegistry.register(orderMenuBuilder)
+menuRegistry.register(customerMenuBuilder)
 
 export { adminMenuBuilder, cmsMenuBuilder, cmsRelationsMenuBuilder }
 

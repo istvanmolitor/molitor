@@ -4,11 +4,18 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Molitor\Address\database\seeders\AddressSeeder;
 use Molitor\Cms\Database\Seeders\CmsSeeder;
 use Molitor\Currency\Database\Seeders\CurrencySeeder;
+use Molitor\Customer\database\seeders\CustomerSeeder;
 use Molitor\Language\Database\Seeders\LanguageSeeder;
+use Molitor\Media\Database\Seeders\MediaSeeder;
+use Molitor\Order\database\seeders\OrderSeeder;
 use Molitor\Product\Database\Seeders\ProductSeeder;
 use Molitor\RssWatcher\database\seeders\NewsRssSeeder;
+use Molitor\Setting\database\seeders\SettingSeeder;
+use Molitor\Stock\database\seeders\StockSeeder;
+use Molitor\Unas\database\seeders\UnasSeeder;
 use Molitor\User\Database\Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,9 +30,16 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             LanguageSeeder::class,
+            AddressSeeder::class,
             CmsSeeder::class,
             CurrencySeeder::class,
+            CustomerSeeder::class,
+            MediaSeeder::class,
+            OrderSeeder::class,
             ProductSeeder::class,
+            SettingSeeder::class,
+            StockSeeder::class,
+            UnasSeeder::class,
             NewsRssSeeder::class,
         ]);
     }

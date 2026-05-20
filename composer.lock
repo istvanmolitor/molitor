@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5931f248fc503690824ff370e37eae8b",
+    "content-hash": "745600df114837d1707520fa9d9ebc5c",
     "packages": [
         {
             "name": "brick/math",
@@ -1169,6 +1169,44 @@
             "time": "2025-08-22T14:27:06+00:00"
         },
         {
+            "name": "istvanmolitor/address",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/address",
+                "reference": "f7b261329e2a57696c4b6780df59555bc633c882"
+            },
+            "require": {
+                "istvanmolitor/user": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Address\\Providers\\AddressServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Address\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Address",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/admin",
             "version": "dev-main",
             "dist": {
@@ -1278,7 +1316,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "ee1636b1f6a1597d672dbe32f85c7d5437034941"
+                "reference": "884f5b7618c7001b1578a4de57fbb3061639486b"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1319,7 +1357,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms-post-relations",
-                "reference": "3650ad0ce025cca869ee9850d15274ca8b25b64b"
+                "reference": "36c594e989ce19065dba4875d8db4473f38646c4"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -1467,6 +1505,45 @@
                 }
             ],
             "description": "Currency",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/customer",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/customer",
+                "reference": "1091e6d4dbd5b65d184e63b178aa49482f1c0341"
+            },
+            "require": {
+                "istvanmolitor/currency": "*@dev",
+                "istvanmolitor/language": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Customer\\Providers\\CustomerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Customer\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Customer",
             "transport-options": {
                 "relative": true
             }
@@ -1665,12 +1742,51 @@
             }
         },
         {
+            "name": "istvanmolitor/order",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/order",
+                "reference": "b29515a0da4310c593fb8f8f3333abcc516192cc"
+            },
+            "require": {
+                "istvanmolitor/product": "*@dev",
+                "istvanmolitor/user": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Order\\Providers\\OrderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Order\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Order",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/post-calendar",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/post-calendar",
-                "reference": "36b8ec054e91f987ecf49119fc057536fb4a922b"
+                "reference": "099225b52aacd1cf9b17189e9068fea406483bef"
             },
             "require": {
                 "laravel/framework": "^11.0|^12.0",
@@ -1814,6 +1930,44 @@
             }
         },
         {
+            "name": "istvanmolitor/stock",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/stock",
+                "reference": "d62db92667b84df3dc9545fc2401b8dfec248016"
+            },
+            "require": {
+                "istvanmolitor/product": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Stock\\Providers\\StockServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Stock\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Stock",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/theme",
             "version": "dev-main",
             "dist": {
@@ -1847,6 +2001,46 @@
                 }
             ],
             "description": "Theme package",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/unas",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/unas",
+                "reference": "c3ba4ab6751a75ad480eed55e6a0cf245b58ad1b"
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-simplexml": "*",
+                "istvanmolitor/product": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Unas\\Providers\\UnasServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Unas\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "UNAS",
             "transport-options": {
                 "relative": true
             }
@@ -10010,6 +10204,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "istvanmolitor/address": 20,
         "istvanmolitor/admin": 20,
         "istvanmolitor/article-parser": 20,
         "istvanmolitor/article-scraper": 20,
@@ -10018,16 +10213,20 @@
         "istvanmolitor/cms-search": 20,
         "istvanmolitor/contact": 20,
         "istvanmolitor/currency": 20,
+        "istvanmolitor/customer": 20,
         "istvanmolitor/gallery": 20,
         "istvanmolitor/html-parser": 20,
         "istvanmolitor/language": 20,
         "istvanmolitor/media": 20,
         "istvanmolitor/menu": 20,
+        "istvanmolitor/order": 20,
         "istvanmolitor/post-calendar": 20,
         "istvanmolitor/product": 20,
         "istvanmolitor/rss-watcher": 20,
         "istvanmolitor/setting": 20,
+        "istvanmolitor/stock": 20,
         "istvanmolitor/theme": 20,
+        "istvanmolitor/unas": 20,
         "istvanmolitor/user": 20
     },
     "prefer-stable": true,

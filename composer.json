@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "istvanmolitor/address": "@dev",
         "istvanmolitor/admin": "@dev",
         "istvanmolitor/article-parser": "@dev",
         "istvanmolitor/article-scraper": "@dev",
@@ -18,17 +19,21 @@
         "istvanmolitor/cms-search": "@dev",
         "istvanmolitor/contact": "@dev",
         "istvanmolitor/currency": "@dev",
+        "istvanmolitor/customer": "@dev",
         "istvanmolitor/gallery": "@dev",
         "istvanmolitor/html-parser": "@dev",
         "istvanmolitor/language": "@dev",
         "istvanmolitor/media": "@dev",
         "istvanmolitor/menu": "@dev",
+        "istvanmolitor/order": "@dev",
+        "istvanmolitor/post-calendar": "@dev",
         "istvanmolitor/product": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/setting": "@dev",
+        "istvanmolitor/stock": "@dev",
         "istvanmolitor/theme": "@dev",
+        "istvanmolitor/unas": "@dev",
         "istvanmolitor/user": "@dev",
-        "istvanmolitor/post-calendar": "@dev",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
     },
@@ -51,6 +56,11 @@
         }
     },
     "repositories": [
+        {
+            "name": "address",
+            "type": "path",
+            "url": "packages/address"
+        },
         {
             "type": "path",
             "url": "packages/admin"
@@ -85,6 +95,10 @@
         },
         {
             "type": "path",
+            "url": "packages/customer"
+        },
+        {
+            "type": "path",
             "url": "packages/gallery"
         },
         {
@@ -105,7 +119,15 @@
         },
         {
             "type": "path",
+            "url": "packages/order"
+        },
+        {
+            "type": "path",
             "url": "packages/product"
+        },
+        {
+            "type": "path",
+            "url": "packages/stock"
         },
         {
             "type": "path",
@@ -118,6 +140,10 @@
         {
             "type": "path",
             "url": "packages/theme"
+        },
+        {
+            "type": "path",
+            "url": "packages/unas"
         },
         {
             "type": "path",

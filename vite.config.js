@@ -33,6 +33,7 @@ export default defineConfig({
             '@unas': path.resolve(__dirname, 'resources/js/packages/vue-unas'),
             '@order': path.resolve(__dirname, 'resources/js/packages/vue-order'),
             '@customer': path.resolve(__dirname, 'resources/js/packages/vue-customer'),
+            '@address': path.resolve(__dirname, 'resources/js/packages/vue-address'),
         },
     },
     server: {

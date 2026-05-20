@@ -17,7 +17,8 @@ import stockRoutes from '@stock/router/index'
 import { galleryRoutes } from '@gallery/router/index'
 import unasRoutes from '@unas/router/index'
 import orderRoutes from '@order/router/index'
-import { customerRoutes } from '@customer'
+import { customerRoutes } from '@customer/index.ts'
+import { addressRoutes } from '@address/index.ts'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -44,6 +45,7 @@ const routes: RouteRecordRaw[] = [
   ...unasRoutes,
   ...orderRoutes,
   ...customerRoutes,
+  ...addressRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

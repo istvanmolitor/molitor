@@ -20,7 +20,8 @@ import { stockMenuBuilder } from "@stock/index.ts";
 import { galleryMenuBuilder } from "@gallery/index.ts";
 import { unasMenuBuilder } from "@unas";
 import { orderMenuBuilder } from "@order";
-import { customerMenuBuilder } from "@customer";
+import { customerMenuBuilder } from "@customer/index.ts";
+import { addressMenuBuilder } from "@address/index.ts";
 
 // Register admin menu builders
 const adminMenuBuilder = new AdminMenuBuilder()
@@ -42,6 +43,7 @@ menuRegistry.register(galleryMenuBuilder)
 menuRegistry.register(unasMenuBuilder)
 menuRegistry.register(orderMenuBuilder)
 menuRegistry.register(customerMenuBuilder)
+menuRegistry.register(addressMenuBuilder)
 
 export { adminMenuBuilder, cmsMenuBuilder, cmsRelationsMenuBuilder }
 

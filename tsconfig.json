@@ -55,7 +55,11 @@
       "@unas": ["resources/js/packages/vue-unas/index.ts"],
       "@unas/*": ["resources/js/packages/vue-unas/*"],
       "@order": ["resources/js/packages/vue-order/index.ts"],
-      "@order/*": ["resources/js/packages/vue-order/*"]
+      "@order/*": ["resources/js/packages/vue-order/*"],
+      "@customer": ["resources/js/packages/vue-customer/index.ts"],
+      "@customer/*": ["resources/js/packages/vue-customer/*"],
+      "@address": ["resources/js/packages/vue-address/index.ts"],
+      "@address/*": ["resources/js/packages/vue-address/*"]
     }
   },
   "include": [

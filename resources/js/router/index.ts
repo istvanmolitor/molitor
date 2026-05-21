@@ -19,6 +19,7 @@ import unasRoutes from '@unas/router/index'
 import orderRoutes from '@order/router/index'
 import { customerRoutes } from '@customer/index.ts'
 import { addressRoutes } from '@address/index.ts'
+import purchaseRoutes from '@purchase/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -46,6 +47,7 @@ const routes: RouteRecordRaw[] = [
   ...orderRoutes,
   ...customerRoutes,
   ...addressRoutes,
+  ...purchaseRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

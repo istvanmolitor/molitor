@@ -59,7 +59,9 @@
       "@customer": ["resources/js/packages/vue-customer/index.ts"],
       "@customer/*": ["resources/js/packages/vue-customer/*"],
       "@address": ["resources/js/packages/vue-address/index.ts"],
-      "@address/*": ["resources/js/packages/vue-address/*"]
+      "@address/*": ["resources/js/packages/vue-address/*"],
+      "@purchase": ["resources/js/packages/vue-purchase/index.ts"],
+      "@purchase/*": ["resources/js/packages/vue-purchase/*"]
     }
   },
   "include": [

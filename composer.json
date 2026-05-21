@@ -27,6 +27,7 @@
         "istvanmolitor/menu": "@dev",
         "istvanmolitor/order": "@dev",
         "istvanmolitor/post-calendar": "@dev",
+        "istvanmolitor/purchase": "@dev",
         "istvanmolitor/product": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/setting": "@dev",
@@ -124,6 +125,10 @@
         {
             "type": "path",
             "url": "packages/product"
+        },
+        {
+            "type": "path",
+            "url": "packages/purchase"
         },
         {
             "type": "path",

@@ -22,6 +22,7 @@ import { unasMenuBuilder } from "@unas";
 import { orderMenuBuilder } from "@order";
 import { customerMenuBuilder } from "@customer/index.ts";
 import { addressMenuBuilder } from "@address/index.ts";
+import { purchaseMenuBuilder } from "@purchase";
 
 // Register admin menu builders
 const adminMenuBuilder = new AdminMenuBuilder()
@@ -44,6 +45,7 @@ menuRegistry.register(unasMenuBuilder)
 menuRegistry.register(orderMenuBuilder)
 menuRegistry.register(customerMenuBuilder)
 menuRegistry.register(addressMenuBuilder)
+menuRegistry.register(purchaseMenuBuilder)
 
 export { adminMenuBuilder, cmsMenuBuilder, cmsRelationsMenuBuilder }
 

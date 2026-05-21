@@ -34,6 +34,7 @@ export default defineConfig({
             '@order': path.resolve(__dirname, 'resources/js/packages/vue-order'),
             '@customer': path.resolve(__dirname, 'resources/js/packages/vue-customer'),
             '@address': path.resolve(__dirname, 'resources/js/packages/vue-address'),
+            '@purchase': path.resolve(__dirname, 'resources/js/packages/vue-purchase'),
         },
     },
     server: {

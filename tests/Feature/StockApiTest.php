@@ -19,8 +19,13 @@ class StockApiTest extends TestCase
         parent::setUp();
 
         Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('purchase_logs');
+        Schema::dropIfExists('purchase_items');
+        Schema::dropIfExists('purchases');
         Schema::dropIfExists('stock_movement_items');
         Schema::dropIfExists('stock_movements');
+        Schema::dropIfExists('inventory_items');
+        Schema::dropIfExists('inventories');
         Schema::dropIfExists('warehouse_region_products');
         Schema::dropIfExists('stocks');
         Schema::dropIfExists('warehouse_regions');
@@ -60,6 +65,8 @@ class StockApiTest extends TestCase
             $table->foreignId('warehouse_region_id')->constrained('warehouse_regions');
             $table->foreignId('product_id')->constrained('products');
             $table->decimal('quantity');
+            $table->decimal('min_quantity')->nullable();
+            $table->decimal('max_quantity')->nullable();
             $table->primary(['warehouse_region_id', 'product_id']);
         });
 
@@ -83,6 +90,26 @@ class StockApiTest extends TestCase
             $table->foreign('destination_warehouse_region_id')->references('id')->on('warehouse_regions');
             $table->decimal('quantity');
             $table->timestamps();
+        });
+
+        Schema::create('inventories', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('warehouse_region_id')->constrained('warehouse_regions')->cascadeOnDelete();
+            $table->text('description')->nullable();
+            $table->timestamp('stock_updated_at')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('inventory_items', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('inventory_id')->constrained('inventories')->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
+            $table->decimal('old_quantity', 16, 4)->default(0);
+            $table->decimal('new_quantity', 16, 4)->default(0);
+            $table->timestamps();
+
+            $table->unique(['inventory_id', 'product_id']);
         });
     }
 
@@ -334,5 +361,354 @@ class StockApiTest extends TestCase
         $this->deleteJson("/api/admin/stock/movements/{$movementId}")->assertOk();
         $this->assertDatabaseMissing('stock_movements', ['id' => $movementId]);
         $this->assertDatabaseMissing('stock_movement_items', ['stock_movement_id' => $movementId]);
+    }
+
+    public function test_can_list_products_with_region_quantities(): void
+    {
+        $user = User::factory()->create();
+        Sanctum::actingAs($user);
+
+        $warehouse = Warehouse::query()->create(['name' => 'Központ', 'is_primary' => true]);
+        $regionAId = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouse->id,
+            'name' => 'A régió',
+            'is_primary' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $regionBId = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouse->id,
+            'name' => 'B régió',
+            'is_primary' => false,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $productId = DB::table('products')->insertGetId([
+            'sku' => 'SKU-STOCK-1',
+            'slug' => 'sku-stock-1',
+            'price' => 0,
+            'active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
+
+        DB::table('stocks')->insert([
+            ['warehouse_region_id' => $regionAId, 'product_id' => $productId, 'quantity' => 4],
+            ['warehouse_region_id' => $regionBId, 'product_id' => $productId, 'quantity' => 6],
+        ]);
+
+        $response = $this->getJson('/api/admin/stock/products');
+
+        $response->assertOk()
+            ->assertJsonPath('data.0.sku', 'SKU-STOCK-1')
+            ->assertJsonPath('data.0.total_quantity', 10)
+            ->assertJsonPath('data.0.region_quantities.0.quantity', 4)
+            ->assertJsonPath('data.0.region_quantities.1.quantity', 6);
+    }
+
+    public function test_can_show_product_stock_detail_grouped_by_warehouse_and_region(): void
+    {
+        $user = User::factory()->create();
+        Sanctum::actingAs($user);
+
+        $warehouseA = Warehouse::query()->create(['name' => 'Központ', 'is_primary' => true]);
+        $warehouseB = Warehouse::query()->create(['name' => 'Outlet', 'is_primary' => false]);
+
+        $regionA1Id = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouseA->id,
+            'name' => 'A1',
+            'is_primary' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $regionA2Id = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouseA->id,
+            'name' => 'A2',
+            'is_primary' => false,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $regionB1Id = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouseB->id,
+            'name' => 'B1',
+            'is_primary' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $productId = DB::table('products')->insertGetId([
+            'sku' => 'SKU-STOCK-DETAIL',
+            'slug' => 'sku-stock-detail',
+            'price' => 0,
+            'active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
+
+        DB::table('stocks')->insert([
+            ['warehouse_region_id' => $regionA1Id, 'product_id' => $productId, 'quantity' => 3, 'min_quantity' => 1, 'max_quantity' => 10],
+            ['warehouse_region_id' => $regionA2Id, 'product_id' => $productId, 'quantity' => 2, 'min_quantity' => null, 'max_quantity' => null],
+            ['warehouse_region_id' => $regionB1Id, 'product_id' => $productId, 'quantity' => 5, 'min_quantity' => 2, 'max_quantity' => 12],
+        ]);
+
+        $response = $this->getJson("/api/admin/stock/products/{$productId}");
+
+        $response->assertOk()
+            ->assertJsonPath('data.sku', 'SKU-STOCK-DETAIL')
+            ->assertJsonPath('data.total_quantity', 10)
+            ->assertJsonPath('data.warehouse_count', 2)
+            ->assertJsonPath('data.region_count', 3)
+            ->assertJsonPath('data.warehouses.0.warehouse_name', 'Központ')
+            ->assertJsonPath('data.warehouses.0.total_quantity', 5)
+            ->assertJsonPath('data.warehouses.0.regions.0.warehouse_region_name', 'A1')
+            ->assertJsonPath('data.warehouses.0.regions.0.quantity', 3)
+            ->assertJsonPath('data.warehouses.0.regions.0.min_quantity', 1)
+            ->assertJsonPath('data.warehouses.0.regions.0.max_quantity', 10)
+            ->assertJsonPath('data.warehouses.0.regions.1.warehouse_region_name', 'A2')
+            ->assertJsonPath('data.warehouses.0.regions.1.quantity', 2)
+            ->assertJsonPath('data.warehouses.1.warehouse_name', 'Outlet')
+            ->assertJsonPath('data.warehouses.1.total_quantity', 5)
+            ->assertJsonPath('data.warehouses.1.regions.0.warehouse_region_name', 'B1')
+            ->assertJsonPath('data.warehouses.1.regions.0.quantity', 5)
+            ->assertJsonPath('data.warehouses.1.regions.0.min_quantity', 2)
+            ->assertJsonPath('data.warehouses.1.regions.0.max_quantity', 12);
+    }
+
+    public function test_can_update_product_region_min_and_max_quantities(): void
+    {
+        $user = User::factory()->create();
+        Sanctum::actingAs($user);
+
+        $warehouse = Warehouse::query()->create(['name' => 'Kozpont', 'is_primary' => true]);
+
+        $regionId = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouse->id,
+            'name' => 'A1',
+            'is_primary' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $productId = DB::table('products')->insertGetId([
+            'sku' => 'SKU-LIMIT-1',
+            'slug' => 'sku-limit-1',
+            'price' => 0,
+            'active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
+
+        DB::table('stocks')->insert([
+            'warehouse_region_id' => $regionId,
+            'product_id' => $productId,
+            'quantity' => 7,
+            'min_quantity' => null,
+            'max_quantity' => null,
+        ]);
+
+        $response = $this->putJson("/api/admin/stock/products/{$productId}/regions/{$regionId}", [
+            'min_quantity' => 2,
+            'max_quantity' => 15,
+        ]);
+
+        $response->assertOk()
+            ->assertJsonPath('data.warehouse_region_id', $regionId)
+            ->assertJsonPath('data.min_quantity', 2)
+            ->assertJsonPath('data.max_quantity', 15);
+
+        $this->assertDatabaseHas('stocks', [
+            'warehouse_region_id' => $regionId,
+            'product_id' => $productId,
+            'quantity' => 7,
+            'min_quantity' => 2,
+            'max_quantity' => 15,
+        ]);
+    }
+
+    public function test_can_create_update_and_close_inventory_for_region_stock(): void
+    {
+        $user = User::factory()->create();
+        Sanctum::actingAs($user);
+
+        $warehouse = Warehouse::query()->create(['name' => 'Központ', 'is_primary' => true]);
+        $regionId = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouse->id,
+            'name' => 'Leltár régió',
+            'is_primary' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $productAId = DB::table('products')->insertGetId([
+            'sku' => 'SKU-INV-A',
+            'slug' => 'sku-inv-a',
+            'price' => 0,
+            'active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
+        $productBId = DB::table('products')->insertGetId([
+            'sku' => 'SKU-INV-B',
+            'slug' => 'sku-inv-b',
+            'price' => 0,
+            'active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
+        $productCId = DB::table('products')->insertGetId([
+            'sku' => 'SKU-INV-C',
+            'slug' => 'sku-inv-c',
+            'price' => 0,
+            'active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
+
+        DB::table('stocks')->insert([
+            ['warehouse_region_id' => $regionId, 'product_id' => $productAId, 'quantity' => 5],
+            ['warehouse_region_id' => $regionId, 'product_id' => $productBId, 'quantity' => 3],
+        ]);
+
+        $createResponse = $this->postJson('/api/admin/stock/inventories', [
+            'warehouse_region_id' => $regionId,
+            'description' => 'Nyitó leltár',
+        ]);
+
+        $createResponse->assertCreated()
+            ->assertJsonPath('data.warehouse_region_id', $regionId)
+            ->assertJsonPath('data.user_id', $user->id)
+            ->assertJsonPath('data.is_closed', false);
+
+        $inventoryId = $createResponse->json('data.id');
+        $items = $createResponse->json('data.items');
+
+        $this->assertCount(2, $items);
+
+        $updateResponse = $this->putJson("/api/admin/stock/inventories/{$inventoryId}", [
+            'description' => 'Lezárás előtti módosítás',
+            'items' => [
+                ['id' => $items[0]['id'], 'product_id' => $productAId, 'new_quantity' => 7],
+                ['id' => $items[1]['id'], 'product_id' => $productBId, 'new_quantity' => 1],
+                ['product_id' => $productCId, 'new_quantity' => 4],
+            ],
+        ]);
+
+        $updateResponse->assertOk()
+            ->assertJsonPath('data.description', 'Lezárás előtti módosítás');
+
+        $closeResponse = $this->postJson("/api/admin/stock/inventories/{$inventoryId}/close");
+
+        $closeResponse->assertOk()
+            ->assertJsonPath('data.is_closed', true);
+
+        $this->assertDatabaseHas('inventories', [
+            'id' => $inventoryId,
+            'user_id' => $user->id,
+            'warehouse_region_id' => $regionId,
+            'description' => 'Lezárás előtti módosítás',
+        ]);
+
+        $this->assertDatabaseHas('inventory_items', [
+            'inventory_id' => $inventoryId,
+            'product_id' => $productAId,
+            'old_quantity' => 5,
+            'new_quantity' => 7,
+        ]);
+        $this->assertDatabaseHas('inventory_items', [
+            'inventory_id' => $inventoryId,
+            'product_id' => $productBId,
+            'old_quantity' => 3,
+            'new_quantity' => 1,
+        ]);
+        $this->assertDatabaseHas('inventory_items', [
+            'inventory_id' => $inventoryId,
+            'product_id' => $productCId,
+            'old_quantity' => 0,
+            'new_quantity' => 4,
+        ]);
+
+        $this->assertDatabaseHas('stocks', [
+            'warehouse_region_id' => $regionId,
+            'product_id' => $productAId,
+            'quantity' => 7,
+        ]);
+        $this->assertDatabaseHas('stocks', [
+            'warehouse_region_id' => $regionId,
+            'product_id' => $productBId,
+            'quantity' => 1,
+        ]);
+        $this->assertDatabaseHas('stocks', [
+            'warehouse_region_id' => $regionId,
+            'product_id' => $productCId,
+            'quantity' => 4,
+        ]);
+    }
+
+    public function test_can_delete_open_inventory_but_cannot_delete_closed_inventory(): void
+    {
+        $user = User::factory()->create();
+        Sanctum::actingAs($user);
+
+        $warehouse = Warehouse::query()->create(['name' => 'Törlés teszt raktár', 'is_primary' => true]);
+        $regionId = DB::table('warehouse_regions')->insertGetId([
+            'warehouse_id' => $warehouse->id,
+            'name' => 'Törlés régió',
+            'is_primary' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $productId = DB::table('products')->insertGetId([
+            'sku' => 'SKU-INV-DELETE',
+            'slug' => 'sku-inv-delete',
+            'price' => 0,
+            'active' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);
+
+        DB::table('stocks')->insert([
+            'warehouse_region_id' => $regionId,
+            'product_id' => $productId,
+            'quantity' => 8,
+        ]);
+
+        $createResponse = $this->postJson('/api/admin/stock/inventories', [
+            'warehouse_region_id' => $regionId,
+            'description' => 'Törölhető leltár',
+        ]);
+
+        $createResponse->assertCreated();
+        $inventoryId = (int) $createResponse->json('data.id');
+
+        $this->deleteJson("/api/admin/stock/inventories/{$inventoryId}")
+            ->assertOk()
+            ->assertJsonPath('message', 'A leltár sikeresen törölve lett.');
+
+        $this->assertDatabaseMissing('inventories', ['id' => $inventoryId]);
+        $this->assertDatabaseMissing('inventory_items', ['inventory_id' => $inventoryId]);
+
+        $closedInventoryId = DB::table('inventories')->insertGetId([
+            'user_id' => $user->id,
+            'warehouse_region_id' => $regionId,
+            'description' => 'Lezárt leltár',
+            'stock_updated_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $this->deleteJson("/api/admin/stock/inventories/{$closedInventoryId}")
+            ->assertUnprocessable()
+            ->assertJsonPath('message', 'A lezárt leltár nem törölhető.');
+
+        $this->assertDatabaseHas('inventories', ['id' => $closedInventoryId]);
     }
 }

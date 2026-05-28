@@ -5,11 +5,33 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="Unit">
-            <directory>tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature">
-            <directory>tests/Feature</directory>
+        <testsuite name="Packages">
+            <directory>packages/address/tests</directory>
+            <directory>packages/admin/tests</directory>
+            <directory>packages/article-parser/tests</directory>
+            <directory>packages/article-scraper/tests</directory>
+            <directory>packages/cms/tests</directory>
+            <directory>packages/cms-post-relations/tests</directory>
+            <directory>packages/cms-search/tests</directory>
+            <directory>packages/contact/tests</directory>
+            <directory>packages/currency/tests</directory>
+            <directory>packages/customer/tests</directory>
+            <directory>packages/gallery/tests</directory>
+            <directory>packages/html-parser/tests</directory>
+            <directory>packages/language/tests</directory>
+            <directory>packages/media/tests</directory>
+            <directory>packages/menu/tests</directory>
+            <directory>packages/order/tests</directory>
+            <directory>packages/post-calendar/tests</directory>
+            <directory>packages/product/tests</directory>
+            <directory>packages/purchase/tests</directory>
+            <directory>packages/rss-watcher/tests</directory>
+            <directory>packages/setting/tests</directory>
+            <directory>packages/shop/tests</directory>
+            <directory>packages/stock/tests</directory>
+            <directory>packages/theme/tests</directory>
+            <directory>packages/unas/tests</directory>
+            <directory>packages/user/tests</directory>
         </testsuite>
     </testsuites>
     <source>

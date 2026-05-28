@@ -32,6 +32,7 @@
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/stock": "@dev",
+        "istvanmolitor/tree": "@dev",
         "istvanmolitor/theme": "@dev",
         "istvanmolitor/unas": "@dev",
         "istvanmolitor/user": "@dev",
@@ -133,6 +134,10 @@
         {
             "type": "path",
             "url": "packages/stock"
+        },
+        {
+            "type": "path",
+            "url": "packages/tree"
         },
         {
             "type": "path",

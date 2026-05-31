@@ -4,7 +4,6 @@ import type { RouteRecordRaw } from 'vue-router'
 // Import routes from all packages
 import userRoutes from '@user/router/index'
 import cmsRoutes from '@cms/router/index'
-import cmsRelationRoutes from '@cms-relations/router/index'
 import currencyRoutes from '@currency/router/index'
 import mediaRoutes from '@media/router/index'
 import adminRoutes from '@admin/router/index'
@@ -12,14 +11,7 @@ import rssWatcherRoutes from '@rss-watcher/router/index'
 import themeRoutes from '@theme/router/index'
 import languageRoutes from '@language/router/index'
 import articleScraperRoutes from '@article-scraper/router/index'
-import productRoutes from '@product/router/index'
-import stockRoutes from '@stock/router/index'
 import { galleryRoutes } from '@gallery/router/index'
-import unasRoutes from '@unas/router/index'
-import orderRoutes from '@order/router/index'
-import { customerRoutes } from '@customer/index.ts'
-import { addressRoutes } from '@address/index.ts'
-import purchaseRoutes from '@purchase/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -32,7 +24,6 @@ const routes: RouteRecordRaw[] = [
   },
   ...userRoutes,
   ...cmsRoutes,
-  ...cmsRelationRoutes,
   ...currencyRoutes,
   ...mediaRoutes,
   ...adminRoutes,
@@ -40,14 +31,7 @@ const routes: RouteRecordRaw[] = [
   ...themeRoutes,
   ...languageRoutes,
   ...articleScraperRoutes,
-  ...productRoutes,
-  ...stockRoutes,
   ...galleryRoutes,
-  ...unasRoutes,
-  ...orderRoutes,
-  ...customerRoutes,
-  ...addressRoutes,
-  ...purchaseRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

@@ -15,6 +15,16 @@ git clone git@github.com:istvanmolitor/theme.git
 git clone git@github.com:istvanmolitor/user.git
 git clone git@github.com:istvanmolitor/currency.git
 git clone git@github.com:istvanmolitor/contact.git
+git clone git@github.com:istvanmolitor/address.git
+git clone git@github.com:istvanmolitor/cms-post-relations.git
+git clone git@github.com:istvanmolitor/customer.git
+git clone git@github.com:istvanmolitor/gallery.git
+git clone git@github.com:istvanmolitor/order.git
+git clone git@github.com:istvanmolitor/product.git
+git clone git@github.com:istvanmolitor/purchase.git
+git clone git@github.com:istvanmolitor/stock.git
+git clone git@github.com:istvanmolitor/unas.git
+git clone git@github.com:istvanmolitor/post-calendar.git
 
 cd ../resources/js
 mkdir packages
@@ -30,6 +40,7 @@ git clone git@github.com:istvanmolitor/vue-theme.git
 git clone git@github.com:istvanmolitor/vue-user.git
 git clone git@github.com:istvanmolitor/vue-language.git
 git clone git@github.com:istvanmolitor/vue-currency.git
+git clone git@github.com:istvanmolitor/vue-contact.git
 
 cd ../../../
 if [ ! -f .env ]; then

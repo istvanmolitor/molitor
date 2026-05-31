@@ -11,6 +11,7 @@ import rssWatcherRoutes from '@rss-watcher/router/index'
 import themeRoutes from '@theme/router/index'
 import languageRoutes from '@language/router/index'
 import articleScraperRoutes from '@article-scraper/router/index'
+import productRoutes from '@product/router/index'
 import { galleryRoutes } from '@gallery/router/index'
 
 // Import guards
@@ -31,6 +32,7 @@ const routes: RouteRecordRaw[] = [
   ...themeRoutes,
   ...languageRoutes,
   ...articleScraperRoutes,
+  ...productRoutes,
   ...galleryRoutes,
   // 404 catch-all route
   {

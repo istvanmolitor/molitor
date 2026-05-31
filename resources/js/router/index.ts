@@ -14,6 +14,12 @@ import articleScraperRoutes from '@article-scraper/router/index'
 import productRoutes from '@product/router/index'
 import unasRoutes from '@unas/router/index'
 import { galleryRoutes } from '@gallery/router/index'
+import { customerRoutes } from '@customer/router'
+import { addressRoutes } from '@address/router'
+import cmsRelationRoutes from '@cms-relations/router/index'
+import orderRoutes from '@order/router/index'
+import purchaseRoutes from '@purchase/router/index'
+import stockRoutes from '@stock/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -36,6 +42,12 @@ const routes: RouteRecordRaw[] = [
   ...productRoutes,
   ...unasRoutes,
   ...galleryRoutes,
+  ...customerRoutes,
+  ...addressRoutes,
+  ...cmsRelationRoutes,
+  ...orderRoutes,
+  ...purchaseRoutes,
+  ...stockRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

@@ -4,7 +4,6 @@
  */
 
 import { menuRegistry } from '@menu/index.ts'
-import { AdminMenuBuilder } from '@admin/lib/AdminMenuBuilder.ts'
 import { cmsMenuBuilder } from '@cms/index.ts'
 import { currencyMenuBuilder } from '@currency/index.ts'
 import { mediaMenuBuilder } from "@media/index.ts";
@@ -21,11 +20,6 @@ import { purchaseMenuBuilder } from "@purchase/index.ts";
 import { stockMenuBuilder } from "@stock/index.ts";
 import { unasMenuBuilder } from "@unas/index.ts";
 
-// Register admin menu builders
-const adminMenuBuilder = new AdminMenuBuilder()
-// const settingsMenuBuilder = new SettingsMenuBuilder()
-
-menuRegistry.register(adminMenuBuilder)
 menuRegistry.register(mediaMenuBuilder)
 menuRegistry.register(userMenuBuilder)
 menuRegistry.register(cmsMenuBuilder)
@@ -41,6 +35,4 @@ menuRegistry.register(orderMenuBuilder)
 menuRegistry.register(purchaseMenuBuilder)
 menuRegistry.register(stockMenuBuilder)
 menuRegistry.register(unasMenuBuilder)
-
-export { adminMenuBuilder, cmsMenuBuilder }
 

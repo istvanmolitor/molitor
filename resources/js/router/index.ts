@@ -20,6 +20,7 @@ import cmsRelationRoutes from '@cms-relations/router/index'
 import orderRoutes from '@order/router/index'
 import purchaseRoutes from '@purchase/router/index'
 import stockRoutes from '@stock/router/index'
+import textMiningRoutes from '@text-mining/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -48,6 +49,7 @@ const routes: RouteRecordRaw[] = [
   ...orderRoutes,
   ...purchaseRoutes,
   ...stockRoutes,
+  ...textMiningRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

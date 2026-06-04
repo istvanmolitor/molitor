@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d44e98339d53ea9ae552443bc3c39a4d",
+    "content-hash": "01002ea08293e480e6be7dc6b840e3aa",
     "packages": [
         {
             "name": "brick/math",
@@ -758,25 +758,26 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.10.5",
+            "version": "7.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "7c8d84b39e680315f687e8662a9d6fb0865c5148"
+                "reference": "c987f8ce84b8434fa430795eca0f3430663da72b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7c8d84b39e680315f687e8662a9d6fb0865c5148",
-                "reference": "7c8d84b39e680315f687e8662a9d6fb0865c5148",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/c987f8ce84b8434fa430795eca0f3430663da72b",
+                "reference": "c987f8ce84b8434fa430795eca0f3430663da72b",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^2.3",
-                "guzzlehttp/psr7": "^2.8",
+                "guzzlehttp/promises": "^2.5",
+                "guzzlehttp/psr7": "^2.11",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
-                "symfony/deprecation-contracts": "^2.2 || ^3.0"
+                "symfony/deprecation-contracts": "^2.5 || ^3.0",
+                "symfony/polyfill-php80": "^1.24"
             },
             "provide": {
                 "psr/http-client-implementation": "1.0"
@@ -865,7 +866,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.10.5"
+                "source": "https://github.com/guzzle/guzzle/tree/7.11.0"
             },
             "funding": [
                 {
@@ -881,24 +882,25 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-27T11:53:46+00:00"
+            "time": "2026-06-02T12:40:51+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.4.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "09e8a212562fb1fb6a512c4156ed71525969d6c2"
+                "reference": "4360e982f87f5f258bf872d094647791db2f4c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/09e8a212562fb1fb6a512c4156ed71525969d6c2",
-                "reference": "09e8a212562fb1fb6a512c4156ed71525969d6c2",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/4360e982f87f5f258bf872d094647791db2f4c8e",
+                "reference": "4360e982f87f5f258bf872d094647791db2f4c8e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5 || ^8.0"
+                "php": "^7.2.5 || ^8.0",
+                "symfony/deprecation-contracts": "^2.5 || ^3.0"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
@@ -948,7 +950,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.4.1"
+                "source": "https://github.com/guzzle/promises/tree/2.5.0"
             },
             "funding": [
                 {
@@ -964,27 +966,29 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-20T22:57:30+00:00"
+            "time": "2026-06-02T12:23:43+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.10.4",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "d2a1a094e396da8957e797489fddaf860c340cfc"
+                "reference": "bbb5e61349fa5cb822b3e87842b951088b76b81f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/d2a1a094e396da8957e797489fddaf860c340cfc",
-                "reference": "d2a1a094e396da8957e797489fddaf860c340cfc",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/bbb5e61349fa5cb822b3e87842b951088b76b81f",
+                "reference": "bbb5e61349fa5cb822b3e87842b951088b76b81f",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.1 || ^2.0",
-                "ralouphie/getallheaders": "^3.0"
+                "ralouphie/getallheaders": "^3.0",
+                "symfony/deprecation-contracts": "^2.5 || ^3.0",
+                "symfony/polyfill-php80": "^1.24"
             },
             "provide": {
                 "psr/http-factory-implementation": "1.0",
@@ -1065,7 +1069,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.10.4"
+                "source": "https://github.com/guzzle/psr7/tree/2.11.0"
             },
             "funding": [
                 {
@@ -1081,7 +1085,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T12:59:07+00:00"
+            "time": "2026-06-02T12:30:48+00:00"
         },
         {
             "name": "guzzlehttp/uri-template",
@@ -1175,7 +1179,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/address",
-                "reference": "650ad39c230a9d9fe8db716587e2c5b5aa7a1e83"
+                "reference": "07ffa066c8f166631dc48390c54f8c82c3b64ce0"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -1283,7 +1287,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/article-scraper",
-                "reference": "75c526b4f8e6b41fdfb3182d06f71d55ccc50a83"
+                "reference": "fc6e3d19579bd3821f95c5512be10206efa26a80"
             },
             "require": {
                 "istvanmolitor/article-parser": "dev-main",
@@ -1317,7 +1321,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "4189eb6aa89687bf7f08c4328310d2ff1c8dfe15"
+                "reference": "e9c26dc572bac3ad0a18a088215f504b05030446"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1358,7 +1362,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms-post-relations",
-                "reference": "b43596cdbff9151301450d734a2f4223ad756357"
+                "reference": "1e56e76b7341267b9dd47c5b4f5fa104018ab4f6"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -1478,7 +1482,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/currency",
-                "reference": "6fb8fde318aea76410890df5a7b808fb02f81cc2"
+                "reference": "a7eb8b3948da513db1257ded974c6824eb89be95"
             },
             "require": {
                 "istvanmolitor/language": "*@dev"
@@ -1516,7 +1520,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/customer",
-                "reference": "af6a9a9c0d4df9bb89624c7abf826696f6b08700"
+                "reference": "4ce2f6156cb96f71480976c7070a6be162141d8a"
             },
             "require": {
                 "istvanmolitor/currency": "*@dev",
@@ -1627,7 +1631,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/language",
-                "reference": "365ef7e3d45d0156b8effe0844adecfcafe1627b"
+                "reference": "2e2b1c30166a33e726f158bed4d346c6260473f8"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -1666,7 +1670,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/media",
-                "reference": "327a4893d144f627cef43ef869e416c3aae25295"
+                "reference": "9d1f9e3380110382389b9d56955c34c519feb7f3"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1748,7 +1752,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/order",
-                "reference": "27a1c3c854c41e1ccadae36a25aca5b8793b3317"
+                "reference": "587626041423735f79f968973106e0abc32e9295"
             },
             "require": {
                 "istvanmolitor/product": "*@dev",
@@ -1826,7 +1830,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/product",
-                "reference": "b99b51293fb5935b2e287fef731d88271644b840"
+                "reference": "a3529bbe902e6b03b9a93e5acc8a4ab3cfdcc58d"
             },
             "require": {
                 "istvanmolitor/currency": "*@dev"
@@ -1864,7 +1868,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/purchase",
-                "reference": "c58e41be979e5d4b2287dde360bcef96eca1b619"
+                "reference": "581e09a00acd1383fae237e3e0a5d16cc6347150"
             },
             "require": {
                 "istvanmolitor/admin": "*@dev",
@@ -1907,7 +1911,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/rss-watcher",
-                "reference": "231685608969bd8872882e1f06377f4b60c40052"
+                "reference": "38f0c63c8006caf7d35a3a04abb95d014c6288a0"
             },
             "require": {
                 "illuminate/support": "^10.0|^11.0|^12.0",
@@ -1941,7 +1945,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/setting",
-                "reference": "3f8a61fc2c23089ab76a6b3d97c73b8d4f7b3721"
+                "reference": "433cbaa515e917734d4746586c478479e8927658"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -1974,12 +1978,58 @@
             }
         },
         {
+            "name": "istvanmolitor/shop",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/shop",
+                "reference": "776f62315a3986a67b29cb0f7315553d62fbe1cb"
+            },
+            "require": {
+                "istvanmolitor/address": "*@dev",
+                "istvanmolitor/currency": "*@dev",
+                "istvanmolitor/customer": "*@dev",
+                "istvanmolitor/language": "*@dev",
+                "istvanmolitor/menu": "*@dev",
+                "istvanmolitor/order": "*@dev",
+                "istvanmolitor/product": "*@dev",
+                "istvanmolitor/stock": "*@dev",
+                "livewire/livewire": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Shop\\Providers\\ShopServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Shop\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Shop modul",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/stock",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/stock",
-                "reference": "7a1553c60a260fa9da4a73c4841e6e81166f9f7b"
+                "reference": "77a30253f434d5d051b3e7843283f4b9b8d0aa8e"
             },
             "require": {
                 "istvanmolitor/product": "*@dev"
@@ -2012,12 +2062,47 @@
             }
         },
         {
+            "name": "istvanmolitor/text-mining",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/text-mining",
+                "reference": "9b2efcf072ac4428e327ca046761abbddf601336"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\TextMining\\Providers\\TextMiningServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\TextMining\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Text mining package for Laravel",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/theme",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/theme",
-                "reference": "fceaa1e739f30bcd615362e32de25d384473bb0e"
+                "reference": "58ff8f01a04ec5df5ba21feafea6ff385a0b4725"
             },
             "require": {
                 "php": "^8.2"
@@ -2083,7 +2168,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/unas",
-                "reference": "b5b1fa10a4bf8965be9f3d0a033dc5570a826892"
+                "reference": "db02f8d2ebd8fbd75708dc35a93edad222c4fddc"
             },
             "require": {
                 "ext-curl": "*",
@@ -2124,7 +2209,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
-                "reference": "3df168848d36b64ab62f64dcbc8c8990a9452d83"
+                "reference": "f5537a7f4adb6189a342c1e4cb47a1179f99f84b"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -2159,16 +2244,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.61.0",
+            "version": "v12.61.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1124062a1ca92d290c8bcb9b7f649920fa6816bf"
+                "reference": "e8472ca9774452fe50841d9bdced060679f4d58d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1124062a1ca92d290c8bcb9b7f649920fa6816bf",
-                "reference": "1124062a1ca92d290c8bcb9b7f649920fa6816bf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e8472ca9774452fe50841d9bdced060679f4d58d",
+                "reference": "e8472ca9774452fe50841d9bdced060679f4d58d",
                 "shasum": ""
             },
             "require": {
@@ -2377,7 +2462,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-05-26T23:41:33+00:00"
+            "time": "2026-06-04T14:22:52+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -3186,6 +3271,82 @@
                 }
             ],
             "time": "2026-03-08T20:05:35+00:00"
+        },
+        {
+            "name": "livewire/livewire",
+            "version": "v3.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/livewire/livewire.git",
+                "reference": "0a7c2ec6c5c958cab32870ce5a7836a2fca0b459"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/0a7c2ec6c5c958cab32870ce5a7836a2fca0b459",
+                "reference": "0a7c2ec6c5c958cab32870ce5a7836a2fca0b459",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/routing": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/validation": "^10.0|^11.0|^12.0|^13.0",
+                "laravel/prompts": "^0.1.24|^0.2|^0.3",
+                "league/mime-type-detection": "^1.9",
+                "php": "^8.1",
+                "symfony/console": "^6.0|^7.0|^8.0",
+                "symfony/http-kernel": "^6.2|^7.0|^8.0"
+            },
+            "require-dev": {
+                "calebporzio/sushi": "^2.1",
+                "laravel/framework": "^10.15.0|^11.0|^12.0|^13.0",
+                "mockery/mockery": "^1.3.1",
+                "orchestra/testbench": "^8.21.0|^9.0|^10.0|^11.0",
+                "orchestra/testbench-dusk": "^8.24|^9.1|^10.0|^11.0",
+                "phpunit/phpunit": "^10.4|^11.5|^12.5",
+                "psy/psysh": "^0.11.22|^0.12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Livewire": "Livewire\\Livewire"
+                    },
+                    "providers": [
+                        "Livewire\\LivewireServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Livewire\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "A front-end framework for Laravel.",
+            "support": {
+                "issues": "https://github.com/livewire/livewire/issues",
+                "source": "https://github.com/livewire/livewire/tree/v3.8.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/livewire",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-06-02T08:18:44+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7896,16 +8057,16 @@
         },
         {
             "name": "laravel/boost",
-            "version": "v2.4.8",
+            "version": "v2.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/boost.git",
-                "reference": "d11d720cf9537f8d236a11d973e99563a598ec9c"
+                "reference": "f0359e55f6c3782023a35baf1d3df817053d69e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/boost/zipball/d11d720cf9537f8d236a11d973e99563a598ec9c",
-                "reference": "d11d720cf9537f8d236a11d973e99563a598ec9c",
+                "url": "https://api.github.com/repos/laravel/boost/zipball/f0359e55f6c3782023a35baf1d3df817053d69e8",
+                "reference": "f0359e55f6c3782023a35baf1d3df817053d69e8",
                 "shasum": ""
             },
             "require": {
@@ -7914,7 +8075,7 @@
                 "illuminate/contracts": "^11.45.3|^12.41.1|^13.0",
                 "illuminate/routing": "^11.45.3|^12.41.1|^13.0",
                 "illuminate/support": "^11.45.3|^12.41.1|^13.0",
-                "laravel/mcp": "^0.5.1|^0.6.0|~0.7.0,<0.7.1",
+                "laravel/mcp": "^0.7.1",
                 "laravel/prompts": "^0.3.10",
                 "laravel/roster": "^0.5.0",
                 "php": "^8.2"
@@ -7958,20 +8119,20 @@
                 "issues": "https://github.com/laravel/boost/issues",
                 "source": "https://github.com/laravel/boost"
             },
-            "time": "2026-05-19T20:09:50+00:00"
+            "time": "2026-06-04T10:33:57+00:00"
         },
         {
             "name": "laravel/mcp",
-            "version": "v0.7.0",
+            "version": "v0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/mcp.git",
-                "reference": "3513b4feca5f1678be4d2261dcfa8e456436d02a"
+                "reference": "08962a276357f89164f78b38407c08187ab26cfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/mcp/zipball/3513b4feca5f1678be4d2261dcfa8e456436d02a",
-                "reference": "3513b4feca5f1678be4d2261dcfa8e456436d02a",
+                "url": "https://api.github.com/repos/laravel/mcp/zipball/08962a276357f89164f78b38407c08187ab26cfe",
+                "reference": "08962a276357f89164f78b38407c08187ab26cfe",
                 "shasum": ""
             },
             "require": {
@@ -7985,7 +8146,8 @@
                 "illuminate/routing": "^11.45.3|^12.41.1|^13.0",
                 "illuminate/support": "^11.45.3|^12.41.1|^13.0",
                 "illuminate/validation": "^11.45.3|^12.41.1|^13.0",
-                "php": "^8.2"
+                "php": "^8.2",
+                "symfony/process": "^7.4.5|^8.0.5"
             },
             "require-dev": {
                 "laravel/pint": "^1.20",
@@ -8031,7 +8193,7 @@
                 "issues": "https://github.com/laravel/mcp/issues",
                 "source": "https://github.com/laravel/mcp"
             },
-            "time": "2026-04-21T10:23:03+00:00"
+            "time": "2026-05-22T11:45:29+00:00"
         },
         {
             "name": "laravel/pail",
@@ -8244,16 +8406,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.61.0",
+            "version": "v1.62.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "68ef35015630fe510432e63e11e21749006df688"
+                "reference": "3aaeefc979f8ba6586fbc5b6e0b1b3638058f98e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/68ef35015630fe510432e63e11e21749006df688",
-                "reference": "68ef35015630fe510432e63e11e21749006df688",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/3aaeefc979f8ba6586fbc5b6e0b1b3638058f98e",
+                "reference": "3aaeefc979f8ba6586fbc5b6e0b1b3638058f98e",
                 "shasum": ""
             },
             "require": {
@@ -8303,7 +8465,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2026-05-23T23:33:57+00:00"
+            "time": "2026-05-27T04:02:01+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -10308,7 +10470,9 @@
         "istvanmolitor/purchase": 20,
         "istvanmolitor/rss-watcher": 20,
         "istvanmolitor/setting": 20,
+        "istvanmolitor/shop": 20,
         "istvanmolitor/stock": 20,
+        "istvanmolitor/text-mining": 20,
         "istvanmolitor/theme": 20,
         "istvanmolitor/tree": 20,
         "istvanmolitor/unas": 20,

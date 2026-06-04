@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
+        $seeders = [
             UserSeeder::class,
             LanguageSeeder::class,
             ArticleScraperSeeder::class,
@@ -47,6 +47,13 @@ class DatabaseSeeder extends Seeder
             UnasSeeder::class,
             NewsRssSeeder::class,
             AddressSeeder::class,
-        ]);
+        ];
+
+        $textMiningSeeder = 'Molitor\\TextMining\\Database\\Seeders\\TextMiningSeeder';
+        if (class_exists($textMiningSeeder)) {
+            $seeders[] = $textMiningSeeder;
+        }
+
+        $this->call($seeders);
     }
 }

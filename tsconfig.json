@@ -61,7 +61,9 @@
       "@address": ["resources/js/packages/vue-address/index.ts"],
       "@address/*": ["resources/js/packages/vue-address/*"],
       "@purchase": ["resources/js/packages/vue-purchase/index.ts"],
-      "@purchase/*": ["resources/js/packages/vue-purchase/*"]
+      "@purchase/*": ["resources/js/packages/vue-purchase/*"],
+      "@text-mining": ["resources/js/packages/vue-text-mining/index.ts"],
+      "@text-mining/*": ["resources/js/packages/vue-text-mining/*"]
     }
   },
   "include": [

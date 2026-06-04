@@ -29,9 +29,11 @@
         "istvanmolitor/post-calendar": "@dev",
         "istvanmolitor/purchase": "@dev",
         "istvanmolitor/product": "@dev",
+        "istvanmolitor/shop": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/stock": "@dev",
+        "istvanmolitor/text-mining": "@dev",
         "istvanmolitor/tree": "@dev",
         "istvanmolitor/theme": "@dev",
         "istvanmolitor/unas": "@dev",
@@ -129,6 +131,10 @@
         },
         {
             "type": "path",
+            "url": "packages/shop"
+        },
+        {
+            "type": "path",
             "url": "packages/purchase"
         },
         {
@@ -150,6 +156,10 @@
         {
             "type": "path",
             "url": "packages/theme"
+        },
+        {
+            "type": "path",
+            "url": "packages/text-mining"
         },
         {
             "type": "path",

@@ -38,6 +38,7 @@
         "istvanmolitor/theme": "@dev",
         "istvanmolitor/unas": "@dev",
         "istvanmolitor/user": "@dev",
+        "istvanmolitor/scraper": "@dev",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
     },
@@ -168,6 +169,10 @@
         {
             "type": "path",
             "url": "packages/user"
+        },
+        {
+            "type": "path",
+            "url": "packages/scraper"
         },
         {
             "type": "path",

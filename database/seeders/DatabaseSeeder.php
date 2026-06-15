@@ -15,6 +15,7 @@ use Molitor\Media\Database\Seeders\MediaSeeder;
 use Molitor\Order\database\seeders\OrderSeeder;
 use Molitor\Product\Database\Seeders\ProductSeeder;
 use Molitor\RssWatcher\database\seeders\NewsRssSeeder;
+use Molitor\Scraper\database\seeders\ScraperSeeder;
 use Molitor\Setting\database\seeders\SettingSeeder;
 use Molitor\Stock\database\seeders\StockSeeder;
 use Molitor\Theme\database\seeders\ThemeSeeder;
@@ -47,6 +48,7 @@ class DatabaseSeeder extends Seeder
             UnasSeeder::class,
             NewsRssSeeder::class,
             AddressSeeder::class,
+            ScraperSeeder::class,
         ];
 
         $textMiningSeeder = 'Molitor\\TextMining\\Database\\Seeders\\TextMiningSeeder';

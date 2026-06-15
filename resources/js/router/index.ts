@@ -21,6 +21,7 @@ import orderRoutes from '@order/router/index'
 import purchaseRoutes from '@purchase/router/index'
 import stockRoutes from '@stock/router/index'
 import textMiningRoutes from '@text-mining/router/index'
+import scraperRoutes from '@scraper/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -50,6 +51,7 @@ const routes: RouteRecordRaw[] = [
   ...purchaseRoutes,
   ...stockRoutes,
   ...textMiningRoutes,
+  ...scraperRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

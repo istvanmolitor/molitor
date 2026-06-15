@@ -35,7 +35,6 @@ class SyncCorpusTextFromPost
 
         $corpusText = CorpusText::query()->firstOrNew(['name' => $name]);
         $corpusText->text = $text;
-        $corpusText->tokens = '';
         $corpusText->save();
 
         $this->textMiningService->updateKeywords($corpusText);

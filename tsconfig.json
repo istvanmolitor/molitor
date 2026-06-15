@@ -58,6 +58,8 @@
       "@order/*": ["resources/js/packages/vue-order/*"],
       "@customer": ["resources/js/packages/vue-customer/index.ts"],
       "@customer/*": ["resources/js/packages/vue-customer/*"],
+      "@customer-product": ["resources/js/packages/vue-customer-product/index.ts"],
+      "@customer-product/*": ["resources/js/packages/vue-customer-product/*"],
       "@address": ["resources/js/packages/vue-address/index.ts"],
       "@address/*": ["resources/js/packages/vue-address/*"],
       "@purchase": ["resources/js/packages/vue-purchase/index.ts"],

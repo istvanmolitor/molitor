@@ -18,6 +18,7 @@ git clone git@github.com:istvanmolitor/contact.git
 git clone git@github.com:istvanmolitor/address.git
 git clone git@github.com:istvanmolitor/cms-post-relations.git
 git clone git@github.com:istvanmolitor/customer.git
+git clone git@github.com:istvanmolitor/customer-product.git
 git clone git@github.com:istvanmolitor/gallery.git
 git clone git@github.com:istvanmolitor/order.git
 git clone git@github.com:istvanmolitor/product.git
@@ -46,6 +47,7 @@ git clone git@github.com:istvanmolitor/vue-currency.git
 git clone git@github.com:istvanmolitor/vue-contact.git
 git clone git@github.com:istvanmolitor/vue-cms-post-relations.git
 git clone git@github.com:istvanmolitor/vue-customer.git
+git clone git@github.com:istvanmolitor/vue-customer-product.git
 git clone git@github.com:istvanmolitor/vue-gallery.git
 git clone git@github.com:istvanmolitor/vue-order.git
 git clone git@github.com:istvanmolitor/vue-product.git

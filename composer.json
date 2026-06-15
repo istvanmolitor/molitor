@@ -20,6 +20,7 @@
         "istvanmolitor/contact": "@dev",
         "istvanmolitor/currency": "@dev",
         "istvanmolitor/customer": "@dev",
+        "istvanmolitor/customer-product": "@dev",
         "istvanmolitor/gallery": "@dev",
         "istvanmolitor/html-parser": "@dev",
         "istvanmolitor/language": "@dev",
@@ -101,6 +102,10 @@
         {
             "type": "path",
             "url": "packages/customer"
+        },
+        {
+            "type": "path",
+            "url": "packages/customer-product"
         },
         {
             "type": "path",

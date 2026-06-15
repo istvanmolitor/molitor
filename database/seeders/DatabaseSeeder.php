@@ -10,6 +10,7 @@ use Molitor\Cms\Database\Seeders\CmsSeeder;
 use Molitor\CmsPostRelations\Database\Seeders\CmsPostRelationsSeeder;
 use Molitor\Currency\Database\Seeders\CurrencySeeder;
 use Molitor\Customer\database\seeders\CustomerSeeder;
+use Molitor\CustomerProduct\database\seeders\CustomerProductSeeder;
 use Molitor\Language\Database\Seeders\LanguageSeeder;
 use Molitor\Media\Database\Seeders\MediaSeeder;
 use Molitor\Order\database\seeders\OrderSeeder;
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
             CmsPostRelationsSeeder::class,
             CurrencySeeder::class,
             CustomerSeeder::class,
+            CustomerProductSeeder::class,
             MediaSeeder::class,
             OrderSeeder::class,
             ProductSeeder::class,
@@ -50,11 +52,6 @@ class DatabaseSeeder extends Seeder
             AddressSeeder::class,
             ScraperSeeder::class,
         ];
-
-        $textMiningSeeder = 'Molitor\\TextMining\\Database\\Seeders\\TextMiningSeeder';
-        if (class_exists($textMiningSeeder)) {
-            $seeders[] = $textMiningSeeder;
-        }
 
         $this->call($seeders);
     }

@@ -97,6 +97,23 @@ Az API útvonalakat az `api` middleware-csoportban, `/api` prefix alatt kell bet
 
 A `config/{name}.php` fájl a csomag publikus konfigurációja. A ServiceProvider `mergeConfigFrom`-mal tölti be.
 
+### Seeder
+
+Ha a csomag jogosultságokat vagy kezdeti adatokat hoz létre, kötelező egy `{Name}Seeder` osztályt készíteni a `src/Database/Seeders/` mappában (vagy `src/database/seeders/`). A seeder:
+
+- `AclManagementService`-szel hozza létre a szükséges jogosultságokat
+- Lokális környezetben (`app()->isLocal()`) tölt be tesztadatokat
+- Regisztrálni kell a gyökér `database/seeders/DatabaseSeeder.php` fájlban:
+
+```php
+use Molitor\{Name}\Database\Seeders\{Name}Seeder;
+
+// DatabaseSeeder::run() $seeders tömbben:
+{Name}Seeder::class,
+```
+
+A csomag `README.md`-jében kötelező dokumentálni a seeder regisztrálását `## Seeder regisztrálása` szekció alatt, a pontos `use` importtal és példakóddal.
+
 ---
 
 ## Frontend csomag (`resources/js/packages/{vue-name}/`)

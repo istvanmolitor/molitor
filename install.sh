@@ -26,6 +26,8 @@ git clone git@github.com:istvanmolitor/stock.git
 git clone git@github.com:istvanmolitor/unas.git
 git clone git@github.com:istvanmolitor/post-calendar.git
 git clone git@github.com:istvanmolitor/tree.git
+git clone git@github.com:istvanmolitor/shop.git
+git clone git@github.com:istvanmolitor/text-mining.git
 
 cd ../resources/js
 mkdir packages
@@ -51,6 +53,8 @@ git clone git@github.com:istvanmolitor/vue-purchase.git
 git clone git@github.com:istvanmolitor/vue-stock.git
 git clone git@github.com:istvanmolitor/vue-unas.git
 git clone git@github.com:istvanmolitor/vue-address.git
+git clone git@github.com:istvanmolitor/vue-text-mining.git
+git clone git@github.com:istvanmolitor/vue-article-scraper.git
 
 cd ../../../
 if [ ! -f .env ]; then

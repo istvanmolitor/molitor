@@ -66,8 +66,6 @@
       "@address/*": ["resources/js/packages/vue-address/*"],
       "@purchase": ["resources/js/packages/vue-purchase/index.ts"],
       "@purchase/*": ["resources/js/packages/vue-purchase/*"],
-      "@scraper": ["resources/js/packages/vue-scraper/index.ts"],
-      "@scraper/*": ["resources/js/packages/vue-scraper/*"],
       "@text-mining": ["resources/js/packages/vue-text-mining/index.ts"],
       "@text-mining/*": ["resources/js/packages/vue-text-mining/*"]
     }

@@ -41,7 +41,6 @@ export default defineConfig({
             '@customer-product': path.resolve(__dirname, 'resources/js/packages/vue-customer-product'),
             '@address': path.resolve(__dirname, 'resources/js/packages/vue-address'),
             '@purchase': path.resolve(__dirname, 'resources/js/packages/vue-purchase'),
-            '@scraper': path.resolve(__dirname, 'resources/js/packages/vue-scraper'),
             '@text-mining': path.resolve(__dirname, 'resources/js/packages/vue-text-mining'),
         },
     },

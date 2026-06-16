@@ -40,9 +40,4 @@ menuRegistry.register(purchaseMenuBuilder)
 menuRegistry.register(stockMenuBuilder)
 menuRegistry.register(unasMenuBuilder)
 menuRegistry.register(textMiningMenuBuilder)
-<<<<<<< HEAD
 menuRegistry.register(scraperMenuBuilder)
-=======
-menuRegistry.register(scraperMenuBuilder)
-
->>>>>>> 1269e36 (bug)

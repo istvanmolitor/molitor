@@ -15,6 +15,7 @@ import { languageMenuBuilder } from "@language/index.ts";
 import { productMenuBuilder } from "@product/index.ts";
 import { cmsRelationsMenuBuilder } from "@cms-relations/index.ts";
 import { customerMenuBuilder } from "@customer/index.ts";
+import { customerProductMenuBuilder } from "@customer-product/index.ts";
 import { orderMenuBuilder } from "@order/index.ts";
 import { purchaseMenuBuilder } from "@purchase/index.ts";
 import { stockMenuBuilder } from "@stock/index.ts";
@@ -33,9 +34,15 @@ menuRegistry.register(currencyMenuBuilder)
 menuRegistry.register(productMenuBuilder)
 menuRegistry.register(cmsRelationsMenuBuilder)
 menuRegistry.register(customerMenuBuilder)
+menuRegistry.register(customerProductMenuBuilder)
 menuRegistry.register(orderMenuBuilder)
 menuRegistry.register(purchaseMenuBuilder)
 menuRegistry.register(stockMenuBuilder)
 menuRegistry.register(unasMenuBuilder)
 menuRegistry.register(textMiningMenuBuilder)
+<<<<<<< HEAD
 menuRegistry.register(scraperMenuBuilder)
+=======
+menuRegistry.register(scraperMenuBuilder)
+
+>>>>>>> 1269e36 (bug)

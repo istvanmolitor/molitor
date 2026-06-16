@@ -8,6 +8,7 @@ import currencyRoutes from '@currency/router/index'
 import mediaRoutes from '@media/router/index'
 import adminRoutes from '@admin/router/index'
 import rssWatcherRoutes from '@rss-watcher/router/index'
+import scraperRoutes from '@scraper/router/index'
 import themeRoutes from '@theme/router/index'
 import languageRoutes from '@language/router/index'
 import articleScraperRoutes from '@article-scraper/router/index'
@@ -15,6 +16,7 @@ import productRoutes from '@product/router/index'
 import unasRoutes from '@unas/router/index'
 import { galleryRoutes } from '@gallery/router/index'
 import { customerRoutes } from '@customer/router'
+import { customerProductRoutes } from '@customer-product/router'
 import { addressRoutes } from '@address/router'
 import cmsRelationRoutes from '@cms-relations/router/index'
 import orderRoutes from '@order/router/index'
@@ -38,6 +40,7 @@ const routes: RouteRecordRaw[] = [
   ...mediaRoutes,
   ...adminRoutes,
   ...rssWatcherRoutes,
+  ...scraperRoutes,
   ...themeRoutes,
   ...languageRoutes,
   ...articleScraperRoutes,
@@ -45,6 +48,7 @@ const routes: RouteRecordRaw[] = [
   ...unasRoutes,
   ...galleryRoutes,
   ...customerRoutes,
+  ...customerProductRoutes,
   ...addressRoutes,
   ...cmsRelationRoutes,
   ...orderRoutes,

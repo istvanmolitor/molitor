@@ -46,6 +46,8 @@
       "@stock/*": ["resources/js/packages/vue-stock/*"],
       "@rss-watcher": ["resources/js/packages/vue-rss-watcher/index.ts"],
       "@rss-watcher/*": ["resources/js/packages/vue-rss-watcher/*"],
+      "@scraper": ["resources/js/packages/vue-scraper/index.ts"],
+      "@scraper/*": ["resources/js/packages/vue-scraper/*"],
       "@theme": ["resources/js/packages/vue-theme/index.ts"],
       "@theme/*": ["resources/js/packages/vue-theme/*"],
       "@user": ["resources/js/packages/vue-user/index.ts"],

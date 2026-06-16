@@ -32,6 +32,7 @@
         "istvanmolitor/product": "@dev",
         "istvanmolitor/shop": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
+        "istvanmolitor/scraper": "@dev",
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/stock": "@dev",
         "istvanmolitor/text-mining": "@dev",
@@ -154,6 +155,10 @@
         {
             "type": "path",
             "url": "packages/rss-watcher"
+        },
+        {
+            "type": "path",
+            "url": "packages/scraper"
         },
         {
             "type": "path",

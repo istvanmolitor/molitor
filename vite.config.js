@@ -30,6 +30,7 @@ export default defineConfig({
             '@product': path.resolve(__dirname, 'resources/js/packages/vue-product'),
             '@stock': path.resolve(__dirname, 'resources/js/packages/vue-stock'),
             '@rss-watcher': path.resolve(__dirname, 'resources/js/packages/vue-rss-watcher'),
+            '@scraper': path.resolve(__dirname, 'resources/js/packages/vue-scraper'),
             '@theme': path.resolve(__dirname, 'resources/js/packages/vue-theme'),
             '@user': path.resolve(__dirname, 'resources/js/packages/vue-user'),
             '@language': path.resolve(__dirname, 'resources/js/packages/vue-language'),

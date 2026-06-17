@@ -22,6 +22,7 @@ import { stockMenuBuilder } from "@stock/index.ts";
 import { unasMenuBuilder } from "@unas/index.ts";
 import { textMiningMenuBuilder } from "@text-mining/index.ts";
 import { scraperMenuBuilder } from "@scraper/index.ts";
+import { galleryMenuBuilder } from "@gallery/index.ts";
 
 menuRegistry.register(mediaMenuBuilder)
 menuRegistry.register(userMenuBuilder)
@@ -41,3 +42,4 @@ menuRegistry.register(stockMenuBuilder)
 menuRegistry.register(unasMenuBuilder)
 menuRegistry.register(textMiningMenuBuilder)
 menuRegistry.register(scraperMenuBuilder)
+menuRegistry.register(galleryMenuBuilder)

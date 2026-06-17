@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "9cfd1276519e18398d5d972b3de1cf2a",
+=======
+    "content-hash": "323f6ad49a41c50791862339a4d382ca",
+>>>>>>> 1269e36 (bug)
     "packages": [
         {
             "name": "brick/math",
@@ -1321,7 +1325,11 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
+<<<<<<< HEAD
                 "reference": "82e029f1480ae74ad4595ab77f5b83d7649ee667"
+=======
+                "reference": "47aec31c558964e44026f0cc2829600f8f8ff22f"
+>>>>>>> 1269e36 (bug)
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1549,6 +1557,48 @@
                 }
             ],
             "description": "Customer",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/customer-product",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/customer-product",
+                "reference": "f8ddc9bd42abd1fff06608177de65d7564144c74"
+            },
+            "require": {
+                "istvanmolitor/admin": "*@dev",
+                "istvanmolitor/currency": "*@dev",
+                "istvanmolitor/customer": "*@dev",
+                "istvanmolitor/language": "*@dev",
+                "istvanmolitor/product": "*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\CustomerProduct\\Providers\\CustomerProductServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\CustomerProduct\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Ügyfél termékeinek kezelése",
             "transport-options": {
                 "relative": true
             }
@@ -1830,7 +1880,11 @@
             "dist": {
                 "type": "path",
                 "url": "packages/product",
+<<<<<<< HEAD
                 "reference": "d8ab76bacf21d8ef79eca2762350930c999e275f"
+=======
+                "reference": "044b430ee685fb0fc11bdb7c730f169d705f3ff9"
+>>>>>>> 1269e36 (bug)
             },
             "require": {
                 "istvanmolitor/currency": "*@dev"
@@ -1945,7 +1999,11 @@
             "dist": {
                 "type": "path",
                 "url": "packages/scraper",
+<<<<<<< HEAD
                 "reference": "b5fe2f4404b6154cf8bf839b74353aeb22ea2bbe"
+=======
+                "reference": "e91aed7ddc10637e79214659532a7d62808cfabd"
+>>>>>>> 1269e36 (bug)
             },
             "require": {
                 "istvanmolitor/html-parser": "*@dev",
@@ -2106,7 +2164,11 @@
             "dist": {
                 "type": "path",
                 "url": "packages/text-mining",
+<<<<<<< HEAD
                 "reference": "8d444d2645cefed5ad4ea3b43ca41d638fd0e4c6"
+=======
+                "reference": "ecc470a136c4a601c8c7414bfe6252e6daa64e04"
+>>>>>>> 1269e36 (bug)
             },
             "type": "library",
             "extra": {
@@ -2248,7 +2310,11 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
+<<<<<<< HEAD
                 "reference": "93627b5eadb7774008feea5e4670839ce829d871"
+=======
+                "reference": "518c6f2aaca654881c0c1cc0240b617069ac2286"
+>>>>>>> 1269e36 (bug)
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -10498,6 +10564,7 @@
         "istvanmolitor/contact": 20,
         "istvanmolitor/currency": 20,
         "istvanmolitor/customer": 20,
+        "istvanmolitor/customer-product": 20,
         "istvanmolitor/gallery": 20,
         "istvanmolitor/html-parser": 20,
         "istvanmolitor/language": 20,

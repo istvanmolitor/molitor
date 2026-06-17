@@ -6,8 +6,17 @@ export const galleryRoutes: RouteRecordRaw[] = [
     name: 'admin.gallery.index',
     component: () => import('../views/gallery/GalleryIndex.vue'),
     meta: {
-      auth: true,
-      permission: 'gallery.view'
+      requiresAuth: true,
+      permission: 'gallery'
+    }
+  },
+  {
+    path: '/admin/gallery/:id',
+    name: 'admin.gallery.show',
+    component: () => import('../views/gallery/GalleryShow.vue'),
+    meta: {
+      requiresAuth: true,
+      permission: 'gallery'
     }
   },
   {
@@ -15,8 +24,8 @@ export const galleryRoutes: RouteRecordRaw[] = [
     name: 'admin.gallery.create',
     component: () => import('../views/gallery/GalleryEdit.vue'),
     meta: {
-      auth: true,
-      permission: 'gallery.create'
+      requiresAuth: true,
+      permission: 'gallery'
     }
   },
   {
@@ -24,8 +33,8 @@ export const galleryRoutes: RouteRecordRaw[] = [
     name: 'admin.gallery.edit',
     component: () => import('../views/gallery/GalleryEdit.vue'),
     meta: {
-      auth: true,
-      permission: 'gallery.edit'
+      requiresAuth: true,
+      permission: 'gallery'
     }
   }
 ]

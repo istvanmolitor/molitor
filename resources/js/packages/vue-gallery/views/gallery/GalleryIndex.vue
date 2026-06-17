@@ -3,6 +3,7 @@ import { AdminLayout, toastService } from '@admin'
 import CreateButton from '@admin/components/ui/button/CreateButton.vue'
 import DeleteButton from '@admin/components/ui/button/DeleteButton.vue'
 import EditButton from '@admin/components/ui/button/EditButton.vue'
+import ShowButton from '@admin/components/ui/button/ShowButton.vue'
 import DataTable, { type Column, type PaginationMeta } from '@admin/components/ui/dataTable/DataTable.vue'
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
@@ -48,7 +49,7 @@ const deleteGallery = async (id: number) => {
   try {
     await galleryService.delete(id)
     toastService.success('Galéria sikeresen törölve!')
-    await fetchGalleries({ page: pagination.value.current_page })
+    await fetchGalleries({ page: Number(pagination.value.current_page) })
   } catch (error) {
     console.error('Hiba a galéria törlésekor:', error)
     toastService.error('Hiba történt a törlés során.')
@@ -88,6 +89,9 @@ onMounted(() => {
       </template>
 
       <template #row-actions="{ row }">
+        <ShowButton
+          :to="`/admin/gallery/${row.id}`"
+        />
         <EditButton
           @click="editGallery(row.id!)"
         />

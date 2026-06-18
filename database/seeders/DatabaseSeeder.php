@@ -11,6 +11,7 @@ use Molitor\CmsPostRelations\Database\Seeders\CmsPostRelationsSeeder;
 use Molitor\Currency\Database\Seeders\CurrencySeeder;
 use Molitor\Customer\database\seeders\CustomerSeeder;
 use Molitor\CustomerProduct\database\seeders\CustomerProductSeeder;
+use Molitor\Gallery\Database\Seeders\GallerySeeder;
 use Molitor\Language\Database\Seeders\LanguageSeeder;
 use Molitor\Media\Database\Seeders\MediaSeeder;
 use Molitor\Order\database\seeders\OrderSeeder;
@@ -53,6 +54,7 @@ class DatabaseSeeder extends Seeder
             TextMiningSeeder::class,
             AddressSeeder::class,
             ScraperSeeder::class,
+            GallerySeeder::class,
         ];
 
         $this->call($seeders);

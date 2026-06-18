@@ -3,6 +3,7 @@ cd packages
 git clone git@github.com:istvanmolitor/admin.git
 git clone git@github.com:istvanmolitor/article-parser.git
 git clone git@github.com:istvanmolitor/article-scraper.git
+git clone git@github.com:istvanmolitor/scraper.git
 git clone git@github.com:istvanmolitor/cms.git
 git clone git@github.com:istvanmolitor/cms-search.git
 git clone git@github.com:istvanmolitor/html-parser.git
@@ -35,7 +36,6 @@ mkdir packages
 cd packages
 
 git clone git@github.com:istvanmolitor/vue-admin.git
-git clone git@github.com:istvanmolitor/vue-article-scraper.git
 git clone git@github.com:istvanmolitor/vue-cms.git
 git clone git@github.com:istvanmolitor/vue-media.git
 git clone git@github.com:istvanmolitor/ts-menu.git

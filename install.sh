@@ -57,6 +57,7 @@ git clone git@github.com:istvanmolitor/vue-unas.git
 git clone git@github.com:istvanmolitor/vue-address.git
 git clone git@github.com:istvanmolitor/vue-text-mining.git
 git clone git@github.com:istvanmolitor/vue-article-scraper.git
+git clone git@github.com:istvanmolitor/vue-scraper.git
 
 cd ../../../
 if [ ! -f .env ]; then

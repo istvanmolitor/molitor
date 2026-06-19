@@ -30,6 +30,7 @@ git clone git@github.com:istvanmolitor/post-calendar.git
 git clone git@github.com:istvanmolitor/tree.git
 git clone git@github.com:istvanmolitor/shop.git
 git clone git@github.com:istvanmolitor/text-mining.git
+git clone git@github.com:istvanmolitor/news.git
 
 cd ../resources/js
 mkdir packages

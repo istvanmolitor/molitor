@@ -20,7 +20,6 @@ const pagination = ref<PaginationMeta>({
 })
 
 const columns: Column<Gallery>[] = [
-  { key: 'id', label: 'ID', sortable: true, width: '80px' },
   { key: 'name', label: 'Név', sortable: true },
   { key: 'slug', label: 'Slug', sortable: true },
   { key: 'created_at', label: 'Létrehozva', sortable: true, width: '200px' },

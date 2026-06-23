@@ -18,12 +18,12 @@ class SyncCorpusTextFromPost
 
     public function onCreated(PostCreated $event): void
     {
-        $this->syncFromPost($event->post);
+        //$this->syncFromPost($event->post);
     }
 
     public function onUpdated(PostUpdated $event): void
     {
-        $this->syncFromPost($event->post);
+        //$this->syncFromPost($event->post);
     }
 
     private function syncFromPost(Post $post): void

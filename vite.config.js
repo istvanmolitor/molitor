@@ -42,6 +42,7 @@ export default defineConfig({
             '@address': path.resolve(__dirname, 'resources/js/packages/vue-address'),
             '@purchase': path.resolve(__dirname, 'resources/js/packages/vue-purchase'),
             '@text-mining': path.resolve(__dirname, 'resources/js/packages/vue-text-mining'),
+            '@setting': path.resolve(__dirname, 'resources/js/packages/vue-setting'),
         },
     },
     server: {

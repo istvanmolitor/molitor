@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5088e55dc196b593aa5f3b59d6cbcdf",
+    "content-hash": "6b3d958d2e714a696490b5c7dacb48ae",
     "packages": [
         {
             "name": "brick/math",
@@ -1287,7 +1287,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/article-scraper",
-                "reference": "021e75fea7a62db0e3650f8dec863f835e9e4c88"
+                "reference": "bd981ae31ace594d982948710a661123934b4b76"
             },
             "require": {
                 "istvanmolitor/article-parser": "dev-main",
@@ -1316,12 +1316,88 @@
             }
         },
         {
+            "name": "istvanmolitor/auth-ui",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/auth-ui",
+                "reference": "ab2ea33830275cef61937eb925466b12f99f5023"
+            },
+            "require": {
+                "istvanmolitor/user": "dev-main"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\AuthUi\\Providers\\AuthUiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\AuthUi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Auth UI - Web-based authentication views and controller",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/blade-ui",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/blade-ui",
+                "reference": "152c6af54df2a34fc05fda9f7feec0d2f759a465"
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\BladeUi\\Providers\\BladeUiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\BladeUi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Blade UI components package",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "istvanmolitor/cms",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "8388ee66e3f68a83781bba72d48004c32895cef8"
+                "reference": "8af7657741b0db9be0d6d61506732ea87d2538c7"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1443,7 +1519,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/contact",
-                "reference": "d4965a848264384d0ad6a68c2d38b52caeec36c0"
+                "reference": "4267fa5500a6dca05ac341c65a881ce58f43c754"
             },
             "require": {
                 "laravel/framework": "^11.0|^12.0",
@@ -1601,7 +1677,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/gallery",
-                "reference": "e09339de37a5cf21aeebb52442be3e88e296b136"
+                "reference": "e338908446f91e156a49b9e532c2e9f922e6a432"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1767,7 +1843,10 @@
             "autoload": {
                 "psr-4": {
                     "Molitor\\Menu\\": "src/"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "autoload-dev": {
                 "psr-4": {
@@ -1794,7 +1873,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/news",
-                "reference": "8201f3444565435547820dd71cf37b160ca51725"
+                "reference": "c48119bee1b85cf298adb2ee4837d64f986333b9"
             },
             "require": {
                 "istvanmolitor/theme": "*@dev"
@@ -2025,7 +2104,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/scraper",
-                "reference": "b5fe2f4404b6154cf8bf839b74353aeb22ea2bbe"
+                "reference": "e81e26dbd4d77c93114287cbb8f0f75a0dd4884b"
             },
             "require": {
                 "istvanmolitor/html-parser": "*@dev",
@@ -2064,7 +2143,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/setting",
-                "reference": "6d7d2296f848df669d600d111de60464b972b3f2"
+                "reference": "9b2f146534e26e150f4221bbf0fc5a1829aa17ce"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -2221,7 +2300,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/theme",
-                "reference": "aa338c7b042834f67f963593e3aec764c1029bd1"
+                "reference": "dffc5b4afd614f102fbb5a6b098efeba4cb829b8"
             },
             "require": {
                 "php": "^8.2"
@@ -2287,7 +2366,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/unas",
-                "reference": "92708f34081802737930a1ee084122ddda3a88bf"
+                "reference": "8ad455c8f3717bc85b5fcf886e1d98d0d0a7f5b6"
             },
             "require": {
                 "ext-curl": "*",
@@ -2328,7 +2407,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
-                "reference": "93627b5eadb7774008feea5e4670839ce829d871"
+                "reference": "63e4e0e13c5d490b6d41066d08e7c872e97530fa"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -10572,6 +10651,8 @@
         "istvanmolitor/admin": 20,
         "istvanmolitor/article-parser": 20,
         "istvanmolitor/article-scraper": 20,
+        "istvanmolitor/auth-ui": 20,
+        "istvanmolitor/blade-ui": 20,
         "istvanmolitor/cms": 20,
         "istvanmolitor/cms-post-relations": 20,
         "istvanmolitor/cms-search": 20,

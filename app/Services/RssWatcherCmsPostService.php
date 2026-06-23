@@ -9,6 +9,7 @@ use Molitor\Cms\Repositories\ContentRepositoryInterface;
 use Molitor\Cms\Repositories\PostGroupRepositoryInterface;
 use Molitor\Cms\Repositories\PostMetaRepositoryInterface;
 use Molitor\Cms\Repositories\PostRepositoryInterface;
+use Molitor\Cms\Repositories\PostTypeRepositoryInterface;
 use Molitor\Language\Repositories\LanguageRepositoryInterface;
 use Molitor\RssWatcher\Models\RssFeedItem;
 use Molitor\Theme\Services\LayoutService;
@@ -21,6 +22,7 @@ class RssWatcherCmsPostService
         protected PostMetaRepositoryInterface $postMetaRepository,
         protected LanguageRepositoryInterface $languageRepository,
         protected PostGroupRepositoryInterface $postGroupRepository,
+        protected PostTypeRepositoryInterface $postTypeRepository,
     ) {}
 
     public function createOrUpdateFromRssItem(RssFeedItem $rssFeedItem): Post
@@ -32,6 +34,7 @@ class RssWatcherCmsPostService
             $post = $postMetaRssId->post;
         } else {
             $languageId = $this->languageRepository->getDefaultId();
+            $postTypeId = $this->postTypeRepository->getDefault()?->id;
 
             $post = $this->postRepository->create(
                 title: $rssFeedItem->title,
@@ -40,7 +43,8 @@ class RssWatcherCmsPostService
                 lead: $rssFeedItem->description,
                 mainImageUrl: $rssFeedItem->image,
                 languageId: $languageId,
-                layout: $layout
+                layout: $layout,
+                postTypeId: $postTypeId
             );
 
             $this->postMetaRepository->create([

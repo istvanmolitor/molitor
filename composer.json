@@ -14,6 +14,8 @@
         "istvanmolitor/admin": "@dev",
         "istvanmolitor/article-parser": "@dev",
         "istvanmolitor/article-scraper": "@dev",
+        "istvanmolitor/auth-ui": "@dev",
+        "istvanmolitor/blade-ui": "@dev",
         "istvanmolitor/cms": "@dev",
         "istvanmolitor/cms-post-relations": "@dev",
         "istvanmolitor/cms-search": "@dev",
@@ -26,21 +28,21 @@
         "istvanmolitor/language": "@dev",
         "istvanmolitor/media": "@dev",
         "istvanmolitor/menu": "@dev",
+        "istvanmolitor/news": "@dev",
         "istvanmolitor/order": "@dev",
         "istvanmolitor/post-calendar": "@dev",
-        "istvanmolitor/purchase": "@dev",
         "istvanmolitor/product": "@dev",
-        "istvanmolitor/shop": "@dev",
+        "istvanmolitor/purchase": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/scraper": "@dev",
         "istvanmolitor/setting": "@dev",
+        "istvanmolitor/shop": "@dev",
         "istvanmolitor/stock": "@dev",
         "istvanmolitor/text-mining": "@dev",
-        "istvanmolitor/tree": "@dev",
         "istvanmolitor/theme": "@dev",
+        "istvanmolitor/tree": "@dev",
         "istvanmolitor/unas": "@dev",
         "istvanmolitor/user": "@dev",
-        "istvanmolitor/news": "@dev",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
     },
@@ -175,6 +177,14 @@
         {
             "type": "path",
             "url": "packages/unas"
+        },
+        {
+            "type": "path",
+            "url": "packages/blade-ui"
+        },
+        {
+            "type": "path",
+            "url": "packages/auth-ui"
         },
         {
             "type": "path",

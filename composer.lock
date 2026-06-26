@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b3d958d2e714a696490b5c7dacb48ae",
+    "content-hash": "afc4ce995bba02fec3a7bc1b8d811b5c",
     "packages": [
         {
             "name": "brick/math",
@@ -1359,7 +1359,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/blade-ui",
-                "reference": "152c6af54df2a34fc05fda9f7feec0d2f759a465"
+                "reference": "1a230c1e15ff02b142a7e6fc47cf974c2e92a6fe"
             },
             "require": {
                 "php": "^8.2"
@@ -1397,7 +1397,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "8d55b6f9d597b229fd046e7cc0bb9c0e7a52e9cb"
+                "reference": "ef98dbf1ca9b25f089365762efd3311257191a13"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1519,7 +1519,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/contact",
-                "reference": "4267fa5500a6dca05ac341c65a881ce58f43c754"
+                "reference": "2d34cfc2c815c50bbc570cabe8dc3898a4e50582"
             },
             "require": {
                 "laravel/framework": "^11.0|^12.0",
@@ -1677,7 +1677,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/gallery",
-                "reference": "b0d4f71904d26b4f8d2f4d080f95d2a0f9a3dc00"
+                "reference": "839cfcbe1ade361f969653c93a7b98a60947c16e"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1739,6 +1739,41 @@
                 }
             ],
             "description": "HTML Parser",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/keyword",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/keyword",
+                "reference": "be97d852ea926f1c2f80e8dbea71f6fe66c935f6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Keyword\\Providers\\KeywordServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Keyword\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Keyword management package for Laravel",
             "transport-options": {
                 "relative": true
             }
@@ -1873,7 +1908,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/news",
-                "reference": "b118a377ac27a7408a01eaa746ed2c9ed2df4337"
+                "reference": "d9d96662bdb21608b1637530fbbace5572c20f55"
             },
             "require": {
                 "istvanmolitor/theme": "*@dev"
@@ -1950,7 +1985,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/post-calendar",
-                "reference": "9597d2d7ecbbbc73f63d8b7746e80d63788f1ca5"
+                "reference": "90f641e21c9d6801962644835ed29b0b638896a2"
             },
             "require": {
                 "laravel/framework": "^11.0|^12.0",
@@ -2267,6 +2302,9 @@
                 "url": "packages/text-mining",
                 "reference": "f05f1ad3d82d3ec24e25c9ce2d262554dce9fe1a"
             },
+            "require": {
+                "istvanmolitor/keyword": "@dev"
+            },
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2300,7 +2338,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/theme",
-                "reference": "6251c0e424a0bb9f8027b4190aeb11fbdaf04ffe"
+                "reference": "7ef2e4b69e3d6c20714c64dcd678dca1c94fa1aa"
             },
             "require": {
                 "php": "^8.2"
@@ -10665,6 +10703,7 @@
         "istvanmolitor/customer-product": 20,
         "istvanmolitor/gallery": 20,
         "istvanmolitor/html-parser": 20,
+        "istvanmolitor/keyword": 20,
         "istvanmolitor/language": 20,
         "istvanmolitor/media": 20,
         "istvanmolitor/menu": 20,

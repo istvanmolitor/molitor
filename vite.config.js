@@ -41,6 +41,7 @@ export default defineConfig({
             '@customer-product': path.resolve(__dirname, 'resources/js/packages/vue-customer-product'),
             '@address': path.resolve(__dirname, 'resources/js/packages/vue-address'),
             '@purchase': path.resolve(__dirname, 'resources/js/packages/vue-purchase'),
+            '@keyword': path.resolve(__dirname, 'resources/js/packages/vue-keyword'),
             '@text-mining': path.resolve(__dirname, 'resources/js/packages/vue-text-mining'),
             '@setting': path.resolve(__dirname, 'resources/js/packages/vue-setting'),
         },

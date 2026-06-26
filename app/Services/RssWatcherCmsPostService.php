@@ -27,12 +27,27 @@ class RssWatcherCmsPostService
 
     public function createOrUpdateFromRssItem(RssFeedItem $rssFeedItem): Post
     {
-        $postMetaRssId = $this->postMetaRepository->getByValue((string) $rssFeedItem->id, 'rss_feed_item_id');
         $layout = app(LayoutService::class)->getDefault();
+        $post = null;
 
-        if ($postMetaRssId) {
+        $postMetaRssId = $this->postMetaRepository->getByValue((string) $rssFeedItem->id, 'rss_feed_item_id');
+        if ($postMetaRssId?->post) {
             $post = $postMetaRssId->post;
-        } else {
+        }
+
+        if ($post === null && $rssFeedItem->link) {
+            $postMetaSourceLink = $this->postMetaRepository->getByValue($rssFeedItem->link, 'source_link');
+            if ($postMetaSourceLink?->post) {
+                $post = $postMetaSourceLink->post;
+                $this->postMetaRepository->create([
+                    'post_id' => $post->id,
+                    'name' => 'rss_feed_item_id',
+                    'meta_data' => (string) $rssFeedItem->id,
+                ]);
+            }
+        }
+
+        if ($post === null) {
             $languageId = $this->languageRepository->getDefaultId();
             $postTypeId = $this->postTypeRepository->getDefault()?->id;
 

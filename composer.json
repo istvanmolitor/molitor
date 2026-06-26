@@ -38,6 +38,7 @@
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/shop": "@dev",
         "istvanmolitor/stock": "@dev",
+        "istvanmolitor/keyword": "@dev",
         "istvanmolitor/text-mining": "@dev",
         "istvanmolitor/theme": "@dev",
         "istvanmolitor/tree": "@dev",
@@ -169,6 +170,10 @@
         {
             "type": "path",
             "url": "packages/theme"
+        },
+        {
+            "type": "path",
+            "url": "packages/keyword"
         },
         {
             "type": "path",

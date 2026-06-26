@@ -20,6 +20,7 @@ import { orderMenuBuilder } from "@order/index.ts";
 import { purchaseMenuBuilder } from "@purchase/index.ts";
 import { stockMenuBuilder } from "@stock/index.ts";
 import { unasMenuBuilder } from "@unas/index.ts";
+import { keywordMenuBuilder } from "@keyword/index.ts";
 import { textMiningMenuBuilder } from "@text-mining/index.ts";
 import { scraperMenuBuilder } from "@scraper/index.ts";
 import { galleryMenuBuilder } from "@gallery/index.ts";
@@ -41,6 +42,7 @@ menuRegistry.register(orderMenuBuilder)
 menuRegistry.register(purchaseMenuBuilder)
 menuRegistry.register(stockMenuBuilder)
 menuRegistry.register(unasMenuBuilder)
+menuRegistry.register(keywordMenuBuilder)
 menuRegistry.register(textMiningMenuBuilder)
 menuRegistry.register(scraperMenuBuilder)
 menuRegistry.register(galleryMenuBuilder)

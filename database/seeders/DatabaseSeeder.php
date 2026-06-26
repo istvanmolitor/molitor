@@ -20,6 +20,7 @@ use Molitor\RssWatcher\database\seeders\NewsRssSeeder;
 use Molitor\Scraper\database\seeders\ScraperSeeder;
 use Molitor\Setting\database\seeders\SettingSeeder;
 use Molitor\Stock\database\seeders\StockSeeder;
+use Molitor\Keyword\Database\Seeders\KeywordSeeder;
 use Molitor\TextMining\Database\Seeders\TextMiningSeeder;
 use Molitor\Theme\database\seeders\ThemeSeeder;
 use Molitor\Unas\database\seeders\UnasSeeder;
@@ -51,6 +52,7 @@ class DatabaseSeeder extends Seeder
             StockSeeder::class,
             UnasSeeder::class,
             NewsRssSeeder::class,
+            KeywordSeeder::class,
             TextMiningSeeder::class,
             AddressSeeder::class,
             ScraperSeeder::class,

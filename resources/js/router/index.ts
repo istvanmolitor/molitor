@@ -22,6 +22,7 @@ import cmsRelationRoutes from '@cms-relations/router/index'
 import orderRoutes from '@order/router/index'
 import purchaseRoutes from '@purchase/router/index'
 import stockRoutes from '@stock/router/index'
+import keywordRoutes from '@keyword/router/index'
 import textMiningRoutes from '@text-mining/router/index'
 import scraperRoutes from '@scraper/router/index'
 import settingRoutes from '@setting/router/index'
@@ -55,6 +56,7 @@ const routes: RouteRecordRaw[] = [
   ...orderRoutes,
   ...purchaseRoutes,
   ...stockRoutes,
+  ...keywordRoutes,
   ...textMiningRoutes,
   ...scraperRoutes,
   ...settingRoutes,

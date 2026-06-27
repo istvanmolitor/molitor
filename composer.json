@@ -19,6 +19,7 @@
         "istvanmolitor/cms": "@dev",
         "istvanmolitor/cms-post-relations": "@dev",
         "istvanmolitor/cms-search": "@dev",
+        "istvanmolitor/search": "@dev",
         "istvanmolitor/contact": "@dev",
         "istvanmolitor/currency": "@dev",
         "istvanmolitor/customer": "@dev",
@@ -90,6 +91,10 @@
         {
             "type": "path",
             "url": "packages/cms-post-relations"
+        },
+        {
+            "type": "path",
+            "url": "packages/search"
         },
         {
             "type": "path",

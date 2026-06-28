@@ -245,6 +245,8 @@ export const {name}DashboardBuilder = new {Name}DashboardBuilder()
 
 Az admin felületen minden listanézet a `DataTable` rendszert használja. A szűrés, lapozás és rendezés **szerver oldalon** történik.
 
+> **Szabály:** Az oszlopdefiníciókat (`columns`) **mindig a szervertől kell lekérni**, soha nem szabad frontenden hardcode-olni. A frontenden a `columns` mindig `ref<Column[]>([])` típusú reaktív változó, amelyet a fetch válasz `columns` mezőjéből töltünk fel: `columns.value = (response.data.columns ?? []) as Column[]`. A backend DataTable osztály felelős az oszlopcímkék, rendezhetőség és egyéb tulajdonságok meghatározásáért.
+
 ### Backend: `DataTable` absztrakt osztály
 
 **Helye:** `packages/admin/src/DataTables/DataTable.php`
@@ -294,10 +296,31 @@ class {Entity}DataTable extends DataTable
 
 **Haladó testreszabás:**
 
-- `getBaseQuery()` – override az eager loadinghoz: `return {Entity}::query()->with('relation')`
-- `query(Builder $query)` – extra szűrők hozzáadása (pl. `->where('is_active', true)`)
+- `query(Builder $query)` – lekérdezés bővítése: eager loading, joinok, extra szűrők (pl. `return $query->with('relation')->where('active', true)`) – **`getBaseQuery()`-t ne írjuk felül**
 - `getDefaultSort()` / `getDefaultDirection()` – alapértelmezett rendezés megadása
 - `getPerPage()` – alapértelmezett oldalméret (default: 10)
+
+**Nyelvesített (TranslatableModel) mezők kereshetővé/rendezhetővé tétele:**
+
+Ha a modell a `TranslatableModel`-t terjeszti ki (a `language` csomag), a fordított mezők (`name`, `title` stb.) a fordítások táblájában vannak, nem az alaptáblában. Ezért a `query()` metódusban a `language` csomag scope-jait kell használni:
+
+```php
+public function query(Builder $query): Builder
+{
+    return $query->joinTranslation()->selectBase();
+}
+```
+
+- `joinTranslation()` – leftJoin a fordítások táblájára (aktuális nyelv szerint) + `with('translations')`
+- `selectBase()` – `{table}.*` select, hogy ne legyen oszlopütközés
+
+Ezután a fordított oszlopon normálisan megadható `->setSearchable()` és `->setOrderable()`:
+
+```php
+$this->addColumn('name')->setLabel('Név')->setSearchable()->setOrderable();
+```
+
+**Soha ne** írd felül az `applyFilters()` metódust (privát), és **ne** használj kézi `leftJoin`-t vagy `with('translations')`-t — a scope-ok elvégzik ezeket.
 
 **Controller:**
 

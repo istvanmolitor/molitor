@@ -129,6 +129,16 @@
     }
 }
 
+/* Links inside rendered HTML content elements */
+.content-element a {
+    color: oklch(0.45 0.2 250);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.content-element a:hover {
+    color: oklch(0.35 0.22 250);
+}
+
 /* Ensure full viewport height */
 html, body {
     height: 100%;

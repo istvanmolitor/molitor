@@ -35,7 +35,6 @@
         "istvanmolitor/purchase": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/scraper": "@dev",
-        "istvanmolitor/search": "@dev",
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/shop": "@dev",
         "istvanmolitor/stock": "@dev",
@@ -91,10 +90,6 @@
         {
             "type": "path",
             "url": "packages/cms-post-relations"
-        },
-        {
-            "type": "path",
-            "url": "packages/search"
         },
         {
             "type": "path",

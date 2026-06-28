@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use IstvanMolitor\ArticleScraper\Services\ArticleToPostService;
+use Illuminate\Support\Facades\Log;
 use Molitor\ArticleParser\Services\ArticleParserService;
 use Molitor\Cms\Events\Post\PostShow;
 use Molitor\Cms\Repositories\PostMetaRepositoryInterface;
@@ -41,10 +42,18 @@ class ScrapePostOnShow
             return;
         }
 
-        $this->articleToPostService->convertArticleToPost(
-            article: $article,
-            sourceLink: $url,
-            publish: true,
-        );
+        try {
+            $this->articleToPostService->convertArticleToPost(
+                article: $article,
+                sourceLink: $url,
+                publish: true,
+            );
+        } catch (\Throwable $e) {
+            Log::warning('ScrapePostOnShow: scraping sikertelen', [
+                'post_id' => $post->id,
+                'url' => $url,
+                'error' => $e->getMessage(),
+            ]);
+        }
     }
 }

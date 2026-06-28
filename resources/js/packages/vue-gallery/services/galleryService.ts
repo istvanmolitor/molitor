@@ -37,6 +37,7 @@ export interface PaginatedResponse<T> {
     to: number
     total: number
   }
+  columns?: Array<{ key: string; label: string; sortable: boolean }>
 }
 
 export interface SingleResponse<T> {
@@ -44,7 +45,7 @@ export interface SingleResponse<T> {
 }
 
 export const galleryService = {
-  getAll(params?: { page?: number }) {
+  getAll(params?: { page?: number; search?: string; sort?: string; direction?: 'asc' | 'desc'; per_page?: number }) {
     return api.get<PaginatedResponse<Gallery>>('/api/galleries', { params })
   },
   getById(id: number | string) {

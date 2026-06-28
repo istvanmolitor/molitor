@@ -19,11 +19,7 @@ const pagination = ref<PaginationMeta>({
   total: 0
 })
 
-const columns: Column<Gallery>[] = [
-  { key: 'name', label: 'Név', sortable: true },
-  { key: 'slug', label: 'Slug', sortable: true },
-  { key: 'created_at', label: 'Létrehozva', sortable: true, width: '200px' },
-]
+const columns = ref<Column[]>([])
 
 const fetchGalleries = async (params: {
   search?: string
@@ -36,6 +32,7 @@ const fetchGalleries = async (params: {
     const response = await galleryService.getAll(params)
     galleries.value = response.data.data
     pagination.value = response.data.meta
+    columns.value = (response.data.columns ?? []) as Column[]
   } catch (error) {
     console.error('Hiba a galériák betöltésekor:', error)
     toastService.error('Hiba történt a galériák betöltése során.')

@@ -241,6 +241,225 @@ export const {name}DashboardBuilder = new {Name}DashboardBuilder()
 
 ---
 
+## DataTable – szűrhető, lapozható, rendezhető lista
+
+Az admin felületen minden listanézet a `DataTable` rendszert használja. A szűrés, lapozás és rendezés **szerver oldalon** történik.
+
+### Backend: `DataTable` absztrakt osztály
+
+**Helye:** `packages/admin/src/DataTables/DataTable.php`
+
+Minden entitáshoz saját DataTable osztályt kell létrehozni a `src/DataTables/` mappában:
+
+```php
+// packages/{name}/src/DataTables/{Entity}DataTable.php
+namespace Molitor\{Name}\DataTables;
+
+use Molitor\Admin\DataTables\DataTable;
+
+class {Entity}DataTable extends DataTable
+{
+    protected function getModelClass(): string
+    {
+        return {Entity}::class;
+    }
+
+    protected function getResourceClass(): string
+    {
+        return {Entity}Resource::class;
+    }
+
+    protected function initColumns(): void
+    {
+        $this->addColumn('title')
+            ->setLabel('Cím')
+            ->setSearchable()
+            ->setOrderable();
+
+        $this->addColumn('slug')
+            ->setLabel('Slug')
+            ->setSearchable();
+    }
+}
+```
+
+**`DataTableColumn` metódusai** (fluent builder):
+
+| Metódus | Leírás |
+|---|---|
+| `->setLabel('Cím')` | Frontend fejléc szövege (default: ucfirst(name)) |
+| `->setSearchable()` | LIKE keresésnél bevonni |
+| `->setOrderable()` | Rendezési oszlopként engedélyezni |
+| `->setHidden()` | Ne küldjük a kliensnek (csak query-hez kell) |
+
+**Haladó testreszabás:**
+
+- `getBaseQuery()` – override az eager loadinghoz: `return {Entity}::query()->with('relation')`
+- `query(Builder $query)` – extra szűrők hozzáadása (pl. `->where('is_active', true)`)
+- `getDefaultSort()` / `getDefaultDirection()` – alapértelmezett rendezés megadása
+- `getPerPage()` – alapértelmezett oldalméret (default: 10)
+
+**Controller:**
+
+```php
+public function index({Entity}DataTable $dataTable): AnonymousResourceCollection
+{
+    return $dataTable->getResponse();
+}
+```
+
+A DataTable a requestből olvassa a paramétereket, ezért a controller egyetlen sort tartalmaz.
+
+**Válasz struktúra:**
+
+```json
+{
+  "data": [...],
+  "meta": {
+    "current_page": 1,
+    "last_page": 5,
+    "per_page": 10,
+    "total": 42
+  },
+  "filters": {
+    "search": "query",
+    "sort": "title",
+    "direction": "asc"
+  },
+  "columns": [
+    { "key": "title", "label": "Cím", "sortable": true },
+    { "key": "slug", "label": "Slug", "sortable": false }
+  ]
+}
+```
+
+**Elfogadott query paraméterek:**
+
+| Paraméter | Leírás |
+|---|---|
+| `search` | LIKE keresési szöveg |
+| `sort` | Rendezési oszlop neve (csak orderable oszlopra érvényes) |
+| `direction` | `asc` vagy `desc` |
+| `per_page` | Oldalméret (default: 10) |
+| `page` | Oldalszám (default: 1) |
+
+---
+
+### Frontend: `DataTable` komponens
+
+**Helye:** `resources/js/packages/vue-admin/components/ui/dataTable/DataTable.vue`
+
+A komponens állapotmentes: minden adatot propokként kap, az interakciókat `@fetch` eseménnyel jelzi.
+
+**Props:**
+
+| Prop | Típus | Leírás |
+|---|---|---|
+| `columns` | `Column[]` | Oszlopdefiníciók (a szervertől jön) |
+| `data` | `TData[]` | Az aktuális oldal sorai |
+| `loading` | `boolean` | Töltési állapot |
+| `pagination` | `PaginationMeta` | Lapozási metaadatok |
+| `searchable` | `boolean` | Keresőmező megjelenítése (default: true) |
+| `searchPlaceholder` | `string` | Keresőmező placeholder szövege |
+| `defaultSort` | `string` | Alapértelmezett rendezési oszlop |
+| `defaultDirection` | `'asc' \| 'desc'` | Alapértelmezett rendezési irány |
+
+**Emit – `@fetch(params)`:**
+
+300 ms debounce-szal hívódik keresésnél, azonnali rendezésnél és lapozásnál:
+
+```ts
+{ search?: string; sort?: string; direction?: 'asc' | 'desc'; page?: number }
+```
+
+**Slot-ok:**
+
+| Slot | Leírás |
+|---|---|
+| `#actions` | Fejléc jobb oldali gombok (pl. "Új elem" gomb) |
+| `#row-actions="{ row }"` | Sor szintű műveletek (edit, delete stb.) |
+| `#cell-{key}="{ value, row }"` | Egyedi cella renderelés |
+| `#empty` | Üres állapot szövege |
+
+---
+
+### Index nézet minta
+
+```vue
+<script setup lang="ts">
+import { AdminLayout, toastService } from '@admin'
+import DataTable, { type Column, type PaginationMeta } from '@admin/components/ui/dataTable/DataTable.vue'
+import CreateButton from '@admin/components/ui/button/CreateButton.vue'
+import EditButton from '@admin/components/ui/button/EditButton.vue'
+import DeleteButton from '@admin/components/ui/button/DeleteButton.vue'
+import { ref, onMounted } from 'vue'
+import { entityService, type Entity } from '../../services/entityService'
+
+const items = ref<Entity[]>([])
+const isLoading = ref(false)
+const pagination = ref<PaginationMeta>({ current_page: 1, last_page: 1, per_page: 10, total: 0 })
+const columns = ref<Column[]>([])
+
+const fetchItems = async (params: {
+  search?: string; sort?: string; direction?: 'asc' | 'desc'; page?: number
+}) => {
+  try {
+    isLoading.value = true
+    const response = await entityService.getAll(params)
+    items.value = response.data.data
+    pagination.value = response.data.meta
+    columns.value = (response.data.columns ?? []) as Column[]
+  } catch {
+    toastService.error('Hiba történt az adatok betöltése során.')
+  } finally {
+    isLoading.value = false
+  }
+}
+
+onMounted(() => fetchItems({ page: 1, sort: 'name', direction: 'asc' }))
+</script>
+
+<template>
+  <AdminLayout pageTitle="Entitások">
+    <DataTable
+      :columns="columns"
+      :data="items"
+      :loading="isLoading"
+      :pagination="pagination"
+      search-placeholder="Keresés..."
+      default-sort="name"
+      default-direction="asc"
+      @fetch="fetchItems"
+    >
+      <template #actions>
+        <CreateButton to="/admin/{entity}/create">Új elem</CreateButton>
+      </template>
+      <template #row-actions="{ row }">
+        <EditButton @click="router.push(`/admin/{entity}/${row.id}/edit`)" />
+        <DeleteButton @confirm="deleteItem(row.id!)" />
+      </template>
+      <template #empty>Nincs megjeleníthető adat.</template>
+    </DataTable>
+  </AdminLayout>
+</template>
+```
+
+**Service `getAll` metódus paraméter típusa:**
+
+```ts
+getAll(params?: {
+  page?: number
+  search?: string
+  sort?: string
+  direction?: 'asc' | 'desc'
+  per_page?: number
+})
+```
+
+A válasz `columns` mezőjét mindig `(response.data.columns ?? []) as Column[]` alakban kell kezelni (az első betöltésig üres tömb).
+
+---
+
 ## Backend–Frontend összefüggés
 
 | Backend | Frontend |

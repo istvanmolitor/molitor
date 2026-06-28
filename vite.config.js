@@ -44,6 +44,7 @@ export default defineConfig({
             '@keyword': path.resolve(__dirname, 'resources/js/packages/vue-keyword'),
             '@text-mining': path.resolve(__dirname, 'resources/js/packages/vue-text-mining'),
             '@setting': path.resolve(__dirname, 'resources/js/packages/vue-setting'),
+            '@tinyurl': path.resolve(__dirname, 'resources/js/packages/vue-tinyurl'),
         },
     },
     server: {

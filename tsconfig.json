@@ -71,7 +71,9 @@
       "@text-mining": ["resources/js/packages/vue-text-mining/index.ts"],
       "@text-mining/*": ["resources/js/packages/vue-text-mining/*"],
       "@setting": ["resources/js/packages/vue-setting/index.ts"],
-      "@setting/*": ["resources/js/packages/vue-setting/*"]
+      "@setting/*": ["resources/js/packages/vue-setting/*"],
+      "@tinyurl": ["resources/js/packages/vue-tinyurl/index.ts"],
+      "@tinyurl/*": ["resources/js/packages/vue-tinyurl/*"]
     }
   },
   "include": [

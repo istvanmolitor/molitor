@@ -26,6 +26,7 @@ import keywordRoutes from '@keyword/router/index'
 import textMiningRoutes from '@text-mining/router/index'
 import scraperRoutes from '@scraper/router/index'
 import settingRoutes from '@setting/router/index'
+import tinyurlRoutes from '@tinyurl/router/index'
 
 // Import guards
 import { authGuard } from '@user/router/guards'
@@ -60,6 +61,7 @@ const routes: RouteRecordRaw[] = [
   ...textMiningRoutes,
   ...scraperRoutes,
   ...settingRoutes,
+  ...tinyurlRoutes,
   // 404 catch-all route
   {
     path: '/:pathMatch(.*)*',

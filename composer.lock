@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5cb8e2d6cfca30f0e0f8ee69cb5f1a11",
+    "content-hash": "2bfb0f3dd7be2c3488201a60feeb532d",
     "packages": [
         {
             "name": "brick/math",
@@ -1179,7 +1179,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/address",
-                "reference": "07ffa066c8f166631dc48390c54f8c82c3b64ce0"
+                "reference": "c73934e6e5fe264f2486688d1d772b956404807e"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -1217,7 +1217,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/admin",
-                "reference": "fdd3dade38510f36ee7d8cd4e2be60319606d7f9"
+                "reference": "546840457bf6b1e7fe6dca83ba24269f566ee38b"
             },
             "type": "library",
             "extra": {
@@ -1397,7 +1397,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "9a6e32b40b3bea48ec37dfae5c18c310057e9227"
+                "reference": "04e7484ce8552b6af0b2a0da12e74d966f4dd71c"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1517,7 +1517,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/currency",
-                "reference": "a7eb8b3948da513db1257ded974c6824eb89be95"
+                "reference": "7436c7095d6cef0f0d3afd136a78c40bed4dc78d"
             },
             "require": {
                 "istvanmolitor/language": "*@dev"
@@ -1555,7 +1555,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/customer",
-                "reference": "5093e6eb2c6e215bb0331533441e2efeca7d3cb2"
+                "reference": "64e66c2d8f32656dac254a0746208e6e9b4856fb"
             },
             "require": {
                 "istvanmolitor/currency": "*@dev",
@@ -1594,7 +1594,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/customer-product",
-                "reference": "3cfa5edd39dc9cfbca5ab00ebc4e877cd5a4fe09"
+                "reference": "29c258c9325456043128b5c6ab54e002a984eca3"
             },
             "require": {
                 "istvanmolitor/admin": "*@dev",
@@ -1636,7 +1636,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/gallery",
-                "reference": "839cfcbe1ade361f969653c93a7b98a60947c16e"
+                "reference": "7709be05e083dfc589643120f58b606a98e3bb51"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1708,7 +1708,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/keyword",
-                "reference": "e2aeb8fc57e5b38b0c8b286a2e7ee2cee992ff29"
+                "reference": "2f77b9a161353a474fc6a5ed48ea2356381c95d6"
             },
             "type": "library",
             "extra": {
@@ -1743,7 +1743,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/language",
-                "reference": "6ec9ab901f910858c9a776990917a8a88883999a"
+                "reference": "f7cd97b608f69c586b20928ec0089876fb213935"
             },
             "require": {
                 "istvanmolitor/user": "*@dev"
@@ -1782,7 +1782,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/media",
-                "reference": "6b7ec70203e2f042a6e18080d5937aa6d98ca491"
+                "reference": "a9d096cb5ad6d73b97f11c10a1c5914d372aa2c5"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main"
@@ -1905,7 +1905,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/order",
-                "reference": "70c42c20a554836f9e4a1c4ccc2b90e64a51de0a"
+                "reference": "fe96f06c8cdbedbb0fbfe1b2ebd51b7d68bec77b"
             },
             "require": {
                 "istvanmolitor/product": "*@dev",
@@ -1985,7 +1985,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/product",
-                "reference": "d8ab76bacf21d8ef79eca2762350930c999e275f"
+                "reference": "1b010be0fd86f14a935d0c42746fcb92c1dcbf9f"
             },
             "require": {
                 "istvanmolitor/currency": "*@dev"
@@ -2023,7 +2023,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/purchase",
-                "reference": "0476f9007f6e712a164b853e2f7b961480c8e39e"
+                "reference": "fe36d32b7a4a6bb7da806ef5aaeb097082375e9c"
             },
             "require": {
                 "istvanmolitor/admin": "*@dev",
@@ -2066,7 +2066,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/rss-watcher",
-                "reference": "38f0c63c8006caf7d35a3a04abb95d014c6288a0"
+                "reference": "79a761bab9d7f6dc68ca6f93ab1009e1c9e12b98"
             },
             "require": {
                 "illuminate/support": "^10.0|^11.0|^12.0",
@@ -2100,7 +2100,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/scraper",
-                "reference": "e81e26dbd4d77c93114287cbb8f0f75a0dd4884b"
+                "reference": "6a8c1bb797a03358bce1355d98744ab13bc0efc3"
             },
             "require": {
                 "istvanmolitor/html-parser": "*@dev",
@@ -2139,7 +2139,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/search",
-                "reference": "5401241ede58a67688695c784e469c33168c4c7e"
+                "reference": "43b5f94f02962a7af900df41a24ae03b30f98720"
             },
             "require": {
                 "elasticsearch/elasticsearch": "^8.11",
@@ -2263,7 +2263,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/stock",
-                "reference": "77a30253f434d5d051b3e7843283f4b9b8d0aa8e"
+                "reference": "5d8e34fe6b6320ba0b5b1580e3221bbda472e344"
             },
             "require": {
                 "istvanmolitor/product": "*@dev"
@@ -2301,7 +2301,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/text-mining",
-                "reference": "d71b1bb6634328bb33f66c1952c035b385273584"
+                "reference": "5a5e56f453b995922cf32f109314608d9544ecd7"
             },
             "require": {
                 "istvanmolitor/keyword": "@dev"
@@ -2370,6 +2370,45 @@
                 }
             ],
             "description": "Theme package",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/tinyurl",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/tinyurl",
+                "reference": "8dfe5bffcdb4855f99137745a42f3ace0a03ee35"
+            },
+            "require": {
+                "illuminate/support": "*",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Tinyurl\\Providers\\TinyurlServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Tinyurl\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "TinyURL – URL shortener csomag",
             "transport-options": {
                 "relative": true
             }
@@ -2449,7 +2488,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
-                "reference": "63e4e0e13c5d490b6d41066d08e7c872e97530fa"
+                "reference": "282f006087634ae46858003b1a7cb2ca4a8135ae"
             },
             "require": {
                 "istvanmolitor/admin": "dev-main",
@@ -10720,6 +10759,7 @@
         "istvanmolitor/stock": 20,
         "istvanmolitor/text-mining": 20,
         "istvanmolitor/theme": 20,
+        "istvanmolitor/tinyurl": 20,
         "istvanmolitor/tree": 20,
         "istvanmolitor/unas": 20,
         "istvanmolitor/user": 20

@@ -25,6 +25,7 @@ import { textMiningMenuBuilder } from "@text-mining/index.ts";
 import { scraperMenuBuilder } from "@scraper/index.ts";
 import { galleryMenuBuilder } from "@gallery/index.ts";
 import { settingMenuBuilder } from "@setting/index.ts";
+import { tinyurlMenuBuilder } from "@tinyurl/index.ts";
 
 menuRegistry.register(mediaMenuBuilder)
 menuRegistry.register(userMenuBuilder)
@@ -47,3 +48,4 @@ menuRegistry.register(textMiningMenuBuilder)
 menuRegistry.register(scraperMenuBuilder)
 menuRegistry.register(galleryMenuBuilder)
 menuRegistry.register(settingMenuBuilder)
+menuRegistry.register(tinyurlMenuBuilder)

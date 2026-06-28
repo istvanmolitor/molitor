@@ -18,13 +18,13 @@
         "istvanmolitor/blade-ui": "@dev",
         "istvanmolitor/cms": "@dev",
         "istvanmolitor/cms-post-relations": "@dev",
-        "istvanmolitor/search": "@dev",
         "istvanmolitor/contact": "@dev",
         "istvanmolitor/currency": "@dev",
         "istvanmolitor/customer": "@dev",
         "istvanmolitor/customer-product": "@dev",
         "istvanmolitor/gallery": "@dev",
         "istvanmolitor/html-parser": "@dev",
+        "istvanmolitor/keyword": "@dev",
         "istvanmolitor/language": "@dev",
         "istvanmolitor/media": "@dev",
         "istvanmolitor/menu": "@dev",
@@ -35,12 +35,13 @@
         "istvanmolitor/purchase": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/scraper": "@dev",
+        "istvanmolitor/search": "@dev",
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/shop": "@dev",
         "istvanmolitor/stock": "@dev",
-        "istvanmolitor/keyword": "@dev",
         "istvanmolitor/text-mining": "@dev",
         "istvanmolitor/theme": "@dev",
+        "istvanmolitor/tinyurl": "@dev",
         "istvanmolitor/tree": "@dev",
         "istvanmolitor/unas": "@dev",
         "istvanmolitor/user": "@dev",
@@ -202,6 +203,10 @@
         {
             "type": "path",
             "url": "packages/post-calendar"
+        },
+        {
+            "type": "path",
+            "url": "packages/tinyurl"
         }
     ],
     "autoload-dev": {

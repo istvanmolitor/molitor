@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "elasticsearch/elasticsearch": "^8.19",
         "istvanmolitor/address": "@dev",
         "istvanmolitor/admin": "@dev",
         "istvanmolitor/article-parser": "@dev",
@@ -18,10 +19,12 @@
         "istvanmolitor/blade-ui": "@dev",
         "istvanmolitor/cms": "@dev",
         "istvanmolitor/cms-post-relations": "@dev",
+        "istvanmolitor/cms-search": "@dev",
         "istvanmolitor/contact": "@dev",
         "istvanmolitor/currency": "@dev",
         "istvanmolitor/customer": "@dev",
         "istvanmolitor/customer-product": "@dev",
+        "istvanmolitor/elasticsearch": "@dev",
         "istvanmolitor/gallery": "@dev",
         "istvanmolitor/html-parser": "@dev",
         "istvanmolitor/keyword": "@dev",
@@ -35,6 +38,7 @@
         "istvanmolitor/purchase": "@dev",
         "istvanmolitor/rss-watcher": "@dev",
         "istvanmolitor/scraper": "@dev",
+        "istvanmolitor/search": "@dev",
         "istvanmolitor/setting": "@dev",
         "istvanmolitor/shop": "@dev",
         "istvanmolitor/stock": "@dev",
@@ -93,6 +97,10 @@
         },
         {
             "type": "path",
+            "url": "packages/cms-search"
+        },
+        {
+            "type": "path",
             "url": "packages/contact"
         },
         {
@@ -106,6 +114,10 @@
         {
             "type": "path",
             "url": "packages/customer-product"
+        },
+        {
+            "type": "path",
+            "url": "packages/elasticsearch"
         },
         {
             "type": "path",
@@ -202,6 +214,10 @@
         {
             "type": "path",
             "url": "packages/tinyurl"
+        },
+        {
+            "type": "path",
+            "url": "packages/search"
         }
     ],
     "autoload-dev": {

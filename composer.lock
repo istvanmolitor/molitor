@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bfb0f3dd7be2c3488201a60feeb532d",
+    "content-hash": "73f002af035d753ae3ae8ba92a72169e",
     "packages": [
         {
             "name": "brick/math",
@@ -1252,7 +1252,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/article-parser",
-                "reference": "b959cf41102ad2d9e7d666451c40f83574f947e6"
+                "reference": "dbc2f2c469b51b4f524ef30d24da0833d377e1e8"
             },
             "require": {
                 "istvanmolitor/html-parser": "@dev",
@@ -1287,7 +1287,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/article-scraper",
-                "reference": "bba4d75caa0a2275a7d1ba565b9c87acfc9ffb7a"
+                "reference": "239efffe62d02fde2b8d27ed1b7eadc206bec6f5"
             },
             "require": {
                 "istvanmolitor/article-parser": "dev-main",
@@ -1397,7 +1397,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/cms",
-                "reference": "04e7484ce8552b6af0b2a0da12e74d966f4dd71c"
+                "reference": "b09b0b798e1790219cf58c923f3c11d523d47ef2"
             },
             "require": {
                 "istvanmolitor/language": "*@dev",
@@ -1468,6 +1468,47 @@
                 }
             ],
             "description": "CMS post and image relations",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/cms-search",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/cms-search",
+                "reference": "e1769d652646dace94e931c6a1ee249dbb24a212"
+            },
+            "require": {
+                "illuminate/support": "^12.0",
+                "istvanmolitor/cms": "*@dev",
+                "istvanmolitor/elasticsearch": "*@dev",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\CmsSearch\\Providers\\CmsSearchServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\CmsSearch\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Elasticsearch integration for CMS package.",
             "transport-options": {
                 "relative": true
             }
@@ -1626,6 +1667,44 @@
                 }
             ],
             "description": "Ügyfél termékeinek kezelése",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/elasticsearch",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/elasticsearch",
+                "reference": "a493c172e78694876e82f5e0f59527a3d5aa986f"
+            },
+            "require": {
+                "elasticsearch/elasticsearch": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\Elasticsearch\\Providers\\ElasticsearchServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\Elasticsearch\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Elasticsearch integration",
             "transport-options": {
                 "relative": true
             }
@@ -2139,12 +2218,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/search",
-                "reference": "43b5f94f02962a7af900df41a24ae03b30f98720"
-            },
-            "require": {
-                "elasticsearch/elasticsearch": "^8.11",
-                "illuminate/support": "^12.0",
-                "php": "^8.2"
+                "reference": "b0023a7f7dc32ff1d4c0d31d0b167eda1ea20e0d"
             },
             "type": "library",
             "extra": {
@@ -2168,7 +2242,7 @@
                     "email": "istvanmolitor@gmail.com"
                 }
             ],
-            "description": "General Elasticsearch integration package.",
+            "description": "Search package.",
             "transport-options": {
                 "relative": true
             }
@@ -2380,7 +2454,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/tinyurl",
-                "reference": "8dfe5bffcdb4855f99137745a42f3ace0a03ee35"
+                "reference": "a5b75d2b755a459f33e3c24b3deffe197979b27f"
             },
             "require": {
                 "illuminate/support": "*",
@@ -10736,10 +10810,12 @@
         "istvanmolitor/blade-ui": 20,
         "istvanmolitor/cms": 20,
         "istvanmolitor/cms-post-relations": 20,
+        "istvanmolitor/cms-search": 20,
         "istvanmolitor/contact": 20,
         "istvanmolitor/currency": 20,
         "istvanmolitor/customer": 20,
         "istvanmolitor/customer-product": 20,
+        "istvanmolitor/elasticsearch": 20,
         "istvanmolitor/gallery": 20,
         "istvanmolitor/html-parser": 20,
         "istvanmolitor/keyword": 20,

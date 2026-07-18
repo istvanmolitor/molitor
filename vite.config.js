@@ -45,6 +45,7 @@ export default defineConfig({
             '@text-mining': path.resolve(__dirname, 'resources/js/packages/vue-text-mining'),
             '@setting': path.resolve(__dirname, 'resources/js/packages/vue-setting'),
             '@tinyurl': path.resolve(__dirname, 'resources/js/packages/vue-tinyurl'),
+            '@dynamic-form': path.resolve(__dirname, 'resources/js/packages/vue-dynamic-form'),
         },
     },
     server: {

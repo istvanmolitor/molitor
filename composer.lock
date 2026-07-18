@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73f002af035d753ae3ae8ba92a72169e",
+    "content-hash": "f52d19113c3f5778b146cba8841fd973",
     "packages": [
         {
             "name": "brick/math",
@@ -1217,7 +1217,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/admin",
-                "reference": "546840457bf6b1e7fe6dca83ba24269f566ee38b"
+                "reference": "dd568a4e6e01b716a87bd5b24bec29f99d5814ad"
             },
             "type": "library",
             "extra": {
@@ -1558,7 +1558,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/currency",
-                "reference": "7436c7095d6cef0f0d3afd136a78c40bed4dc78d"
+                "reference": "30719645806e4c18a4dfa61e3af75b44fb986498"
             },
             "require": {
                 "istvanmolitor/language": "*@dev"
@@ -1574,7 +1574,10 @@
             "autoload": {
                 "psr-4": {
                     "Molitor\\Currency\\": "src/"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "license": [
                 "MIT"
@@ -1667,6 +1670,47 @@
                 }
             ],
             "description": "Ügyfél termékeinek kezelése",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "istvanmolitor/dynamic-form",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/dynamic-form",
+                "reference": "2d94e9eec2cfb8cc8a9702bb802ddaa2b2a93707"
+            },
+            "require": {
+                "illuminate/support": "*",
+                "istvanmolitor/admin": "*",
+                "istvanmolitor/user": "*",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Molitor\\DynamicForm\\Providers\\DynamicFormServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Molitor\\DynamicForm\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Molitor István",
+                    "email": "istvanmolitor@gmail.com"
+                }
+            ],
+            "description": "Dinamikus űrlapok kezelése",
             "transport-options": {
                 "relative": true
             }
@@ -1984,7 +2028,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/order",
-                "reference": "fe96f06c8cdbedbb0fbfe1b2ebd51b7d68bec77b"
+                "reference": "7c04314b2f03298843d2fce28280375df8b7b113"
             },
             "require": {
                 "istvanmolitor/product": "*@dev",
@@ -2064,7 +2108,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/product",
-                "reference": "1b010be0fd86f14a935d0c42746fcb92c1dcbf9f"
+                "reference": "22cf5a9a9b3c873f595854892e7841ccec2b649f"
             },
             "require": {
                 "istvanmolitor/currency": "*@dev"
@@ -2102,7 +2146,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/purchase",
-                "reference": "fe36d32b7a4a6bb7da806ef5aaeb097082375e9c"
+                "reference": "39122782f9f487d0aa33933bcd575d8a2d0d8562"
             },
             "require": {
                 "istvanmolitor/admin": "*@dev",
@@ -10748,6 +10792,7 @@
         "istvanmolitor/currency": 20,
         "istvanmolitor/customer": 20,
         "istvanmolitor/customer-product": 20,
+        "istvanmolitor/dynamic-form": 20,
         "istvanmolitor/elasticsearch": 20,
         "istvanmolitor/gallery": 20,
         "istvanmolitor/html-parser": 20,

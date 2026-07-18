@@ -73,7 +73,9 @@
       "@setting": ["resources/js/packages/vue-setting/index.ts"],
       "@setting/*": ["resources/js/packages/vue-setting/*"],
       "@tinyurl": ["resources/js/packages/vue-tinyurl/index.ts"],
-      "@tinyurl/*": ["resources/js/packages/vue-tinyurl/*"]
+      "@tinyurl/*": ["resources/js/packages/vue-tinyurl/*"],
+      "@dynamic-form": ["resources/js/packages/vue-dynamic-form/index.ts"],
+      "@dynamic-form/*": ["resources/js/packages/vue-dynamic-form/*"]
     }
   },
   "include": [

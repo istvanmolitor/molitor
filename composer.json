@@ -45,6 +45,7 @@
         "istvanmolitor/text-mining": "@dev",
         "istvanmolitor/theme": "@dev",
         "istvanmolitor/tinyurl": "@dev",
+        "istvanmolitor/dynamic-form": "@dev",
         "istvanmolitor/tree": "@dev",
         "istvanmolitor/unas": "@dev",
         "istvanmolitor/user": "@dev",
@@ -214,6 +215,10 @@
         {
             "type": "path",
             "url": "packages/tinyurl"
+        },
+        {
+            "type": "path",
+            "url": "packages/dynamic-form"
         },
         {
             "type": "path",

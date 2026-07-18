@@ -26,6 +26,7 @@ import { scraperMenuBuilder } from "@scraper/index.ts";
 import { galleryMenuBuilder } from "@gallery/index.ts";
 import { settingMenuBuilder } from "@setting/index.ts";
 import { tinyurlMenuBuilder } from "@tinyurl/index.ts";
+import { dynamicFormMenuBuilder } from "@dynamic-form/index.ts";
 
 menuRegistry.register(mediaMenuBuilder)
 menuRegistry.register(userMenuBuilder)
@@ -49,3 +50,4 @@ menuRegistry.register(scraperMenuBuilder)
 menuRegistry.register(galleryMenuBuilder)
 menuRegistry.register(settingMenuBuilder)
 menuRegistry.register(tinyurlMenuBuilder)
+menuRegistry.register(dynamicFormMenuBuilder)

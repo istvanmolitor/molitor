@@ -32,6 +32,8 @@
       "@cms/*": ["resources/js/packages/vue-cms/*"],
       "@cms-relations": ["resources/js/packages/vue-cms-post-relations/index.ts"],
       "@cms-relations/*": ["resources/js/packages/vue-cms-post-relations/*"],
+      "@cms-post-generator": ["resources/js/packages/vue-cms-post-generator/index.ts"],
+      "@cms-post-generator/*": ["resources/js/packages/vue-cms-post-generator/*"],
       "@currency": ["resources/js/packages/vue-currency/index.ts"],
       "@currency/*": ["resources/js/packages/vue-currency/*"],
       "@media": ["resources/js/packages/vue-media/index.ts"],

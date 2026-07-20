@@ -11,6 +11,7 @@
             <directory>packages/article-parser/tests</directory>
             <directory>packages/article-scraper/tests</directory>
             <directory>packages/cms/tests</directory>
+            <directory>packages/cms-post-generator/tests</directory>
             <directory>packages/cms-post-relations/tests</directory>
             <directory>packages/cms-search/tests</directory>
             <directory>packages/contact/tests</directory>

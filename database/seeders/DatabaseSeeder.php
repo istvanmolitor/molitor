@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use IstvanMolitor\ArticleScraper\database\seeders\ArticleScraperSeeder;
 use Molitor\Address\database\seeders\AddressSeeder;
 use Molitor\Cms\Database\Seeders\CmsSeeder;
+use Molitor\CmsPostGenerator\Database\Seeders\CmsPostGeneratorSeeder;
 use Molitor\CmsPostRelations\Database\Seeders\CmsPostRelationsSeeder;
 use Molitor\Currency\Database\Seeders\CurrencySeeder;
 use Molitor\Customer\database\seeders\CustomerSeeder;
@@ -42,6 +43,7 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             ArticleScraperSeeder::class,
             CmsSeeder::class,
+            CmsPostGeneratorSeeder::class,
             CmsPostRelationsSeeder::class,
             CurrencySeeder::class,
             CustomerSeeder::class,

@@ -18,6 +18,7 @@
         "istvanmolitor/auth-ui": "@dev",
         "istvanmolitor/blade-ui": "@dev",
         "istvanmolitor/cms": "@dev",
+        "istvanmolitor/cms-post-generator": "@dev",
         "istvanmolitor/cms-post-relations": "@dev",
         "istvanmolitor/cms-search": "@dev",
         "istvanmolitor/contact": "@dev",
@@ -91,6 +92,10 @@
         {
             "type": "path",
             "url": "packages/cms"
+        },
+        {
+            "type": "path",
+            "url": "packages/cms-post-generator"
         },
         {
             "type": "path",

@@ -19,6 +19,7 @@ import { customerRoutes } from '@customer/router'
 import { customerProductRoutes } from '@customer-product/router'
 import { addressRoutes } from '@address/router'
 import cmsRelationRoutes from '@cms-relations/router/index'
+import cmsPostGeneratorRoutes from '@cms-post-generator/router/index'
 import orderRoutes from '@order/router/index'
 import purchaseRoutes from '@purchase/router/index'
 import stockRoutes from '@stock/router/index'
@@ -55,6 +56,7 @@ const routes: RouteRecordRaw[] = [
   ...customerProductRoutes,
   ...addressRoutes,
   ...cmsRelationRoutes,
+  ...cmsPostGeneratorRoutes,
   ...orderRoutes,
   ...purchaseRoutes,
   ...stockRoutes,

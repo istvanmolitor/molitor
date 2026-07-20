@@ -14,6 +14,7 @@ import { rssWatcherMenuBuilder } from "@rss-watcher/index.ts";
 import { languageMenuBuilder } from "@language/index.ts";
 import { productMenuBuilder } from "@product/index.ts";
 import { cmsRelationsMenuBuilder } from "@cms-relations/index.ts";
+import { cmsPostGeneratorMenuBuilder } from "@cms-post-generator/index.ts";
 import { customerMenuBuilder } from "@customer/index.ts";
 import { customerProductMenuBuilder } from "@customer-product/index.ts";
 import { orderMenuBuilder } from "@order/index.ts";
@@ -38,6 +39,7 @@ menuRegistry.register(languageMenuBuilder)
 menuRegistry.register(currencyMenuBuilder)
 menuRegistry.register(productMenuBuilder)
 menuRegistry.register(cmsRelationsMenuBuilder)
+menuRegistry.register(cmsPostGeneratorMenuBuilder)
 menuRegistry.register(customerMenuBuilder)
 menuRegistry.register(customerProductMenuBuilder)
 menuRegistry.register(orderMenuBuilder)
